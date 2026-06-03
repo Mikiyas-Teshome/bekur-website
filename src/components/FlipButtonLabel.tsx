@@ -27,7 +27,7 @@ export default function FlipButtonLabel({
     const track = trackRef.current;
     if (!wrap || !track) return;
 
-    const trigger = wrap.closest("a, button");
+    const trigger = wrap.closest<HTMLElement>("a, button");
     if (!trigger) return;
 
     const motionQuery = window.matchMedia("(prefers-reduced-motion: reduce)");

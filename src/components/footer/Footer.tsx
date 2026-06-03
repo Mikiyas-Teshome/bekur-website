@@ -188,7 +188,7 @@ const Footer = () => {
 
             <BookCallButton
               className="px-12.5 h-15 text-xl md:text-[1.75rem]"
-              text="Book a call"
+              label="Book a call"
             />
           </div>
 
