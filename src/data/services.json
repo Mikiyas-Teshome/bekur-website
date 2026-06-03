@@ -1,0 +1,40 @@
+{
+  "services": [
+       {
+      "number": "01",
+      "title": "Outsource",
+      "description": "Reliable outsourcing services to help you scale faster and work smarter.",
+      "iconKey": "Outsource"
+    },
+    {
+      "number": "02",
+      "title": "Digital Marketing",
+      "description": "Data-driven strategies to grow your online presence and conversions.",
+      "iconKey": "DigitalMarketing"
+    },
+    {
+      "number": "03",
+      "title": "Social Media Management",
+      "description": "Engaging content and smart scheduling to build loyal audiences.",
+      "iconKey": "SocialMediaManagement"
+    },
+    {
+      "number": "04",
+      "title": "Web Development",
+      "description": "Responsive, high-performing websites tailored for seamless user experiences",
+      "iconKey": "WebDevelopment"
+    },
+    {
+      "number": "05",
+      "title": "App Development",
+      "description": "Intuitive, scalable mobile apps built for performance and engagement.",
+      "iconKey": "AppDevelopment"
+    },
+    {
+      "number": "06",
+      "title": "UI/UX Design",
+      "description": "Human-centered interfaces that balance usability, beauty, and business goals.",
+      "iconKey": "UiUxDevelopment"
+    }
+  ]
+}

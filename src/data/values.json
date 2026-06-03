@@ -1,0 +1,32 @@
+{
+  "values": [
+    {
+      "id": 1,
+      "title": "User-Centered Design",
+      "description": "We Put The Heart Of Everything—Every Product Starts With Empathy.",
+      "step": "01",
+      "iconKey": "Users"
+    },
+    {
+      "id": 2,
+      "title": "Innovation & Creativity",
+      "description": "We Blend Technology With Imagination To Deliver Fresh, Forward-Thinking Solutions.",
+      "step": "02",
+      "iconKey": "Lightbulb"
+    },
+    {
+      "id": 3,
+      "title": "Collaboration",
+      "description": "We Work Closely With Clients And Teams, Valuing Honest Communication And Teamwork.",
+      "step": "03",
+      "iconKey": "Handshake"
+    },
+    {
+      "id": 4,
+      "title": "Quality",
+      "description": "We're Committed To Delivering High-Performing, Detail-Driven Work— Every Time.",
+      "step": "04",
+      "iconKey": "Shield"
+    }
+  ]
+}

@@ -1,0 +1,75 @@
+{
+  "pageId": "automation-sprint",
+  "version": "1.0",
+  "seo": {
+    "title": "The Automation Sprint — one workflow in 3–6 weeks",
+    "description": "One production workflow in 3–6 weeks. Fixed scope and price, logic mapping first, partner approvals, hard monthly AI cap for professional service firms.",
+    "canonicalPath": "/automation-sprint"
+  },
+  "hero": {
+    "eyebrow": "Core offer",
+    "headline": "The Automation Sprint",
+    "subheadline": "One production workflow. Fixed scope. Fixed price. Built into your existing stack — not a rip-and-replace platform sale.",
+    "primaryCta": {
+      "label": "Book a call",
+      "href": "/blueprint#book",
+      "variant": "primary"
+    },
+    "secondaryCta": {
+      "label": "See pricing",
+      "href": "/pricing",
+      "variant": "secondary"
+    }
+  },
+  "definition": {
+    "oneLiner": "We help small professional service firms reclaim hundreds of partner hours in 3–6 weeks — without rigid SaaS templates, surprise AI bills, or scope creep.",
+    "timeline": "3–6 weeks per sprint",
+    "scopeRule": "Exactly one workflow per sprint. Additional workflows require a new sprint or change order."
+  },
+  "process": [
+    {
+      "order": 1,
+      "title": "Logic Mapping",
+      "description": "We map how your firm actually operates — triggers, approvals, exceptions, and data sources — before any build.",
+      "duration": "Weeks 1–2"
+    },
+    {
+      "order": 2,
+      "title": "Fixed-scope build",
+      "description": "Senior engineers implement one production workflow into your stack with written AI spend limits.",
+      "duration": "Weeks 3–5"
+    },
+    {
+      "order": 3,
+      "title": "Approval & go-live",
+      "description": "Partner sign-off on every client-facing step. Team adoption support so the workflow runs Monday morning.",
+      "duration": "Week 6"
+    }
+  ],
+  "inclusions": [
+    "One production workflow, documented and owned by your firm",
+    "Integration with existing email, CRM, drives, and spreadsheets",
+    "Hard monthly AI spend cap written into scope",
+    "Partner approval gates on client-facing automation",
+    "Handoff documentation and adoption walkthrough"
+  ],
+  "exclusions": [
+    "Multiple workflows in a single sprint",
+    "Full SaaS replacement or greenfield platform builds",
+    "Open-ended discovery or hourly billing",
+    "SOC 2 / HIPAA pipeline certifications we cannot credibly deliver",
+    "Generic AI wrappers we would not trust on real firm data"
+  ],
+  "deliverables": [
+    "Logic map of the automated workflow",
+    "Production automation with monitoring",
+    "Written scope, fixed price, and AI cost cap",
+    "ROI measurement plan (90-day window)"
+  ],
+  "promises": [
+    { "label": "Time to live", "value": "3–6 weeks" },
+    { "label": "Economics", "value": "Hard monthly AI cap in scope" },
+    { "label": "ROI window", "value": "Measurable target within 90 days of go-live" },
+    { "label": "Risk gate", "value": "Optional paid Blueprint before full build" }
+  ]
+}

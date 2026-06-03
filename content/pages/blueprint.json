@@ -1,0 +1,44 @@
+{
+  "pageId": "blueprint",
+  "version": "1.0",
+  "seo": {
+    "title": "Blueprint — logic mapping before your Automation Sprint",
+    "description": "Paid Blueprint phase maps your firm's business logic and fixes your Automation Sprint quote before full build. De-risk scope, timeline, and AI spend.",
+    "canonicalPath": "/blueprint"
+  },
+  "hero": {
+    "eyebrow": "Start here",
+    "headline": "Blueprint: map the logic before you commit to the build",
+    "subheadline": "A paid logic-mapping engagement that defines one workflow, fixes sprint scope and price, and puts a hard AI spend cap on paper — before a line of production code.",
+    "primaryCta": {
+      "label": "Book a call",
+      "href": "/blueprint#book",
+      "variant": "primary"
+    }
+  },
+  "price": {
+    "amount": 2500,
+    "currency": "USD",
+    "label": "Blueprint tier (starting)"
+  },
+  "deliverables": [
+    "Workflow logic map aligned to how your firm actually operates",
+    "Fixed-scope Automation Sprint quote (scope, timeline, price)",
+    "Written hard monthly AI spend cap for the proposed workflow",
+    "Go / no-go recommendation with honest fit assessment"
+  ],
+  "outcomes": [
+    "No surprise scope creep after kickoff",
+    "Clear single-workflow focus for the sprint",
+    "Decision-ready package for the managing partner"
+  ],
+  "nextStep": {
+    "headline": "Book a call",
+    "description": "30 minutes with a senior operator. We qualify fit, name the highest-ROI workflow, and explain next steps. Below 60 on the ICP scorecard — we'll say so politely.",
+    "cta": {
+      "label": "Schedule Blueprint",
+      "href": "/blueprint#book",
+      "type": "calendly"
+    }
+  }
+}

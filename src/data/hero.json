@@ -1,0 +1,80 @@
+{
+  "hero": {
+    "headline": {
+      "main": "Transform Your",
+      "highlight": "Business",
+      "ending": "With",
+      "subtitle": "Digital Innovation."
+    },
+    "description": {
+      "mobile": "We are dedicated to delivering exceptional value by blending innovative web development, strategic digital marketing, and intuitive design with a relentless commitment to client success.",
+      "desktop": "We are dedicated to delivering exceptional value by blending innovative web development, strategic digital marketing, and intuitive design with a relentless commitment to client success."
+    },
+    "video": {
+      "thumbnail": "/assets/office-interior.png",
+      "alt": "Hero Video",
+      "youtubeUrl": "https://www.youtube.com/watch?v=dQw4w9WgXcQ"
+    },
+    "clientSatisfaction": {
+      "count": "3K+",
+      "label": "Satisfied Clients",
+      "avatars": [
+        {
+          "image": "https://images.unsplash.com/photo-1494790108755-2616b612b786?w=150&h=150&fit=crop&crop=face",
+          "name": "Sarah Chen",
+          "fallback": "SC"
+        },
+        {
+          "image": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150&h=150&fit=crop&crop=face",
+          "name": "Michael Rodriguez",
+          "fallback": "MR"
+        },
+        {
+          "image": "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=150&h=150&fit=crop&crop=face",
+          "name": "Emily Johnson",
+          "fallback": "EJ"
+        },
+        {
+          "image": "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=150&h=150&fit=crop&crop=face",
+          "name": "David Park",
+          "fallback": "DP"
+        },
+        {
+          "image": "https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=150&h=150&fit=crop&crop=face",
+          "name": "Lisa Thompson",
+          "fallback": "LT"
+        },
+        {
+          "image": "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=150&h=150&fit=crop&crop=face",
+          "name": "James Wilson",
+          "fallback": "JW"
+        },
+        {
+          "image": "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=150&h=150&fit=crop&crop=face",
+          "name": "Anna Martinez",
+          "fallback": "AM"
+        }
+      ]
+    },
+    "socialPlatforms": [
+      {
+        "name": "Facebook",
+        "url": "https://facebook.com"
+      },
+      {
+        "name": "LinkedIn",
+        "url": "https://linkedin.com"
+      },
+      {
+        "name": "Youtube",
+        "url": "https://youtube.com"
+      }
+    ],
+    "background": {
+      "image": "/bg.svg",
+      "size": "cover",
+      "position": "center",
+      "repeat": "no-repeat"
+    }
+  }
+}

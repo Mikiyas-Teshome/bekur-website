@@ -1,0 +1,80 @@
+{
+  "pageId": "faq",
+  "version": "1.0",
+  "seo": {
+    "title": "FAQ — Automation Sprint & Blueprint",
+    "description": "Answers on scope, AI spend caps, timelines, fit, and what Bekur does not do. Honest disqualifiers for professional service firms.",
+    "canonicalPath": "/faq"
+  },
+  "hero": {
+    "headline": "Questions operators ask before they commit",
+    "subheadline": "Short answers. No hype.",
+    "primaryCta": {
+      "label": "Book a call",
+      "href": "/blueprint#book",
+      "variant": "primary"
+    }
+  },
+  "items": [
+    {
+      "id": "what-is-sprint",
+      "question": "What is an Automation Sprint?",
+      "answer": "A fixed-scope engagement to ship one production workflow in 3–6 weeks. Logic Mapping comes first, then build, then partner approval and go-live.",
+      "category": "offer"
+    },
+    {
+      "id": "one-workflow",
+      "question": "Can you automate multiple workflows in one sprint?",
+      "answer": "No. One workflow per sprint keeps scope honest and adoption high. Additional workflows mean a new sprint or a signed change order.",
+      "category": "offer"
+    },
+    {
+      "id": "ai-cap",
+      "question": "How do you cap AI spend?",
+      "answer": "We agree a hard monthly AI spend limit in writing before build. Architecture and monitoring are designed to stay inside that cap.",
+      "category": "pricing"
+    },
+    {
+      "id": "blueprint-required",
+      "question": "Do I need Blueprint before a sprint?",
+      "answer": "Not always, but we recommend it when logic is messy or the quote needs certainty. Blueprint maps the workflow and fixes sprint price before production code.",
+      "category": "process"
+    },
+    {
+      "id": "replace-saas",
+      "question": "Will you replace our Clio / CRM / practice management system?",
+      "answer": "No. We build into your existing stack. Full SaaS replacement is out of scope.",
+      "category": "fit"
+    },
+    {
+      "id": "roi",
+      "question": "When will we see ROI?",
+      "answer": "We target a measurable outcome within 90 days of go-live. Blueprint and Logic Mapping define what we measure.",
+      "category": "offer"
+    },
+    {
+      "id": "who-builds",
+      "question": "Who actually does the work?",
+      "answer": "Senior engineers and operators. We don't put juniors on client sprints.",
+      "category": "process"
+    },
+    {
+      "id": "compliance",
+      "question": "Do you provide SOC 2 or HIPAA-certified pipelines?",
+      "answer": "No. If you require certifications we cannot credibly deliver, we're not the right partner.",
+      "category": "disqualifiers"
+    },
+    {
+      "id": "committee",
+      "question": "Can our IT team run the purchase?",
+      "answer": "The managing partner or founder needs to own the engagement. Committee-only buying is a poor fit for sprints.",
+      "category": "disqualifiers"
+    },
+    {
+      "id": "geography",
+      "question": "Where are you based? Do you work globally?",
+      "answer": "We're in Addis Ababa and serve US, UK, Canada, and Australia. Delivery is remote; voice is operator-first, not geography-led.",
+      "category": "fit"
+    }
+  ]
+}

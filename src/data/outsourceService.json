@@ -1,0 +1,47 @@
+{
+  "values": [
+    {
+      "id": 1,
+      "title": "Graphic Designers",
+      "description": "Visually compelling creatives for ads, social media, and marketing collateral.",
+      "step": "01",
+      "iconKey": "Users"
+    },
+    {
+      "id": 2,
+      "title": "Front-End Developers",
+      "description": "React, Angular, Vue — build stunning, responsive user interfaces.",
+      "step": "02",
+      "iconKey": "Lightbulb"
+    },
+    {
+      "id": 3,
+      "title": "Back-End Developers",
+      "description": "Node.js, Python, PHP, Java — scalable and secure back-end systems.",
+      "step": "03",
+      "iconKey": "Handshake"
+    },
+    {
+      "id": 4,
+      "title": "Full-Stack Developers",
+      "description": "Experts who handle both client-side and server-side development.",
+      "step": "04",
+      "iconKey": "Shield"
+    }
+    ,
+    {
+      "id": 5,
+      "title": "Mobile App Developers",
+      "description": "iOS, Android, Flutter, React Native — build mobile experiences users love.",
+      "step": "05",
+      "iconKey": "Users"
+    },
+    {
+      "id": 6,
+      "title": "UI/UX Designers",
+      "description": "Design systems, user flows, prototypes craft user-centered products.",
+      "step": "06",
+      "iconKey": "Lightbulb"
+    }
+  ]
+}

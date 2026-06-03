@@ -1,0 +1,73 @@
+{
+  "pageId": "pricing",
+  "version": "1.0",
+  "seo": {
+    "title": "Pricing — Automation Sprint tiers",
+    "description": "Transparent Automation Sprint pricing from $4,500–$26,000. Pilot, Standard, and Mid-Market tiers. Blueprint from $2,500. Fixed scope, fixed price.",
+    "canonicalPath": "/pricing"
+  },
+  "hero": {
+    "headline": "Fixed scope. Fixed price. No surprise AI bills.",
+    "subheadline": "Sprint engagements typically range $4,500–$26,000 by tier. Blueprint de-risks the quote before full build.",
+    "primaryCta": {
+      "label": "Book a call",
+      "href": "/blueprint#book",
+      "variant": "primary"
+    }
+  },
+  "intro": "Pricing filters tire-kickers and aligns expectations. Every sprint includes one workflow, written AI spend cap, and 3–6 week delivery.",
+  "tiers": [
+    {
+      "id": "pilot",
+      "name": "Pilot",
+      "priceFrom": 4500,
+      "priceTo": 8500,
+      "currency": "USD",
+      "timelineWeeks": "3–4 weeks",
+      "idealFor": "Single high-friction workflow; first automation with Bekur",
+      "includes": [
+        "One workflow, limited integrations",
+        "Logic map + production build",
+        "Hard monthly AI cap in scope",
+        "Partner approval gates"
+      ],
+      "excludes": ["Multi-system orchestration", "Multiple workflows"]
+    },
+    {
+      "id": "standard",
+      "name": "Standard",
+      "priceFrom": 9000,
+      "priceTo": 16000,
+      "currency": "USD",
+      "timelineWeeks": "4–5 weeks",
+      "idealFor": "Cross-tool workflow (email + CRM + drive + spreadsheet)",
+      "includes": [
+        "One workflow, multiple integrations",
+        "Monitoring and handoff documentation",
+        "Adoption walkthrough for core users",
+        "90-day ROI measurement plan"
+      ]
+    },
+    {
+      "id": "mid-market",
+      "name": "Mid-Market",
+      "priceFrom": 17000,
+      "priceTo": 26000,
+      "currency": "USD",
+      "timelineWeeks": "5–6 weeks",
+      "idealFor": "Higher complexity logic, more approval branches, larger firms",
+      "includes": [
+        "One complex workflow with exception handling",
+        "Extended integration surface",
+        "Priority senior delivery",
+        "Post-go-live tuning window (scoped)"
+      ]
+    }
+  ],
+  "blueprintNote": {
+    "headline": "Not sure which tier?",
+    "body": "Start with Blueprint ($2,500 tier). You'll get a logic map and a fixed sprint quote before committing to build.",
+    "href": "/blueprint"
+  },
+  "disclaimer": "Final quote depends on workflow complexity surfaced in Logic Mapping. We do not bill open-ended hours."
+}

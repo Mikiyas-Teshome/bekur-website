@@ -1,0 +1,27 @@
+[
+  {
+    "title": "Discovery & Planning",
+    "number": "01",
+    "description": "Defining goals, audiences, and structure to build a strategic foundation."
+  },
+  {
+    "title": "UI/UX Design for Web",
+    "number": "02",
+    "description": "Designing intuitive, user-focused interfaces that drive engagement."
+  },
+  {
+    "title": "Development",
+    "number": "03",
+    "description": "Bringing designs to life with clean, scalable, and responsive code."
+  },
+  {
+    "title": "Deployment",
+    "number": "04",
+    "description": "Launching your website smoothly and securely, ready for the world."
+  },
+  {
+    "title": "Hosting & Testing",
+    "number": "05",
+    "description": "Ensuring stability, speed, and performance through reliable hosting and rigorous QA."
+  }
+]

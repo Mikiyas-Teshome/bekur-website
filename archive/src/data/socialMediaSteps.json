@@ -1,0 +1,29 @@
+{
+  "socialMediaSteps": [
+    {
+      "number": "01",
+      "title": "Research & Planning",
+      "description": "Laying the groundwork with data-driven insights and strategic direction."
+    },
+    {
+      "number": "02",
+      "title": "Content Calendar",
+      "description": "Organizing consistent, timely content aligned with your brand goals."
+    },
+    {
+      "number": "03",
+      "title": "Creative Design",
+      "description": "Crafting visually compelling assets that capture attention and tell your story."
+    },
+    {
+      "number": "04",
+      "title": "Posting & Monitoring",
+      "description": "Publishing with precision and tracking engagement in real time."
+    },
+    {
+      "number": "05",
+      "title": "Performance Analysis",
+      "description": "Reviewing results to optimize strategy and maximize impact."
+    }
+  ]
+}

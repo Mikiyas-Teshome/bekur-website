@@ -1,0 +1,187 @@
+/* Blog Content Styles for TipTap HTML Rendering */
+
+.blog-content {
+  color: var(--foreground);
+  line-height: 1.625;
+}
+
+.blog-content h1 {
+  font-size: 1.875rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+  margin-top: 2rem;
+}
+
+.blog-content h1:first-child {
+  margin-top: 0;
+}
+
+.blog-content h2 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  margin-top: 1.5rem;
+}
+
+.blog-content h3 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-bottom: 0.75rem;
+  margin-top: 1.25rem;
+}
+
+.blog-content h4 {
+  font-size: 1.125rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  margin-top: 1rem;
+}
+
+.blog-content h5 {
+  font-size: 1rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  margin-top: 0.75rem;
+}
+
+.blog-content h6 {
+  font-size: 0.875rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  margin-top: 0.75rem;
+}
+
+.blog-content p {
+  margin-bottom: 1rem;
+  font-size: 1rem;
+  line-height: 1.625;
+}
+
+.blog-content ul {
+  margin-bottom: 1rem;
+  margin-left: 1.5rem;
+  list-style-type: disc;
+}
+
+.blog-content ol {
+  margin-bottom: 1rem;
+  margin-left: 1.5rem;
+  list-style-type: decimal;
+}
+
+.blog-content li {
+  margin-bottom: 0.5rem;
+}
+
+.blog-content blockquote {
+  border-left: 4px solid var(--primary);
+  padding-left: 1rem;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  margin-bottom: 1rem;
+  font-style: italic;
+  color: var(--muted-foreground);
+  background-color: color-mix(in srgb, var(--muted) 50%, transparent);
+  border-top-right-radius: 0.25rem;
+  border-bottom-right-radius: 0.25rem;
+}
+
+.blog-content code {
+  background-color: var(--muted);
+  padding: 0.25rem 0.5rem;
+  border-radius: 0.25rem;
+  font-size: 0.875rem;
+  font-family: ui-monospace, SFMono-Regular, "SF Mono", Consolas, "Liberation Mono", Menlo, monospace;
+}
+
+.blog-content pre {
+  background-color: var(--muted);
+  padding: 1rem;
+  border-radius: 0.5rem;
+  overflow-x: auto;
+  margin-bottom: 1rem;
+}
+
+.blog-content pre code {
+  background-color: transparent;
+  padding: 0;
+}
+
+.blog-content a {
+  color: var(--primary);
+  text-decoration: underline;
+}
+
+.blog-content a:hover {
+  text-decoration: underline;
+}
+
+.blog-content img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.blog-content table {
+  width: 100%;
+  border-collapse: collapse;
+  border: 1px solid var(--border);
+  margin-bottom: 1rem;
+}
+
+.blog-content th {
+  border: 1px solid var(--border);
+  background-color: var(--muted);
+  padding: 1rem;
+  text-align: left;
+  font-weight: 600;
+}
+
+.blog-content td {
+  border: 1px solid var(--border);
+  padding: 1rem;
+}
+
+.blog-content hr {
+  border-top: 1px solid var(--border);
+  margin: 1.5rem 0;
+}
+
+.blog-content strong {
+  font-weight: 600;
+}
+
+.blog-content em {
+  font-style: italic;
+}
+
+.blog-content u {
+  text-decoration: underline;
+}
+
+.blog-content s {
+  text-decoration: line-through;
+}
+
+.blog-content mark {
+  background-color: #fef08a;
+  padding: 0.125rem;
+  border-radius: 0.25rem;
+}
+
+.dark .blog-content mark {
+  background-color: #713f12;
+}
+
+.blog-content sup {
+  font-size: 0.75rem;
+  position: relative;
+  top: -0.5em;
+}
+
+.blog-content sub {
+  font-size: 0.75rem;
+  position: relative;
+  bottom: -0.5em;
+}

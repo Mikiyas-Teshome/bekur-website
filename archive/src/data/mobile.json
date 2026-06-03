@@ -1,0 +1,27 @@
+[
+  {
+    "title": "Android & iOS Development",
+    "number": "01",
+    "description": "Develop high-performance and user-friendly mobile applications for iOS and Android."
+  },
+  {
+    "title": "Cross-Platform Development",
+    "number": "02",
+    "description": "Ensure your website looks great and functions perfectly on all mobile devices."
+  },
+  {
+    "title": "Mobile UI/UX Design",
+    "number": "03",
+    "description": "Craft intuitive and engaging user interfaces and experiences tailored for mobile."
+  },
+  {
+    "title": "App Store Optimization",
+    "number": "04",
+    "description": "Create effective mobile marketing campaigns to reach your target audience."
+  },
+  {
+    "title": "Mobile App Testing",
+    "number": "05",
+    "description": "Optimize mobile app and website performance for speed and efficiency."
+  }
+]

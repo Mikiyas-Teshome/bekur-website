@@ -1,0 +1,85 @@
+{
+  "pageId": "contact",
+  "version": "1.0",
+  "seo": {
+    "title": "Contact Bekur — book a Blueprint call",
+    "description": "Reach Bekur Technologies. Qualify for an Automation Sprint or Blueprint. For managing partners at professional service firms ready to act within 90 days.",
+    "canonicalPath": "/contact"
+  },
+  "hero": {
+    "headline": "Tell us what's stuck — we'll say if we're the right fit",
+    "subheadline": "This form is for founders and managing partners. If you're a fit, we'll recommend Blueprint or a sprint path.",
+    "primaryCta": {
+      "label": "Book Blueprint instead",
+      "href": "/blueprint#book",
+      "variant": "secondary"
+    }
+  },
+  "intro": "We respond to operator-led inquiries within one business day. Include the workflow you want off your plate.",
+  "qualificationFields": [
+    {
+      "id": "name",
+      "label": "Full name",
+      "type": "text",
+      "required": true
+    },
+    {
+      "id": "email",
+      "label": "Work email",
+      "type": "email",
+      "required": true
+    },
+    {
+      "id": "firm",
+      "label": "Firm name",
+      "type": "text",
+      "required": true
+    },
+    {
+      "id": "role",
+      "label": "Your role",
+      "type": "select",
+      "required": true,
+      "options": [
+        "Founder",
+        "Managing partner",
+        "COO / Operations",
+        "Other (decision-maker)",
+        "Not a decision-maker"
+      ]
+    },
+    {
+      "id": "team-size",
+      "label": "Team size",
+      "type": "select",
+      "required": true,
+      "options": ["1–4", "5–15", "16–50", "50+"]
+    },
+    {
+      "id": "pain",
+      "label": "Primary pain",
+      "type": "select",
+      "required": true,
+      "options": [
+        "Rigid SaaS / templates don't fit",
+        "AI costs out of control",
+        "Data silos / tools don't talk",
+        "Failed AI or automation pilot",
+        "Billable hour leakage / admin bloat"
+      ]
+    },
+    {
+      "id": "workflow",
+      "label": "One workflow you want automated",
+      "type": "textarea",
+      "required": true
+    },
+    {
+      "id": "timeline",
+      "label": "When do you need this live?",
+      "type": "select",
+      "required": true,
+      "options": ["Within 30 days", "Within 90 days", "Exploring — no fixed date"]
+    }
+  ]
+}

@@ -1,0 +1,69 @@
+{
+  "pageId": "why-bekur",
+  "version": "1.0",
+  "seo": {
+    "title": "Why Bekur — logic-first automation for operators",
+    "description": "We don't bend your firm to the tool. Fixed-scope Automation Sprints, hard AI caps, and senior-only delivery for professional service firms.",
+    "canonicalPath": "/why-bekur"
+  },
+  "hero": {
+    "headline": "We don't bend your firm to the tool.",
+    "subheadline": "We build the tool to your firm.",
+    "primaryCta": {
+      "label": "Book a call",
+      "href": "/blueprint#book",
+      "variant": "primary"
+    }
+  },
+  "tagline": "We don't bend your firm to the tool. We build the tool to your firm.",
+  "comparisonTable": [
+    {
+      "alternative": "Vertical SaaS",
+      "theirFailure": "Median-firm templates; painful when your logic deviates",
+      "bekurWins": "Your logic mapped; built around your stack"
+    },
+    {
+      "alternative": "Generic AI agencies",
+      "theirFailure": "Open-ended hours; uncapped AI; demos not production",
+      "bekurWins": "Fixed scope, fixed price, written AI cap"
+    },
+    {
+      "alternative": "Freelance developers",
+      "theirFailure": "Build what you ask; don't fix broken business logic",
+      "bekurWins": "Logic Mapping before implementation"
+    },
+    {
+      "alternative": "Enterprise consultancies",
+      "theirFailure": "Procurement theater; 18-month roadmaps",
+      "bekurWins": "One sprint, ROI inside 90 days"
+    }
+  ],
+  "brandValues": [
+    {
+      "title": "Logic before code",
+      "description": "Mapping and partner sign-off before implementation."
+    },
+    {
+      "title": "Accountability by design",
+      "description": "Fixed scope, fixed price, written AI cap, approval gates, change orders only."
+    },
+    {
+      "title": "Proof over promises",
+      "description": "Credibility from shipped production systems — not pitch decks."
+    },
+    {
+      "title": "Small is intentional",
+      "description": "Senior-only team. The people in the room build the work."
+    },
+    {
+      "title": "Built for operators",
+      "description": "Managing partners and founders — not IT departments."
+    }
+  ],
+  "deliveryPromises": [
+    { "promise": "Time to live", "commitment": "3–6 weeks per Automation Sprint" },
+    { "promise": "Economics", "commitment": "Hard monthly AI spend cap in scope before kickoff" },
+    { "promise": "ROI window", "commitment": "Measurable outcome target within 90 days of go-live" },
+    { "promise": "Risk gate", "commitment": "Paid Blueprint maps logic and fixes sprint quote" }
+  ]
+}

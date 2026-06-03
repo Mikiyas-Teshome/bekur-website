@@ -1,0 +1,38 @@
+{
+  "siteName": "Bekur Technologies",
+  "defaultTitle": "Bekur Technologies — Custom automation for professional service firms",
+  "titleTemplate": "%s | Bekur Technologies",
+  "defaultDescription": "Logic-first automation for small professional service firms. One workflow per Automation Sprint — fixed scope, fixed price, hard monthly AI spend cap, live in 3–6 weeks.",
+  "canonicalBase": "https://www.bekurtechnologies.com",
+  "locale": "en_US",
+  "twitterHandle": "@bekurtech",
+  "ogImage": "/og-image.jpg",
+  "keywordPillars": [
+    "professional service firm automation",
+    "custom workflow automation",
+    "automation sprint fixed scope",
+    "logic mapping before automation",
+    "AI hype fatigue professional services",
+    "billable hour automation",
+    "hard cap AI spend automation",
+    "Clio alternative custom workflow",
+    "client intake automation law firm",
+    "operational systems firm"
+  ],
+  "organization": {
+    "name": "Bekur Technologies",
+    "legalName": "Bekur Technologies",
+    "url": "https://www.bekurtechnologies.com",
+    "logo": "/assets/logo/logo-light.svg",
+    "address": {
+      "addressLocality": "Addis Ababa",
+      "addressCountry": "ET"
+    },
+    "areaServed": ["US", "GB", "CA", "AU"],
+    "sameAs": [
+      "https://www.linkedin.com/company/bekur-technologies",
+      "https://www.facebook.com/bekurtechnologies",
+      "https://www.twitter.com/bekurtech"
+    ]
+  }
+}

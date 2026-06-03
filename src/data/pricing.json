@@ -1,0 +1,734 @@
+{
+  "digitalmarketing": {
+    "pricingType": "platform_based",
+    "platforms": {
+      "facebook": [
+        {
+          "name": "Free",
+          "price": "0",
+          "period": "monthly",
+          "features": [
+            "Basic Facebook page setup",
+            "Content calendar",
+            "Basic analytics",
+            "Up to 5 posts per month"
+          ],
+          "highlight": false,
+          "order": 1,
+          "subtitle": "per user/month, billed annually",
+          "targetAudience": "For Small Businesses",
+          "buttonText": "Get Started"
+        },
+        {
+          "name": "Basic",
+          "price": "39",
+          "discount": "15",
+          "period": "monthly",
+          "features": [
+            "Facebook ads management",
+            "Advanced analytics",
+            "Content creation",
+            "Community management",
+            "Up to 20 posts per month"
+          ],
+          "highlight": false,
+          "order": 2,
+          "subtitle": "per user/month, billed annually",
+          "targetAudience": "For Growing Businesses",
+          "buttonText": "Get Started"
+        },
+        {
+          "name": "Pro",
+          "price": "59",
+          "discount": "15",
+          "period": "monthly",
+          "features": [
+            "Advanced Facebook ads",
+            "Custom audiences",
+            "A/B testing",
+            "Priority support",
+            "Unlimited posts"
+          ],
+          "highlight": true,
+          "order": 3,
+          "subtitle": "per user/month, billed annually",
+          "targetAudience": "For Scaling Businesses",
+          "buttonText": "Get Started"
+        },
+        {
+          "name": "Enterprise",
+          "price": "129",
+          "period": "monthly",
+          "features": [
+            "White-label solutions",
+            "Custom integrations",
+            "Dedicated account manager",
+            "Advanced reporting",
+            "Multi-account management"
+          ],
+          "highlight": false,
+          "order": 4,
+          "subtitle": "per user/month, billed annually",
+          "targetAudience": "For Large Corporations",
+          "buttonText": "Contact Sales"
+        }
+      ],
+      "linkedin": [
+        {
+          "name": "Free",
+          "price": "0",
+          "period": "monthly",
+          "features": [
+            "LinkedIn profile optimization",
+            "Basic content posting",
+            "Network growth tips",
+            "Up to 5 posts per month"
+          ],
+          "highlight": false,
+          "order": 1,
+          "subtitle": "per user/month, billed annually",
+          "targetAudience": "For Professionals",
+          "buttonText": "Get Started"
+        },
+        {
+          "name": "Basic",
+          "price": "45",
+          "discount": "15",
+          "period": "monthly",
+          "features": [
+            "LinkedIn ads management",
+            "Lead generation",
+            "Content strategy",
+            "Analytics dashboard",
+            "Up to 20 posts per month"
+          ],
+          "highlight": false,
+          "order": 2,
+          "subtitle": "per user/month, billed annually",
+          "targetAudience": "For B2B Companies",
+          "buttonText": "Get Started"
+        },
+        {
+          "name": "Pro",
+          "price": "79",
+          "discount": "15",
+          "period": "monthly",
+          "features": [
+            "Advanced LinkedIn campaigns",
+            "Sales Navigator integration",
+            "Automated outreach",
+            "Custom reporting",
+            "Unlimited posts"
+          ],
+          "highlight": true,
+          "order": 3,
+          "subtitle": "per user/month, billed annually",
+          "targetAudience": "For Sales Teams",
+          "buttonText": "Get Started"
+        },
+        {
+          "name": "Enterprise",
+          "price": "149",
+          "period": "monthly",
+          "features": [
+            "Multi-account management",
+            "API integrations",
+            "Custom training",
+            "Dedicated support",
+            "Advanced analytics"
+          ],
+          "highlight": false,
+          "order": 4,
+          "subtitle": "per user/month, billed annually",
+          "targetAudience": "For Enterprise",
+          "buttonText": "Contact Sales"
+        }
+      ],
+      "tiktok": [
+        {
+          "name": "Free",
+          "price": "0",
+          "period": "monthly",
+          "features": [
+            "TikTok account setup",
+            "Content ideas",
+            "Basic hashtag research",
+            "Up to 5 videos per month"
+          ],
+          "highlight": false,
+          "order": 1,
+          "subtitle": "per user/month, billed annually",
+          "targetAudience": "For Creators",
+          "buttonText": "Get Started"
+        },
+        {
+          "name": "Basic",
+          "price": "29",
+          "discount": "15",
+          "period": "monthly",
+          "features": [
+            "TikTok ads management",
+            "Trend analysis",
+            "Content creation",
+            "Performance tracking",
+            "Up to 20 videos per month"
+          ],
+          "highlight": false,
+          "order": 2,
+          "subtitle": "per user/month, billed annually",
+          "targetAudience": "For Small Brands",
+          "buttonText": "Get Started"
+        },
+        {
+          "name": "Pro",
+          "price": "49",
+          "discount": "15",
+          "period": "monthly",
+          "features": [
+            "Advanced TikTok campaigns",
+            "Influencer partnerships",
+            "Viral content strategy",
+            "Analytics insights",
+            "Unlimited videos"
+          ],
+          "highlight": true,
+          "order": 3,
+          "subtitle": "per user/month, billed annually",
+          "targetAudience": "For Growing Brands",
+          "buttonText": "Get Started"
+        },
+        {
+          "name": "Enterprise",
+          "price": "99",
+          "period": "monthly",
+          "features": [
+            "Multi-brand management",
+            "Custom creative production",
+            "Advanced targeting",
+            "Priority support",
+            "White-label solutions"
+          ],
+          "highlight": false,
+          "order": 4,
+          "subtitle": "per user/month, billed annually",
+          "targetAudience": "For Agencies",
+          "buttonText": "Contact Sales"
+        }
+      ]
+    }
+  },
+  "socialmediamanagement": {
+    "pricingType": "platform_based",
+    "platforms": {
+      "instagram": [
+        {
+          "name": "Free",
+          "price": "0",
+          "period": "monthly",
+          "features": [
+            "Basic Instagram setup",
+            "Content calendar",
+            "Basic hashtag research",
+            "Up to 10 posts per month"
+          ],
+          "highlight": false,
+          "order": 1,
+          "subtitle": "per user/month, billed annually",
+          "targetAudience": "For Personal Brands",
+          "buttonText": "Get Started"
+        },
+        {
+          "name": "Basic",
+          "price": "199",
+          "discount": "10",
+          "period": "monthly",
+          "features": [
+            "Instagram content creation",
+            "Story management",
+            "Hashtag strategy",
+            "Basic analytics",
+            "Up to 30 posts per month"
+          ],
+          "highlight": false,
+          "order": 2,
+          "subtitle": "per user/month, billed annually",
+          "targetAudience": "For Small Businesses",
+          "buttonText": "Get Started"
+        },
+        {
+          "name": "Pro",
+          "price": "399",
+          "discount": "10",
+          "period": "monthly",
+          "features": [
+            "Advanced Instagram strategy",
+            "Influencer outreach",
+            "Advanced analytics",
+            "Priority support",
+            "Unlimited posts"
+          ],
+          "highlight": true,
+          "order": 3,
+          "subtitle": "per user/month, billed annually",
+          "targetAudience": "For Growing Brands",
+          "buttonText": "Get Started"
+        },
+        {
+          "name": "Enterprise",
+          "price": "799",
+          "period": "monthly",
+          "features": [
+            "Multi-account management",
+            "Custom campaigns",
+            "Advanced reporting",
+            "Dedicated manager",
+            "White-label solutions"
+          ],
+          "highlight": false,
+          "order": 4,
+          "subtitle": "per user/month, billed annually",
+          "targetAudience": "For Agencies",
+          "buttonText": "Contact Sales"
+        }
+      ],
+      "twitter": [
+        {
+          "name": "Free",
+          "price": "0",
+          "period": "monthly",
+          "features": [
+            "Basic Twitter setup",
+            "Content calendar",
+            "Basic engagement",
+            "Up to 20 tweets per month"
+          ],
+          "highlight": false,
+          "order": 1,
+          "subtitle": "per user/month, billed annually",
+          "targetAudience": "For Personal Brands",
+          "buttonText": "Get Started"
+        },
+        {
+          "name": "Basic",
+          "price": "149",
+          "discount": "10",
+          "period": "monthly",
+          "features": [
+            "Twitter content creation",
+            "Engagement management",
+            "Trend monitoring",
+            "Basic analytics",
+            "Up to 50 tweets per month"
+          ],
+          "highlight": false,
+          "order": 2,
+          "subtitle": "per user/month, billed annually",
+          "targetAudience": "For Small Businesses",
+          "buttonText": "Get Started"
+        },
+        {
+          "name": "Pro",
+          "price": "299",
+          "discount": "10",
+          "period": "monthly",
+          "features": [
+            "Advanced Twitter strategy",
+            "Community management",
+            "Advanced analytics",
+            "Priority support",
+            "Unlimited tweets"
+          ],
+          "highlight": true,
+          "order": 3,
+          "subtitle": "per user/month, billed annually",
+          "targetAudience": "For Growing Brands",
+          "buttonText": "Get Started"
+        },
+        {
+          "name": "Enterprise",
+          "price": "599",
+          "period": "monthly",
+          "features": [
+            "Multi-account management",
+            "Custom campaigns",
+            "Advanced reporting",
+            "Dedicated manager",
+            "White-label solutions"
+          ],
+          "highlight": false,
+          "order": 4,
+          "subtitle": "per user/month, billed annually",
+          "targetAudience": "For Agencies",
+          "buttonText": "Contact Sales"
+        }
+      ]
+    }
+  },
+  "websitedevelopment": {
+    "pricingType": "simple",
+    "plans": [
+      {
+        "name": "Free",
+        "price": "0",
+        "period": "project",
+        "features": [
+          "Basic website template",
+          "Contact form",
+          "Mobile responsive",
+          "Basic SEO"
+        ],
+        "highlight": false,
+        "order": 1,
+        "subtitle": "per project",
+        "targetAudience": "For Small Projects",
+        "buttonText": "Get Started"
+      },
+      {
+        "name": "Basic",
+        "price": "1999",
+        "period": "project",
+        "features": [
+          "Custom design",
+          "CMS integration",
+          "SEO optimization",
+          "Analytics setup",
+          "3 months support"
+        ],
+        "highlight": false,
+        "order": 2,
+        "subtitle": "per project",
+        "targetAudience": "For Small Businesses",
+        "buttonText": "Get Started"
+      },
+      {
+        "name": "Pro",
+        "price": "4999",
+        "discount": "15",
+        "period": "project",
+        "features": [
+          "Advanced features",
+          "E-commerce integration",
+          "Performance optimization",
+          "Priority support",
+          "6 months support"
+        ],
+        "highlight": true,
+        "order": 3,
+        "subtitle": "per project",
+        "targetAudience": "For Growing Businesses",
+        "buttonText": "Get Started"
+      },
+      {
+        "name": "Enterprise",
+        "price": "9999",
+        "period": "project",
+        "features": [
+          "Custom development",
+          "API integrations",
+          "Advanced security",
+          "Dedicated support",
+          "12 months support"
+        ],
+        "highlight": false,
+        "order": 4,
+        "subtitle": "per project",
+        "targetAudience": "For Large Corporations",
+        "buttonText": "Contact Sales"
+      }
+    ]
+  },
+  "appdevelopment": {
+    "pricingType": "simple",
+    "plans": [
+      {
+        "name": "Free",
+        "price": "0",
+        "period": "monthly",
+        "features": [
+          "Basic app consultation",
+          "Simple wireframes",
+          "Basic documentation",
+          "1 hour consultation"
+        ],
+        "highlight": false,
+        "order": 1,
+        "subtitle": "consultation only",
+        "targetAudience": "For Ideas",
+        "buttonText": "Get Started"
+      },
+      {
+        "name": "Basic",
+        "price": "2999",
+        "period": "project",
+        "features": [
+          "Simple mobile app",
+          "Basic UI/UX design",
+          "Core functionality",
+          "3 months support"
+        ],
+        "highlight": false,
+        "order": 2,
+        "subtitle": "per project",
+        "targetAudience": "For Startups",
+        "buttonText": "Get Started"
+      },
+      {
+        "name": "Pro",
+        "price": "7999",
+        "discount": "15",
+        "period": "project",
+        "features": [
+          "Advanced mobile app",
+          "Custom UI/UX design",
+          "Backend integration",
+          "6 months support",
+          "App store submission"
+        ],
+        "highlight": true,
+        "order": 3,
+        "subtitle": "per project",
+        "targetAudience": "For Growing Businesses",
+        "buttonText": "Get Started"
+      },
+      {
+        "name": "Enterprise",
+        "price": "19999",
+        "period": "project",
+        "features": [
+          "Complex mobile app",
+          "Multi-platform support",
+          "Advanced features",
+          "12 months support",
+          "Dedicated team"
+        ],
+        "highlight": false,
+        "order": 4,
+        "subtitle": "per project",
+        "targetAudience": "For Large Companies",
+        "buttonText": "Contact Sales"
+      }
+    ]
+  },
+  "uiuxdesign": {
+    "pricingType": "simple",
+    "plans": [
+      {
+        "name": "Free",
+        "price": "0",
+        "period": "project",
+        "features": [
+          "Basic wireframes",
+          "Simple mockups",
+          "1 revision",
+          "Basic documentation"
+        ],
+        "highlight": false,
+        "order": 1,
+        "subtitle": "per project",
+        "targetAudience": "For Prototypes",
+        "buttonText": "Get Started"
+      },
+      {
+        "name": "Basic",
+        "price": "1999",
+        "period": "project",
+        "features": [
+          "Complete UI design",
+          "User flow design",
+          "3 revisions",
+          "Design system"
+        ],
+        "highlight": false,
+        "order": 2,
+        "subtitle": "per project",
+        "targetAudience": "For Small Projects",
+        "buttonText": "Get Started"
+      },
+      {
+        "name": "Pro",
+        "price": "4999",
+        "discount": "10",
+        "period": "project",
+        "features": [
+          "Advanced UI/UX design",
+          "User research",
+          "Prototyping",
+          "5 revisions",
+          "Usability testing"
+        ],
+        "highlight": true,
+        "order": 3,
+        "subtitle": "per project",
+        "targetAudience": "For Growing Businesses",
+        "buttonText": "Get Started"
+      },
+      {
+        "name": "Enterprise",
+        "price": "9999",
+        "period": "project",
+        "features": [
+          "Complex UI/UX design",
+          "Advanced user research",
+          "Multiple platforms",
+          "Unlimited revisions",
+          "Dedicated designer"
+        ],
+        "highlight": false,
+        "order": 4,
+        "subtitle": "per project",
+        "targetAudience": "For Large Companies",
+        "buttonText": "Contact Sales"
+      }
+    ]
+  },
+  "outsourcing": {
+    "pricingType": "simple",
+    "plans": [
+      {
+        "name": "Free",
+        "price": "0",
+        "period": "monthly",
+        "features": [
+          "Basic consultation",
+          "Project assessment",
+          "Basic recommendations",
+          "1 hour consultation"
+        ],
+        "highlight": false,
+        "order": 1,
+        "subtitle": "consultation only",
+        "targetAudience": "For Assessment",
+        "buttonText": "Get Started"
+      },
+      {
+        "name": "Basic",
+        "price": "1999",
+        "period": "monthly",
+        "features": [
+          "Dedicated developer",
+          "40 hours per month",
+          "Basic project management",
+          "Email support"
+        ],
+        "highlight": false,
+        "order": 2,
+        "subtitle": "per month",
+        "targetAudience": "For Small Projects",
+        "buttonText": "Get Started"
+      },
+      {
+        "name": "Pro",
+        "price": "3999",
+        "discount": "15",
+        "period": "monthly",
+        "features": [
+          "Senior developer team",
+          "80 hours per month",
+          "Advanced project management",
+          "Priority support",
+          "Weekly reports"
+        ],
+        "highlight": true,
+        "order": 3,
+        "subtitle": "per month",
+        "targetAudience": "For Growing Businesses",
+        "buttonText": "Get Started"
+      },
+      {
+        "name": "Enterprise",
+        "price": "7999",
+        "period": "monthly",
+        "features": [
+          "Full development team",
+          "160 hours per month",
+          "Dedicated project manager",
+          "24/7 support",
+          "Custom solutions"
+        ],
+        "highlight": false,
+        "order": 4,
+        "subtitle": "per month",
+        "targetAudience": "For Large Companies",
+        "buttonText": "Contact Sales"
+      }
+    ]
+  },
+  "graphicsdesign": {
+    "pricingType": "simple",
+    "plans": [
+      {
+        "name": "Basic",
+        "price": "499",
+        "period": "monthly",
+        "features": [
+          "Logo design",
+          "Social media templates",
+          "Basic business cards",
+          "Email support"
+        ],
+        "highlight": false,
+        "order": 1,
+        "subtitle": "per project",
+        "targetAudience": "For Startups",
+        "buttonText": "Get Started"
+      },
+      {
+        "name": "Professional",
+        "price": "999",
+        "discount": "10",
+        "period": "monthly",
+        "features": [
+          "Complete brand identity",
+          "Logo variations",
+          "Brand guidelines",
+          "Social media kit",
+          "Business materials",
+          "Priority support"
+        ],
+        "highlight": true,
+        "order": 2,
+        "subtitle": "per project",
+        "targetAudience": "For Growing Businesses",
+        "buttonText": "Get Started"
+      },
+      {
+        "name": "Premium",
+        "price": "1999",
+        "period": "monthly",
+        "features": [
+          "Full design system",
+          "Advanced branding",
+          "Marketing collateral",
+          "Packaging design",
+          "Print-ready files",
+          "Unlimited revisions",
+          "Dedicated designer"
+        ],
+        "highlight": false,
+        "order": 3,
+        "subtitle": "per month",
+        "targetAudience": "For Established Companies",
+        "buttonText": "Get Started"
+      },
+      {
+        "name": "Enterprise",
+        "price": "3999",
+        "period": "monthly",
+        "features": [
+          "Complete design suite",
+          "Brand management",
+          "Quarterly strategy sessions",
+          "Multi-channel campaigns",
+          "Animation & motion graphics",
+          "24/7 dedicated team",
+          "Custom solutions"
+        ],
+        "highlight": false,
+        "order": 4,
+        "subtitle": "per month",
+        "targetAudience": "For Large Enterprises",
+        "buttonText": "Contact Sales"
+      }
+    ]
+  }
+}

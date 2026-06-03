@@ -1,0 +1,39 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://bekurtechnologies.com/schemas/sitemap.json",
+  "title": "BekurSitemap",
+  "type": "object",
+  "required": ["version", "baseUrl", "routes"],
+  "properties": {
+    "version": { "type": "string" },
+    "baseUrl": { "type": "string", "format": "uri" },
+    "routes": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["path", "pageId", "type", "changefreq", "priority"],
+        "properties": {
+          "path": { "type": "string" },
+          "pageId": { "type": "string" },
+          "type": { "enum": ["static", "dynamic"] },
+          "changefreq": {
+            "enum": ["always", "hourly", "daily", "weekly", "monthly", "yearly", "never"]
+          },
+          "priority": { "type": "number", "minimum": 0, "maximum": 1 },
+          "contentFile": { "type": "string" },
+          "dataSource": { "type": "string" },
+          "isrRevalidateSeconds": { "type": "integer" },
+          "onDemandRevalidation": { "type": "boolean" }
+        }
+      }
+    },
+    "excludedFromSitemap": {
+      "type": "array",
+      "items": { "type": "string" }
+    },
+    "retiredPaths": {
+      "type": "array",
+      "items": { "type": "string" }
+    }
+  }
+}

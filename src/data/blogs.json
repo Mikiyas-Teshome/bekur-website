@@ -1,0 +1,171 @@
+{
+  "homePageBlogs": [
+    {
+      "id": 1,
+      "blogUrl": "https://images.unsplash.com/photo-1499750310107-5fef28a66643?w=800&h=400&fit=crop&crop=center",
+      "tag": "News",
+      "headline": "Learn about our Glide Certification program, and what we're planning next",
+      "subtitle": "Discover how our certification program can advance your career in no-code development",
+      "author": {
+        "name": "Cait Levin",
+        "image": "https://images.unsplash.com/photo-1488190211105-8b0e65b80b4e?w=400&h=400&fit=crop&crop=center"
+      },
+      "date": "20 Oct 2023"
+    },
+    {
+      "id": 2,
+      "blogUrl": "https://images.unsplash.com/photo-1551434678-e076c223a692?w=800&h=400&fit=crop&crop=center",
+      "tag": "Learn",
+      "headline": "Create and fully customize your own IT ticketing software without having to code a single line",
+      "subtitle": "Build a complete helpdesk solution using our no-code platform",
+      "author": {
+        "name": "Tech Team",
+        "image": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=400&fit=crop&crop=center"
+      },
+      "date": "3 Nov 2023"
+    },
+    {
+      "id": 3,
+      "blogUrl": "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800&h=400&fit=crop&crop=center",
+      "tag": "Tools",
+      "headline": "Add Glide to your no code app toolbox so more of your team can participate in building software",
+      "subtitle": "Empower your entire team to create powerful applications",
+      "author": {
+        "name": "Wren Noble",
+        "image": "https://images.unsplash.com/photo-1494790108755-2616b612b786?w=400&h=400&fit=crop&crop=center"
+      },
+      "date": "10 Nov 2023"
+    },
+    {
+      "id": 4,
+      "blogUrl": "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=800&h=400&fit=crop&crop=center",
+      "tag": "News",
+      "headline": "Last month we announced Glide's first level of certification. To celebrate the launch, we challenged our Glide community members to share",
+      "subtitle": "Join our community challenge and showcase your skills",
+      "author": {
+        "name": "Andy Claremont",
+        "image": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=400&fit=crop&crop=center"
+      },
+      "date": "22 Nov 2023"
+    },
+    {
+      "id": 5,
+      "blogUrl": "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&h=400&fit=crop&crop=center",
+      "tag": "Insights",
+      "headline": "How to analyze your app performance and optimize for better user experience",
+      "subtitle": "Learn the best practices for app optimization and user engagement",
+      "author": {
+        "name": "Sarah Chen",
+        "image": "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=400&h=400&fit=crop&crop=center"
+      },
+      "date": "28 Nov 2023"
+    },
+    {
+      "id": 6,
+      "blogUrl": "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&h=400&fit=crop&crop=center",
+      "tag": "Tutorial",
+      "headline": "Step-by-step guide to building your first no-code application with Glide",
+      "subtitle": "From concept to deployment in under an hour",
+      "author": {
+        "name": "Mike Rodriguez",
+        "image": "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=400&h=400&fit=crop&crop=center"
+      },
+      "date": "5 Dec 2023"
+    }
+  ],
+  "blogGroups": [
+    {
+      "groupTitle": "AI & Technology",
+      "groupDescription": "Latest insights on artificial intelligence and technological innovations",
+      "featured": {
+        "image": "https://images.unsplash.com/photo-1677442136019-21780ecad995?w=800&h=400&fit=crop&crop=center",
+        "author": "MICHAEL HAO",
+        "authorImage": "https://images.unsplash.com/photo-1677442136019-21780ecad995?w=800&h=400&fit=crop&crop=center",
+        "date": "APR 08, 2025",
+        "title": "Smarter, faster enterprise AI deployment",
+        "tags": ["FOR BUSINESS"],
+        "isFeatured": true
+      },
+      "regular": [
+        {
+          "image": "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=400&h=300&fit=crop&crop=center",
+          "author": "MULTIPLE AUTHORS",
+          "authorImage": "https://images.unsplash.com/photo-1677442136019-21780ecad995?w=800&h=400&fit=crop&crop=center",
+          "date": "APR 04, 2025",
+          "title": "Secure AI in government: Improving services for all",
+          "tags": ["FOR BUSINESS", "PUBLIC SECTOR"]
+        },
+        {
+          "image": "https://images.unsplash.com/photo-1677442136019-21780ecad995?w=800&h=400&fit=crop&crop=center",
+          "author": "COHERE TEAM",
+          "authorImage": "https://images.unsplash.com/photo-1677442136019-21780ecad995?w=800&h=400&fit=crop&crop=center",
+          "date": "APR 03, 2025",
+          "title": "The promise of autonomous and secure AI agents",
+          "tags": ["FOR BUSINESS"]
+        }
+      ]
+    },
+    {
+      "groupTitle": "Development & Engineering",
+      "groupDescription": "Technical insights and development best practices",
+      "featured": {
+        "image": "https://images.unsplash.com/photo-1677442136019-21780ecad995?w=800&h=400&fit=crop&crop=center",
+        "author": "MATTHEW KOSCAK",
+        "authorImage": "https://images.unsplash.com/photo-1677442136019-21780ecad995?w=800&h=400&fit=crop&crop=center",
+        "date": "MAR 28, 2025",
+        "title": "Building AI agents: 5 common hurdles and fixes",
+        "tags": ["FOR BUSINESS", "DEVELOPERS"],
+        "isFeatured": true
+      },
+      "regular": [
+        {
+          "image": "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=400&h=300&fit=crop&crop=center",
+          "author": "DEVELOPMENT TEAM",
+          "authorImage": "https://images.unsplash.com/photo-1677442136019-21780ecad995?w=800&h=400&fit=crop&crop=center",
+          "date": "MAR 25, 2025",
+          "title": "Modern web development frameworks comparison",
+          "tags": ["DEVELOPERS", "WEB DEVELOPMENT"]
+        },
+        {
+          "image": "https://images.unsplash.com/photo-1677442136019-21780ecad995?w=800&h=400&fit=crop&crop=center",
+          "author": "TECH LEAD",
+          "authorImage": "https://images.unsplash.com/photo-1677442136019-21780ecad995?w=800&h=400&fit=crop&crop=center",
+          "date": "MAR 20, 2025",
+          "title": "Best practices for scalable architecture",
+          "tags": ["DEVELOPERS", "ARCHITECTURE"]
+        }
+      ]
+    },
+    {
+      "groupTitle": "Business & Strategy",
+      "groupDescription": "Strategic insights for business growth and digital transformation",
+      "featured": {
+        "image": "https://images.unsplash.com/photo-1677442136019-21780ecad995?w=800&h=400&fit=crop&crop=center",
+        "author": "BUSINESS ANALYST",
+        "authorImage": "https://images.unsplash.com/photo-1677442136019-21780ecad995?w=800&h=400&fit=crop&crop=center",
+        "date": "MAR 15, 2025",
+        "title": "Digital transformation strategies for 2025",
+        "tags": ["FOR BUSINESS", "STRATEGY"],
+        "isFeatured": true
+      },
+      "regular": [
+        {
+          "image": "https://images.unsplash.com/photo-1677442136019-21780ecad995?w=800&h=400&fit=crop&crop=center",
+          "author": "STRATEGY TEAM",
+          "authorImage": "https://images.unsplash.com/photo-1677442136019-21780ecad995?w=800&h=400&fit=crop&crop=center",
+          "date": "MAR 10, 2025",
+          "title": "Customer experience optimization techniques",
+          "tags": ["FOR BUSINESS", "CUSTOMER EXPERIENCE"]
+        },
+        {
+          "image": "https://images.unsplash.com/photo-1677442136019-21780ecad995?w=800&h=400&fit=crop&crop=center",
+          "author": "MARKETING EXPERT",
+          "authorImage": "https://images.unsplash.com/photo-1677442136019-21780ecad995?w=800&h=400&fit=crop&crop=center",
+          "date": "MAR 05, 2025",
+          "title": "Data-driven marketing strategies",
+          "tags": ["FOR BUSINESS", "MARKETING"]
+        }
+      ]
+    }
+  ]
+}
