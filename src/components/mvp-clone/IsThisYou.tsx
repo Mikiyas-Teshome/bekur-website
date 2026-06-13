@@ -264,7 +264,7 @@ export default function IsThisYou() {
 
         <h2
           ref={headingRef}
-          className="relative z-10 px-4 text-center text-[2.5rem] font-bold leading-none tracking-tight text-foreground sm:text-5xl md:text-6xl lg:text-7xl"
+          className="relative z-10 px-4 sm:px-6 text-center font-bold leading-none tracking-tight text-foreground text-[clamp(2rem,7vw,6rem)]"
         >
           Is This{" "}
           <span className="bg-[linear-gradient(-121deg,#214a9c_0%,#4a90e2_52%,#7bb3f0_100%)] bg-clip-text text-transparent dark:bg-[linear-gradient(-121deg,#a8d1f5_0%,#4a90e2_48%,#214a9c_100%)]">
