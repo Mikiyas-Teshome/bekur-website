@@ -5,19 +5,19 @@ import { motion } from "framer-motion";
 
 const stats = [
   {
-    value: "Top Rated",
-    label: "100% Job Success on Upwork",
-    desc: "$20K+ earned in under 12 months — credibility from shipped work, not pitch decks."
-  },
-  {
     value: "#3",
     label: "Product of the Day on Product Hunt",
-    desc: "Finden AI ranked ahead of Vercel v0 — production systems built to real-world standards."
+    desc: "Finden AI ranked ahead of Vercel v0 — see the full case study in shipped systems."
   },
   {
-    value: "1M+",
-    label: "Downloads on Feres ride-hailing",
-    desc: "From national COVID contact tracing to multi-tenant SaaS — we ship at scale."
+    value: "3–6",
+    label: "Weeks from logic mapping to live",
+    desc: "One production workflow per sprint — fixed scope agreed before a line of code is written."
+  },
+  {
+    value: "Hard cap",
+    label: "On monthly AI spend",
+    desc: "Architectural discipline with a hard monthly AI spend cap written into scope — no surprise bills."
   }
 ];
 

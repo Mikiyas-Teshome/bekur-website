@@ -7,55 +7,86 @@ import { cn } from "@/lib/utils";
 
 const DEFAULT_LABEL = "Book a call";
 
+type Variant =
+  | "primary"
+  | "secondary"
+  | "header"
+  | "headerMobile"
+  | "pricing"
+  | "ctaBanner";
+
 type BookCallLinkProps = {
   href?: string;
   className?: string;
+  frameClassName?: string;
   label?: string;
-  variant?: "primary" | "secondary" | "header" | "headerMobile" | "pricing" | "ctaBanner";
+  variant?: Variant;
   showArrow?: boolean;
   arrowType?: "upRight" | "right";
 };
 
-const variantClass: Record<NonNullable<BookCallLinkProps["variant"]>, string> = {
-  primary:
-    "group inline-flex h-11 items-center justify-center gap-2 rounded-full bg-primary px-6 text-sm font-semibold leading-none text-primary-foreground dark:text-white shadow-[0_4px_14px_-4px_rgba(33,74,156,0.45)] transition-colors hover:bg-primary/90 active:scale-[0.98]",
-  secondary:
-    "group inline-flex h-11 items-center justify-center gap-2 rounded-full border border-border/90 bg-card/70 px-6 text-sm font-semibold leading-none text-foreground backdrop-blur-sm transition-colors hover:border-primary/35 hover:bg-card active:scale-[0.98]",
-  header:
-    "group hidden sm:inline-flex items-center justify-center rounded-full bg-primary px-5 py-2.5 text-sm font-medium leading-none text-primary-foreground dark:text-white transition-[filter] hover:brightness-110 active:scale-[0.98]",
-  headerMobile:
-    "group mt-2 inline-flex w-full items-center justify-center rounded-full bg-primary px-5 py-3 text-sm font-medium leading-none text-primary-foreground dark:text-white",
-  pricing:
-    "group relative inline-flex w-full items-center justify-center rounded-full bg-foreground px-6 py-3.5 text-sm font-semibold leading-none text-background transition-[background-color,transform] duration-300 hover:bg-foreground/90 active:scale-[0.98] dark:bg-foreground dark:text-background",
-  ctaBanner:
-    "group inline-flex items-center gap-2 rounded-full bg-primary-foreground px-8 py-4 text-base font-bold leading-none text-primary transition-transform hover:scale-[1.02] active:scale-[0.98] dark:bg-primary dark:text-white",
+/*
+ * One CTA identity everywhere: an animated blue conic border (.cta-frame)
+ * around a monochrome button that adapts to the theme — dark button on the
+ * light theme, light button on the dark theme. Variants only change sizing.
+ */
+const frameVariantClass: Record<Variant, string> = {
+  primary: "",
+  secondary: "",
+  header: "hidden sm:inline-flex",
+  headerMobile: "mt-2 w-full",
+  pricing: "w-full",
+  ctaBanner: "",
+};
+
+const buttonVariantClass: Record<Variant, string> = {
+  primary: "h-12 px-8 text-[15px] sm:h-[52px] sm:px-9",
+  secondary: "h-12 px-7 text-[15px]",
+  header: "h-10 px-5 text-sm",
+  headerMobile: "h-12 px-5 text-sm",
+  pricing: "h-12 px-6 text-sm",
+  ctaBanner: "h-[52px] px-8 text-base",
 };
 
 export default function BookCallLink({
   href = "/blueprint#book",
   className,
+  frameClassName,
   label = DEFAULT_LABEL,
   variant = "primary",
   showArrow = false,
   arrowType = "upRight",
 }: BookCallLinkProps) {
   const Arrow = arrowType === "right" ? ArrowRight : ArrowUpRight;
-  const isOnPrimary = variant !== "secondary";
 
   return (
-    <Link href={href} className={cn(variantClass[variant], className)}>
-      <FlipButtonLabel label={label} />
-      {showArrow && (
-        <Arrow
-          className={cn(
-            "h-4 w-4 shrink-0 transition-transform duration-300 ease-out group-hover:translate-x-0.5",
-            arrowType === "upRight" && "group-hover:-translate-y-0.5",
-            isOnPrimary && "text-primary-foreground dark:text-white",
-          )}
-          strokeWidth={arrowType === "right" ? 2 : 1.75}
-        />
+    <span
+      className={cn(
+        "cta-frame inline-flex rounded-[12px] p-[2px]",
+        frameVariantClass[variant],
+        frameClassName,
       )}
-    </Link>
+    >
+      <Link
+        href={href}
+        className={cn(
+          "group inline-flex w-full items-center justify-center gap-2 rounded-[10px] bg-background font-semibold leading-none tracking-[-0.01em] text-foreground shadow-[inset_0_1px_0_rgba(0,0,0,0.08)] transition-colors hover:bg-background/85 active:scale-[0.98] dark:bg-card dark:text-foreground dark:hover:bg-card/90 dark:shadow-[inset_0_1px_0_rgba(255,255,255,0.08)]",
+          buttonVariantClass[variant],
+          className,
+        )}
+      >
+        <FlipButtonLabel label={label} />
+        {showArrow && (
+          <Arrow
+            className={cn(
+              "h-4 w-4 shrink-0 transition-transform duration-300 ease-out group-hover:translate-x-0.5",
+              arrowType === "upRight" && "group-hover:-translate-y-0.5",
+            )}
+            strokeWidth={arrowType === "right" ? 2 : 1.75}
+          />
+        )}
+      </Link>
+    </span>
   );
 }
 

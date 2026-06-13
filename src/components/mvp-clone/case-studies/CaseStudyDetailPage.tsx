@@ -147,7 +147,7 @@ export default function CaseStudyDetailPage({ project }: CaseStudyDetailPageProp
 
               <div className="rounded-[28px] border border-primary/20 bg-primary/5 p-6 dark:border-border/60 dark:bg-card/80 md:rounded-[32px]">
                 <p className="mb-4 text-sm leading-relaxed text-muted-foreground">{project.proofLine}</p>
-                <BookCallLink variant="primary" showArrow className="w-full justify-center sm:w-auto" />
+                <BookCallLink variant="primary" showArrow frameClassName="w-full sm:w-auto" />
               </div>
             </aside>
           </div>

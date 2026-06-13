@@ -1,78 +1,77 @@
-"use client";
-
-import React from "react";
-import { motion } from "framer-motion";
-import { ArrowUpRight } from "lucide-react";
-import Link from "next/link";
 import BookCallLink from "@/components/BookCallLink";
-import Logo from "@/components/logo/Logo";
-import HeroNightSky from "./HeroNightSky";
+import { loadPageContent } from "@/lib/content/load-page";
 
-const fadeUp = {
-  initial: { opacity: 0, y: 16 },
-  animate: { opacity: 1, y: 0 },
-};
+function FourPointStar({ className }: { className?: string }) {
+  return (
+    <svg
+      viewBox="0 0 24 24"
+      fill="currentColor"
+      aria-hidden="true"
+      className={className}
+    >
+      <path d="M12 0C12.8 7.1 16.9 11.2 24 12C16.9 12.8 12.8 16.9 12 24C11.2 16.9 7.1 12.8 0 12C7.1 11.2 11.2 7.1 12 0Z" />
+    </svg>
+  );
+}
+
+function LineWithSparkle({ text }: { text: string }) {
+  const words = text.split(" ");
+  if (words.length < 2) {
+    return <>{text}</>;
+  }
+  const mid = Math.ceil(words.length / 2);
+  return (
+    <>
+      {words.slice(0, mid).join(" ")}
+      <FourPointStar className="mx-2.5 inline-block h-[0.5em] w-[0.5em] -translate-y-[0.04em] md:mx-4" />
+      {words.slice(mid).join(" ")}
+    </>
+  );
+}
 
 export default function Hero() {
+  const home = loadPageContent("home");
+  if (home.pageId !== "home") {
+    throw new Error("Expected home page content");
+  }
+
+  const { hero } = home;
+  const headlineLines = hero.headlineLines?.length
+    ? hero.headlineLines
+    : [{ text: hero.headline, accent: false, sparkle: false }];
+
   return (
     <section className="relative flex min-h-svh w-full items-center justify-center overflow-hidden px-4 sm:px-6">
-      <HeroNightSky />
-
       <div
-        className="pointer-events-none absolute inset-0 z-[1] flex items-center justify-center overflow-hidden"
+        className="absolute inset-0 bg-gradient-to-b from-[#e9edf5] via-[#eef2f8] to-[#f2f5fa] dark:bg-none dark:bg-[#000104]"
         aria-hidden="true"
       >
-        <Logo
-          width={400}
-          height={168}
-          className="h-auto w-[min(58vw,200px)] opacity-[0.12] blur-sm sm:w-[min(52vw,260px)] md:w-[min(48vw,320px)] lg:w-[400px] dark:opacity-[0.16]"
-        />
+        <div className="hero-dots absolute inset-0" />
+        <div className="hero-glow absolute inset-0" />
       </div>
 
-      <div className="relative z-10 flex w-full max-w-3xl flex-col items-center text-center pt-[5.25rem] pb-14 md:pt-[5.75rem] md:pb-20 lg:max-w-4xl">
-        <motion.h1
-          {...fadeUp}
-          transition={{ duration: 0.7, ease: [0.25, 0.1, 0.25, 1] }}
-          className="mb-4 max-w-[18rem] text-[28px] font-bold leading-[1.12] tracking-tight text-foreground sm:max-w-2xl sm:text-[36px] md:mb-5 md:text-[44px] lg:max-w-3xl lg:text-[52px]"
-        >
-          Custom automation for{" "}
-          <span className="text-foreground/90">professional service firms</span>
-        </motion.h1>
+      <div className="relative z-10 flex w-full max-w-5xl flex-col items-center text-center pt-[5.5rem] pb-16 md:pt-[6rem] md:pb-20">
+        <h1 className="mb-6 text-balance font-bold leading-[1.07] tracking-tight text-[clamp(40px,8.5vw,88px)] md:mb-7">
+          {headlineLines.map((line) => (
+            <span
+              key={line.text}
+              className={line.accent ? "hero-accent block" : "block text-foreground"}
+            >
+              {line.sparkle ? <LineWithSparkle text={line.text} /> : line.text}
+            </span>
+          ))}
+        </h1>
 
-        <motion.p
-          {...fadeUp}
-          transition={{ duration: 0.7, delay: 0.06, ease: [0.25, 0.1, 0.25, 1] }}
-          className="mb-8 max-w-md text-[15px] leading-relaxed text-muted-foreground md:mb-9 md:max-w-lg md:text-[17px]"
-        >
-          Reclaim partner hours in 3–6 weeks — without rigid SaaS templates, surprise AI bills, or scope creep.
-        </motion.p>
+        <p className="mb-10 max-w-xl text-pretty text-[15px] leading-relaxed text-muted-foreground md:mb-12 md:text-[17px]">
+          {hero.subheadline}
+        </p>
 
-        <motion.div
-          {...fadeUp}
-          transition={{ duration: 0.7, delay: 0.12, ease: [0.25, 0.1, 0.25, 1] }}
-          className="flex w-full max-w-sm flex-col gap-3 sm:max-w-none sm:flex-row sm:items-center sm:justify-center"
-        >
-          <BookCallLink
-            variant="primary"
-            showArrow
-            className="h-11 text-[15px] font-medium sm:h-12 sm:px-7 hover:brightness-110"
-          />
-          <Link
-            href="/portfolio"
-            className="inline-flex h-11 items-center justify-center rounded-full border border-border px-6 text-[15px] font-medium text-foreground transition-all hover:bg-muted/60 active:scale-[0.98] sm:h-12 sm:px-7"
-          >
-            View Our Work
-          </Link>
-        </motion.div>
-
-        <motion.p
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 0.7, delay: 0.2 }}
-          className="mt-8 text-xs tracking-wide text-muted-foreground/80 md:mt-10"
-        >
-          Top Rated on Upwork · 100% Job Success
-        </motion.p>
+        <BookCallLink
+          href={hero.primaryCta.href}
+          label={hero.primaryCta.label}
+          variant="primary"
+          showArrow
+        />
       </div>
     </section>
   );

@@ -15,7 +15,7 @@
       "variant": "primary"
     }
   },
-  "trustLine": "Top Rated on Upwork · Shipped production systems operators trust",
+  "trustLine": "Shipped production systems operators trust · Fixed scope, fixed price, hard AI caps",
   "whoWeAre": {
     "eyebrow": "Who we are",
     "headline": "Who we are",
@@ -23,9 +23,9 @@
   },
   "stats": [
     {
-      "value": "$20K+",
-      "label": "On Upwork in under 12 months",
-      "description": "Top Rated · 100% Job Success Score — credibility from shipped work, not pitch decks."
+      "value": "1",
+      "label": "Production workflow per sprint",
+      "description": "Focus is the feature — one workflow shipped end-to-end, not a sprawling transformation program."
     },
     {
       "value": "3–6",
@@ -47,14 +47,15 @@
   "teamPrinciple": "Small is intentional. The people in the room build the work — senior-only, no juniors learning on client sprints.",
   "proofPoints": [
     {
-      "id": "upwork",
-      "headline": "Top Rated on Upwork",
-      "detail": "$20K+ earned in under 12 months · 100% Job Success Score"
+      "id": "finden",
+      "headline": "Finden AI — #3 Product of the Day",
+      "detail": "Product Hunt — ranked ahead of Vercel v0",
+      "href": "/portfolio/finden"
     },
     {
       "id": "production",
-      "headline": "Production systems at scale",
-      "detail": "Finden AI (Product Hunt #3), Feres (1M+ downloads), Debo (national health tracing), enterprise SaaS and HRMS"
+      "headline": "Production systems operators trust",
+      "detail": "Outcome-led case studies — every claim backed by a shipped system in the portfolio"
     }
   ]
 }

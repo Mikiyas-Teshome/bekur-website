@@ -8,8 +8,13 @@
   },
   "hero": {
     "eyebrow": "Operational systems · Logic before code",
-    "headline": "End AI hype fatigue. One workflow. Live in 3–6 weeks.",
-    "subheadline": "We map how your firm actually works — then ship custom automation into your existing stack, with a fixed price and a hard monthly AI spend cap written into scope.",
+    "headline": "Custom Automation No Templates. No Surprises. Fixed $ 3–6 Weeks.",
+    "headlineLines": [
+      { "text": "Custom Automation", "accent": true },
+      { "text": "Mapped to ", "sparkle": true },
+      { "text": "Your Workflows.", "accent": true }
+    ],
+    "subheadline": "Custom automation for professional service firms — mapped to how you actually work and built into the stack you already use. Fixed price. Hard AI spend cap. No scope creep.",
     "primaryCta": {
       "label": "Book a call",
       "href": "/blueprint#book",
@@ -83,28 +88,21 @@
   ],
   "proofPoints": [
     {
-      "id": "upwork",
-      "headline": "$20K+ on Upwork in under 12 months",
-      "detail": "Top Rated · 100% Job Success Score",
-      "metric": "100% JSS"
-    },
-    {
       "id": "finden",
       "headline": "Finden AI — #3 Product of the Day",
       "detail": "Product Hunt (ahead of Vercel v0)",
-      "metric": "#3 POTD"
+      "metric": "#3 POTD",
+      "href": "/portfolio/finden"
     },
     {
-      "id": "feres",
-      "headline": "Feres — 1M+ downloads",
-      "detail": "Production ride-hailing at scale",
-      "metric": "1M+"
+      "id": "fixed-economics",
+      "headline": "Fixed scope. Fixed price. Hard monthly AI cap.",
+      "detail": "Economics written into scope before build begins."
     },
     {
-      "id": "debo",
-      "headline": "Debo — national COVID tracing",
-      "detail": "Ministry of Health · 50,000+ cases tracked",
-      "metric": "50K+"
+      "id": "sprint-speed",
+      "headline": "One workflow, live in 3–6 weeks",
+      "detail": "Production delivery per Automation Sprint — not 18-month roadmaps."
     }
   ],
   "dynamicTeasers": {

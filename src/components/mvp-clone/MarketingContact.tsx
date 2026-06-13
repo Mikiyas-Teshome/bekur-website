@@ -150,7 +150,7 @@ export default function MarketingContact() {
                 <p className="mb-4 text-sm leading-relaxed text-muted-foreground">
                   Prefer a live conversation? Book a call and we&apos;ll walk through scope together.
                 </p>
-                <BookCallLink variant="primary" showArrow className="w-full sm:w-auto" />
+                <BookCallLink variant="primary" showArrow frameClassName="w-full sm:w-auto" />
               </div>
             </div>
           </motion.aside>

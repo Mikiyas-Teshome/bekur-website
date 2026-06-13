@@ -660,7 +660,7 @@ export default function SolutionBridge() {
               className="mb-8 flex flex-col gap-3 sm:flex-row sm:items-stretch"
             >
               <PrimaryButton href="/automation-sprint">Explore the Sprint</PrimaryButton>
-              <BookCallLink variant="secondary" className="h-12 w-full sm:min-w-[168px]" />
+              <BookCallLink variant="secondary" frameClassName="w-full sm:min-w-[168px]" />
             </motion.div>
 
             <motion.div

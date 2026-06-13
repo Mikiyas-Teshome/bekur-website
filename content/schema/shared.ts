@@ -102,7 +102,19 @@ export const pageBaseSchema = z.object({
   seo: seoMetaSchema,
   hero: z.object({
     eyebrow: z.string().optional(),
+    badge: z.string().optional(),
     headline: z.string(),
+    headlineLines: z
+      .array(
+        z.object({
+          text: z.string(),
+          accent: z.boolean().optional(),
+          sparkle: z.boolean().optional(),
+        })
+      )
+      .min(2)
+      .max(3)
+      .optional(),
     subheadline: z.string(),
     primaryCta: ctaSchema,
     secondaryCta: ctaSchema.optional(),
