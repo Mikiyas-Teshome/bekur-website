@@ -7,170 +7,12 @@ import { motion, AnimatePresence, useReducedMotion } from "framer-motion";
 import {
   ArrowUpRight,
   CalendarClock,
-  CheckCircle2,
   GitBranch,
   Layers,
   ShieldCheck,
-  Mail,
-  Database,
-  FileSpreadsheet,
-  UserCheck,
-  Sparkles,
-  CircleDot,
-  ClipboardList,
-  FileSearch,
-  Receipt,
-  Bell,
-  FolderOpen,
   type LucideIcon,
 } from "lucide-react";
 
-type WorkflowStep = {
-  id: string;
-  label: string;
-  detail: string;
-  icon: LucideIcon;
-};
-
-type WorkflowOutput = {
-  icon: LucideIcon;
-  label: string;
-};
-
-type WorkflowScenario = {
-  id: string;
-  badge: string;
-  triggerLabel: string;
-  triggerDetail: string;
-  activeSources: string[];
-  steps: WorkflowStep[];
-  logs: string[];
-  outputs: WorkflowOutput[];
-};
-
-const stackSources = [
-  { id: "inbox", icon: Mail, label: "Inbox" },
-  { id: "crm", icon: Database, label: "CRM" },
-  { id: "forms", icon: ClipboardList, label: "Forms" },
-  { id: "sheets", icon: FileSpreadsheet, label: "Sheets" },
-];
-
-const workflowScenarios: WorkflowScenario[] = [
-  {
-    id: "intake",
-    badge: "Matter intake",
-    triggerLabel: "New matter signal",
-    triggerDetail: "Form submit · CRM update · inbox — one trigger",
-    activeSources: ["forms", "crm", "inbox"],
-    steps: [
-      {
-        id: "map",
-        label: "Map firm logic",
-        detail: "Rules, fields & exceptions from your SOP",
-        icon: GitBranch,
-      },
-      {
-        id: "approve",
-        label: "Partner approval gate",
-        detail: "Route to managing partner for sign-off",
-        icon: UserCheck,
-      },
-      {
-        id: "sync",
-        label: "Sync across stack",
-        detail: "CRM, drive, tasks & notifications",
-        icon: Database,
-      },
-    ],
-    logs: [
-      "Logic map applied · 14 rules matched",
-      "Partner approval routed to J. Smith",
-      "CRM record created · drive folder ready",
-      "Tasks assigned · team notified",
-    ],
-    outputs: [
-      { icon: Database, label: "CRM updated" },
-      { icon: FolderOpen, label: "Drive ready" },
-      { icon: Bell, label: "Team notified" },
-    ],
-  },
-  {
-    id: "documents",
-    badge: "Document chase",
-    triggerLabel: "Matter status changed",
-    triggerDetail: "CRM webhook · drive folder watch",
-    activeSources: ["crm", "sheets"],
-    steps: [
-      {
-        id: "match",
-        label: "Match required docs",
-        detail: "Checklist vs. files in matter folder",
-        icon: FileSearch,
-      },
-      {
-        id: "review",
-        label: "Partner review step",
-        detail: "Flag gaps · approve client follow-up",
-        icon: UserCheck,
-      },
-      {
-        id: "close",
-        label: "Update matter file",
-        detail: "CRM status · client request sent",
-        icon: Database,
-      },
-    ],
-    logs: [
-      "CRM status → awaiting documents",
-      "3 of 5 required docs found",
-      "Gap flagged · partner notified",
-      "Client follow-up queued for review",
-    ],
-    outputs: [
-      { icon: FileSearch, label: "Gaps flagged" },
-      { icon: Mail, label: "Client request" },
-      { icon: Database, label: "Matter updated" },
-    ],
-  },
-  {
-    id: "billing",
-    badge: "Billing reconciliation",
-    triggerLabel: "Period close initiated",
-    triggerDetail: "Timesheet export · ledger pull",
-    activeSources: ["sheets", "crm"],
-    steps: [
-      {
-        id: "reconcile",
-        label: "Reconcile line items",
-        detail: "Hours, rates & write-offs vs. ledger",
-        icon: Sparkles,
-      },
-      {
-        id: "signoff",
-        label: "Partner sign-off",
-        detail: "Exceptions surfaced before invoicing",
-        icon: UserCheck,
-      },
-      {
-        id: "invoice",
-        label: "Generate & send",
-        detail: "Invoice draft · CRM billing sync",
-        icon: Receipt,
-      },
-    ],
-    logs: [
-      "Timesheet export ingested · 847 lines",
-      "12 exceptions flagged for review",
-      "Partner approved batch · 835 lines",
-      "Invoices queued · CRM billing synced",
-    ],
-    outputs: [
-      { icon: Receipt, label: "Invoices sent" },
-      { icon: FileSpreadsheet, label: "Ledger synced" },
-      { icon: Database, label: "CRM billing" },
-    ],
-  },
-];
 
 const fadeUp = {
   hidden: { opacity: 0, y: 20 },
@@ -184,14 +26,16 @@ const stagger = {
 function PrimaryButton({
   href,
   children,
+  className = "",
 }: {
   href: string;
   children: React.ReactNode;
+  className?: string;
 }) {
   return (
     <Link
       href={href}
-      className="group relative inline-flex h-12 w-full items-center justify-center gap-2.5 overflow-hidden rounded-full bg-primary px-7 text-[15px] font-semibold text-primary-foreground shadow-[0_4px_24px_-4px_rgba(33,74,156,0.55)] transition-all hover:shadow-[0_8px_32px_-4px_rgba(33,74,156,0.65)] active:scale-[0.98] sm:w-auto sm:min-w-[200px]"
+      className={`group relative inline-flex h-12 w-full items-center justify-center gap-2.5 overflow-hidden rounded-full bg-primary px-7 text-[15px] font-semibold text-primary-foreground shadow-[0_4px_24px_-4px_rgba(33,74,156,0.55)] transition-all hover:shadow-[0_8px_32px_-4px_rgba(33,74,156,0.65)] active:scale-[0.98] sm:w-auto sm:min-w-[200px] ${className}`}
     >
       <span className="pointer-events-none absolute inset-0 bg-[linear-gradient(105deg,rgba(255,255,255,0.14)_0%,transparent_55%)] opacity-0 transition-opacity group-hover:opacity-100" />
       <span className="relative">{children}</span>
@@ -217,393 +61,223 @@ function SecondaryButton({
   );
 }
 
-function DemoShell({
-  children,
-  badge,
-  reducedMotion,
-}: {
-  children: React.ReactNode;
-  badge: string;
-  reducedMotion: boolean;
-}) {
-  return (
-    <div className="relative mx-auto w-full max-w-[520px] lg:max-w-none">
-      <div className="pointer-events-none absolute -inset-6 rounded-[48px] bg-[radial-gradient(ellipse_at_center,rgba(33,74,156,0.12),transparent_72%)] blur-2xl dark:bg-[radial-gradient(ellipse_at_center,rgba(74,144,226,0.18),transparent_72%)]" />
 
-      <div className="group/demo relative overflow-hidden rounded-[28px] border border-border/60 bg-card shadow-[0_20px_60px_-24px_rgba(33,74,156,0.18),inset_0_1px_0_0_rgba(255,255,255,0.6)] backdrop-blur-md dark:border-border/35 dark:bg-card/95 dark:shadow-[0_28px_72px_-24px_rgba(33,74,156,0.38),inset_0_1px_0_0_rgba(255,255,255,0.04)] md:rounded-[32px]">
-        <div className="pointer-events-none absolute inset-0 bg-gradient-to-br from-primary/[0.04] via-transparent to-chart-3/[0.05] dark:from-primary/[0.08] dark:to-chart-2/[0.06]" />
-        <div
-          className="pointer-events-none absolute inset-0 opacity-[0.35] dark:opacity-[0.22]"
-          style={{
-            backgroundImage:
-              "radial-gradient(circle at 1px 1px, rgba(33,74,156,0.07) 1px, transparent 0)",
-            backgroundSize: "22px 22px",
-          }}
-        />
-        <div className="pointer-events-none absolute -right-20 -top-20 h-52 w-52 rounded-full bg-primary/[0.06] blur-3xl dark:bg-primary/[0.12]" />
+function WorkflowSVGDiagram({ reducedMotion }: { reducedMotion: boolean }) {
+  const [animationStep, setAnimationStep] = useState(0);
 
-        <div className="relative flex items-center gap-2.5 border-b border-border/45 px-4 py-3 md:px-5">
-          <div className="flex items-center gap-1.5">
-            <span className="h-2.5 w-2.5 rounded-full bg-muted-foreground/15 dark:bg-muted-foreground/20" />
-            <span className="h-2.5 w-2.5 rounded-full bg-muted-foreground/10 dark:bg-muted-foreground/15" />
-            <span className="h-2.5 w-2.5 rounded-full bg-primary/30 dark:bg-primary/45" />
-          </div>
-          <span className="flex items-center gap-1.5 rounded-full border border-emerald-500/20 bg-emerald-500/[0.07] px-2 py-0.5">
-            <span className="relative flex h-1.5 w-1.5">
-              <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-500 opacity-50" />
-              <span className="relative inline-flex h-1.5 w-1.5 rounded-full bg-emerald-500" />
-            </span>
-            <span className="text-[9px] font-semibold uppercase tracking-wider text-emerald-600 dark:text-emerald-400">
-              Live
-            </span>
-          </span>
-          <AnimatePresence mode="wait">
-            <motion.span
-              key={badge}
-              initial={reducedMotion ? false : { opacity: 0, y: -4 }}
-              animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, y: 4 }}
-              transition={{ duration: 0.25 }}
-              className="ml-auto rounded-md border border-border/60 bg-muted/40 px-2.5 py-1 text-[10px] font-semibold uppercase tracking-wider text-muted-foreground"
-            >
-              {badge} · Sprint
-            </motion.span>
-          </AnimatePresence>
-        </div>
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setAnimationStep((prev) => (prev + 1) % 5);
+    }, 2500);
 
-        <div className="relative p-4 md:p-5">{children}</div>
-      </div>
-    </div>
-  );
-}
+    return () => clearInterval(timer);
+  }, []);
 
-function DemoPanel({
-  children,
-  className = "",
-  glow = false,
-}: {
-  children: React.ReactNode;
-  className?: string;
-  glow?: boolean;
-}) {
-  return (
-    <div className={`relative overflow-hidden ${className}`}>
-      {glow && (
-        <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(33,74,156,0.07),transparent_70%)] dark:bg-[radial-gradient(ellipse_at_center,rgba(33,74,156,0.14),transparent_70%)]" />
-      )}
-      <div className="relative rounded-2xl border border-border/55 bg-muted/30 shadow-[inset_0_1px_0_0_rgba(255,255,255,0.5)] dark:bg-muted/15 dark:shadow-[inset_0_1px_0_0_rgba(255,255,255,0.03)]">
-        {children}
-      </div>
-    </div>
-  );
-}
-
-function StatusPill({
-  children,
-  tone = "neutral",
-}: {
-  children: React.ReactNode;
-  tone?: "success" | "active" | "neutral";
-}) {
-  const tones = {
-    success:
-      "border-emerald-500/20 bg-emerald-500/[0.08] text-emerald-700 dark:text-emerald-400",
-    active: "border-primary/25 bg-primary/[0.08] text-primary dark:text-chart-3",
-    neutral: "border-border/60 bg-background/50 text-muted-foreground",
+  const allPaths = {
+    "path-in-1": "M 120 120 C 220 120, 220 250, 320 250",
+    "path-in-2": "M 120 250 L 320 250",
+    "path-in-3": "M 120 380 C 220 380, 220 250, 320 250",
+    "path-core-link": "M 380 250 L 480 250",
+    "path-out-1": "M 540 250 C 640 250, 660 120, 760 120",
+    "path-out-2": "M 540 250 L 760 250",
+    "path-out-3": "M 540 250 C 640 250, 660 380, 760 380",
+    "path-final-1": "M 820 120 L 900 120",
+    "path-final-2": "M 820 250 L 900 250",
+    "path-final-3": "M 820 380 L 900 380",
   };
-  return (
-    <span
-      className={`shrink-0 rounded-full border px-2 py-0.5 text-[9px] font-semibold uppercase tracking-wide ${tones[tone]}`}
-    >
-      {children}
-    </span>
-  );
-}
 
-function FlowConnector({ reducedMotion, delay = 0 }: { reducedMotion: boolean; delay?: number }) {
-  return (
-    <div className="relative flex justify-center py-1">
-      <div className="h-7 w-px bg-gradient-to-b from-primary/35 via-primary/20 to-transparent dark:from-chart-2/45" />
-      {!reducedMotion && (
-        <motion.div
-          animate={{ y: [0, 22, 0], opacity: [0, 1, 0], scale: [0.6, 1, 0.6] }}
-          transition={{ duration: 2, repeat: Infinity, ease: "easeInOut", delay }}
-          className="absolute top-0 h-1.5 w-1.5 rounded-full bg-primary shadow-[0_0_8px_rgba(33,74,156,0.5)] dark:bg-chart-3 dark:shadow-[0_0_8px_rgba(123,179,240,0.5)]"
-        />
-      )}
-    </div>
-  );
-}
+  const allNodes = [
+    { id: "node-in-1", cx: 120, cy: 120, r: 30, icon: "📧" },
+    { id: "node-in-2", cx: 120, cy: 250, r: 30, icon: "📝" },
+    { id: "node-in-3", cx: 120, cy: 380, r: 30, icon: "🔗" },
+    { id: "node-parser", cx: 350, cy: 250, r: 35, icon: "🔍", rect: true, w: 70, h: 70 },
+    { id: "node-core", cx: 510, cy: 250, r: 35, icon: "⚙️", rect: true, w: 70, h: 70 },
+    { id: "node-out-1", cx: 790, cy: 120, r: 30, icon: "📄" },
+    { id: "node-out-2", cx: 790, cy: 250, r: 30, icon: "✅" },
+    { id: "node-out-3", cx: 790, cy: 380, r: 30, icon: "📊" },
+    { id: "node-final-sync", cx: 930, cy: 250, r: 30, icon: "✓", final: true },
+  ];
 
-function AutomationDemo({ reducedMotion }: { reducedMotion: boolean }) {
-  const [scenarioIndex, setScenarioIndex] = useState(0);
-  const [activeStep, setActiveStep] = useState(0);
-  const [logIndex, setLogIndex] = useState(0);
+  // Animation steps - nodes accumulate as flow progresses
+  // 0: Inputs → Parser
+  // 1: Parser → Core (keep inputs/parser active)
+  // 2: Core → Outputs (keep all previous active)
+  // 3: Outputs → Final (keep all active)
+  const getActiveNodes = () => {
+    const nodes = [];
+    if (animationStep >= 0) nodes.push("node-in-1", "node-in-2", "node-in-3", "node-parser");
+    if (animationStep >= 1) nodes.push("node-core");
+    if (animationStep >= 2) nodes.push("node-out-1", "node-out-2", "node-out-3");
+    if (animationStep >= 3) nodes.push("node-final-sync");
+    // Step 4: All nodes active showing complete flow
+    if (animationStep === 4) return ["node-in-1", "node-in-2", "node-in-3", "node-parser", "node-core", "node-out-1", "node-out-2", "node-out-3", "node-final-sync"];
+    return nodes;
+  };
 
-  const scenario = workflowScenarios[scenarioIndex];
+  const getActivePaths = () => {
+    const paths = [];
+    if (animationStep >= 0) paths.push("path-in-1", "path-in-2", "path-in-3");
+    if (animationStep >= 1) paths.push("path-core-link");
+    if (animationStep >= 2) paths.push("path-out-1", "path-out-2", "path-out-3");
+    if (animationStep >= 3) paths.push("path-final-1", "path-final-2", "path-final-3");
+    // Step 4: Show complete flow with all paths animated
+    if (animationStep === 4) return ["path-in-1", "path-in-2", "path-in-3", "path-core-link", "path-out-1", "path-out-2", "path-out-3", "path-final-1", "path-final-2", "path-final-3"];
+    return paths;
+  };
 
-  useEffect(() => {
-    if (reducedMotion) return;
+  const activeNodes = getActiveNodes();
+  const activePaths = getActivePaths();
 
-    const stepTimer = setInterval(() => {
-      setActiveStep((prev) => (prev + 1) % scenario.steps.length);
-    }, 2800);
-
-    const logTimer = setInterval(() => {
-      setLogIndex((prev) => (prev + 1) % scenario.logs.length);
-    }, 2200);
-
-    const scenarioTimer = setInterval(() => {
-      setScenarioIndex((prev) => (prev + 1) % workflowScenarios.length);
-      setActiveStep(0);
-      setLogIndex(0);
-    }, 9000);
-
-    return () => {
-      clearInterval(stepTimer);
-      clearInterval(logTimer);
-      clearInterval(scenarioTimer);
-    };
-  }, [reducedMotion, scenario.steps.length, scenario.logs.length]);
-
-  useEffect(() => {
-    setActiveStep(0);
-    setLogIndex(0);
-  }, [scenarioIndex]);
-
-  const progress = ((activeStep + 1) / scenario.steps.length) * 100;
+  const badges = ["Matter intake", "Document chase", "Billing reconciliation", "Complete workflow"];
+  const badge = animationStep === 4 ? "Complete workflow" : badges[animationStep % 3];
 
   return (
-    <DemoShell badge={scenario.badge} reducedMotion={reducedMotion}>
-      <DemoPanel className="mb-1" glow>
-        <div className="p-3.5 md:p-4">
-          <div className="mb-3 flex items-center justify-between">
-            <p className="text-[10px] font-semibold uppercase tracking-[0.14em] text-muted-foreground">
-              Your stack · inputs
-            </p>
-            <StatusPill tone="active">{scenario.activeSources.length} sources</StatusPill>
-          </div>
+    <div className="relative w-full overflow-hidden rounded-2xl border border-primary/10 bg-gradient-to-br from-primary/5 to-background p-6 md:p-8">
+      <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(33,74,156,0.06),transparent_70%)] dark:bg-[radial-gradient(ellipse_at_center,rgba(74,144,226,0.12),transparent_70%)]" />
 
-          <div className="mb-3.5 grid grid-cols-4 gap-2">
-            {stackSources.map((source) => {
-              const isActive = scenario.activeSources.includes(source.id);
-              const SourceIcon = source.icon;
+      <motion.div className="mb-4 flex items-center justify-between" key={badge}>
+        <motion.span
+          initial={{ opacity: 0, y: -8 }}
+          animate={{ opacity: 1, y: 0 }}
+          exit={{ opacity: 0, y: 8 }}
+          transition={{ duration: 0.4 }}
+          className="inline-flex items-center gap-2 rounded-full border border-primary/20 bg-primary/[0.06] px-3 py-1 text-xs font-semibold uppercase tracking-[0.12em] text-primary"
+        >
+          <span className="h-1.5 w-1.5 rounded-full bg-primary" />
+          {badge} · Sprint
+        </motion.span>
+      </motion.div>
 
-              return (
-                <div
-                  key={source.id}
-                  className={`flex flex-col items-center gap-1.5 rounded-xl border px-1 py-2 transition-all duration-500 ${
-                    isActive
-                      ? "border-primary/30 bg-primary/10 shadow-sm dark:border-primary/35 dark:bg-primary/15"
-                      : "border-border/50 bg-background/40 opacity-40 dark:bg-background/20"
-                  }`}
+      <div className="relative flex items-center justify-center overflow-hidden rounded-xl">
+        <svg
+          className="w-full h-auto max-h-96"
+          viewBox="0 0 1000 500"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <defs>
+            <filter id="glow-demo" x="-20%" y="-20%" width="140%" height="140%">
+              <feGaussianBlur stdDeviation="8" result="blur" />
+              <feMerge>
+                <feMergeNode in="blur" />
+                <feMergeNode in="SourceGraphic" />
+              </feMerge>
+            </filter>
+            <linearGradient id="grad-active-demo" x1="0%" y1="0%" x2="100%" y2="0%">
+              <stop offset="0%" stopColor="var(--primary, #214a9c)" />
+              <stop offset="50%" stopColor="var(--chart-2, #4a90e2)" />
+              <stop offset="100%" stopColor="var(--chart-3, #7bb3f0)" />
+            </linearGradient>
+          </defs>
+
+          {/* Subtle background paths */}
+          <g className="text-muted-foreground/10" opacity="0.15">
+            {Object.entries(allPaths).map(([id, d]) => (
+              <path key={`bg-${id}`} d={d} stroke="currentColor" strokeWidth="2.5" fill="none" />
+            ))}
+          </g>
+
+          {/* Animated active paths - solid gradient lines with glow */}
+          <g>
+            {activePaths.map((pathId) => (
+              <motion.g key={`active-${pathId}`}>
+                {/* Glow layer */}
+                <motion.path
+                  d={allPaths[pathId as keyof typeof allPaths]}
+                  stroke="url(#grad-active-demo)"
+                  strokeWidth="8"
+                  fill="none"
+                  strokeLinecap="round"
+                  opacity="0.3"
+                  filter="url(#glow-demo)"
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 0.3 }}
+                  transition={{ duration: 0.4 }}
+                />
+                {/* Main animated line */}
+                <motion.path
+                  d={allPaths[pathId as keyof typeof allPaths]}
+                  stroke="url(#grad-active-demo)"
+                  strokeWidth="5"
+                  fill="none"
+                  strokeLinecap="round"
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  transition={{ duration: 0.4 }}
                 >
-                  <div
-                    className={`flex h-8 w-8 items-center justify-center rounded-lg ring-1 ring-inset ${
-                      isActive
-                        ? "bg-card text-primary ring-primary/15 dark:text-chart-3"
-                        : "bg-muted/60 text-muted-foreground/35 ring-border/40"
-                    }`}
+                  <animate
+                    attributeName="stroke-dasharray"
+                    values="0,1000;1000,0"
+                    dur="3s"
+                    repeatCount="indefinite"
+                  />
+                </motion.path>
+              </motion.g>
+            ))}
+          </g>
+
+          {/* Animated nodes */}
+          <g>
+            {allNodes.map((node) => {
+              const isActive = activeNodes.includes(node.id);
+              return (
+                <motion.g
+                  key={node.id}
+                  initial={{ opacity: 0.2, scale: 0.9 }}
+                  animate={{
+                    opacity: isActive ? 1 : 0.2,
+                    scale: isActive ? 1 : 0.85,
+                    filter: isActive ? "brightness(1.3) drop-shadow(0 0 12px var(--primary))" : "brightness(1)",
+                  }}
+                  transition={{ duration: 0.6, ease: "easeOut" }}
+                >
+                  {node.rect ? (
+                    <motion.rect
+                      x={node.cx - node.w! / 2}
+                      y={node.cy - node.h! / 2}
+                      width={node.w}
+                      height={node.h}
+                      rx="14"
+                      fill="currentColor"
+                      fillOpacity={isActive ? 0.2 : 0.06}
+                      stroke="currentColor"
+                      strokeWidth={isActive ? 2.5 : 2}
+                      className="text-foreground/60"
+                    />
+                  ) : (
+                    <motion.circle
+                      cx={node.cx}
+                      cy={node.cy}
+                      r={node.r}
+                      fill="currentColor"
+                      fillOpacity={isActive ? 0.2 : 0.06}
+                      stroke="currentColor"
+                      strokeWidth={isActive ? 2.5 : 2}
+                      className="text-foreground/60"
+                    />
+                  )}
+                  <motion.text
+                    x={node.cx}
+                    y={node.cy + 6}
+                    fontFamily="inherit"
+                    fontSize={node.rect ? "32" : "28"}
+                    fontWeight="600"
+                    textAnchor="middle"
+                    dominantBaseline="middle"
+                    fill="currentColor"
+                    fillOpacity={isActive ? 1 : 0.35}
+                    animate={{ scale: isActive ? 1.1 : 0.95 }}
+                    transition={{ duration: 0.5 }}
                   >
-                    <SourceIcon className="h-3.5 w-3.5" strokeWidth={1.75} />
-                  </div>
-                  <span
-                    className={`text-[9px] font-semibold ${isActive ? "text-foreground/80" : "text-muted-foreground/35"}`}
-                  >
-                    {source.label}
-                  </span>
-                </div>
+                    {node.icon}
+                  </motion.text>
+                </motion.g>
               );
             })}
-          </div>
-
-          <AnimatePresence mode="wait">
-            <motion.div
-              key={scenario.id}
-              initial={reducedMotion ? false : { opacity: 0, y: 6 }}
-              animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, y: -6 }}
-              transition={{ duration: 0.3 }}
-              className="rounded-xl border border-border/50 bg-background/50 px-3 py-2.5 dark:bg-background/25"
-            >
-              <p className="text-sm font-semibold text-foreground">{scenario.triggerLabel}</p>
-              <p className="mt-0.5 text-xs text-muted-foreground">{scenario.triggerDetail}</p>
-            </motion.div>
-          </AnimatePresence>
-        </div>
-      </DemoPanel>
-
-      <FlowConnector reducedMotion={reducedMotion} />
-
-      <DemoPanel glow className="mb-1">
-        <div className="p-3.5 md:p-4">
-          <div className="mb-3 flex items-center justify-between gap-3">
-            <p className="text-[10px] font-semibold uppercase tracking-[0.14em] text-primary/80 dark:text-chart-3/80">
-              Automation engine
-            </p>
-            <StatusPill tone="success">0 manual steps</StatusPill>
-          </div>
-
-          <div className="mb-3 h-1 overflow-hidden rounded-full bg-muted/80">
-            <motion.div
-              animate={{ width: `${progress}%` }}
-              transition={{ duration: 0.5, ease: [0.25, 0.1, 0.25, 1] }}
-              className="h-full rounded-full bg-[linear-gradient(90deg,var(--primary),var(--chart-2))]"
-            />
-          </div>
-
-          <div className="space-y-2">
-            <AnimatePresence mode="wait">
-              <motion.div
-                key={scenario.id}
-                initial={reducedMotion ? false : { opacity: 0 }}
-                animate={{ opacity: 1 }}
-                exit={{ opacity: 0 }}
-                transition={{ duration: 0.25 }}
-                className="space-y-2"
-              >
-                {scenario.steps.map((step, index) => {
-                  const isActive = activeStep === index;
-                  const isDone = activeStep > index;
-                  const StepIcon = step.icon;
-
-                  return (
-                    <motion.div
-                      key={step.id}
-                      initial={reducedMotion ? false : { opacity: 0, x: 10 }}
-                      animate={{ opacity: 1, x: 0 }}
-                      transition={{ delay: index * 0.06, duration: 0.4 }}
-                      className={`relative overflow-hidden rounded-xl border px-3 py-2.5 transition-all duration-500 ${
-                        isActive
-                          ? "border-primary/30 bg-gradient-to-r from-primary/[0.07] to-transparent shadow-sm dark:from-primary/12"
-                          : isDone
-                            ? "border-emerald-500/20 bg-emerald-500/[0.04]"
-                            : "border-border/50 bg-background/45 dark:bg-background/20"
-                      }`}
-                    >
-                      {isActive && (
-                        <>
-                          <span className="pointer-events-none absolute left-0 top-2 h-4 w-px bg-primary/50" />
-                          <span className="pointer-events-none absolute left-0 top-2 h-px w-4 bg-primary/50" />
-                        </>
-                      )}
-
-                      <div className="flex items-center gap-3">
-                        <div
-                          className={`flex h-9 w-9 shrink-0 items-center justify-center rounded-xl ring-1 ring-inset ${
-                            isDone
-                              ? "bg-emerald-500/10 text-emerald-600 ring-emerald-500/15 dark:text-emerald-400"
-                              : isActive
-                                ? "bg-primary/10 text-primary ring-primary/15 dark:text-chart-3"
-                                : "bg-muted/80 text-muted-foreground/40 ring-border/50"
-                          }`}
-                        >
-                          {isDone ? (
-                            <CheckCircle2 className="h-4 w-4" strokeWidth={2} />
-                          ) : isActive && !reducedMotion ? (
-                            <motion.div
-                              animate={{ rotate: 360 }}
-                              transition={{ duration: 2, repeat: Infinity, ease: "linear" }}
-                              className="h-4 w-4 rounded-full border-2 border-primary/15 border-t-primary dark:border-chart-3/25 dark:border-t-chart-3"
-                            />
-                          ) : (
-                            <StepIcon className="h-4 w-4" strokeWidth={1.75} />
-                          )}
-                        </div>
-
-                        <div className="min-w-0 flex-1">
-                          <div className="mb-0.5 flex items-start justify-between gap-2">
-                            <p
-                              className={`text-sm font-semibold ${
-                                isActive || isDone ? "text-foreground" : "text-muted-foreground/55"
-                              }`}
-                            >
-                              {step.label}
-                            </p>
-                            <StatusPill
-                              tone={
-                                isDone ? "success" : isActive ? "active" : "neutral"
-                              }
-                            >
-                              {isDone ? "Done" : isActive ? "Running" : "Queued"}
-                            </StatusPill>
-                          </div>
-                          <p className="truncate text-[11px] text-muted-foreground">{step.detail}</p>
-                        </div>
-                      </div>
-                    </motion.div>
-                  );
-                })}
-              </motion.div>
-            </AnimatePresence>
-          </div>
-        </div>
-      </DemoPanel>
-
-      <FlowConnector reducedMotion={reducedMotion} delay={0.35} />
-
-      <DemoPanel>
-        <div className="p-3.5 md:p-4">
-          <p className="mb-3 text-[10px] font-semibold uppercase tracking-[0.14em] text-muted-foreground">
-            Outputs
-          </p>
-          <div className="grid grid-cols-3 gap-2">
-            <AnimatePresence mode="wait">
-              <motion.div
-                key={scenario.id}
-                initial={reducedMotion ? false : { opacity: 0 }}
-                animate={{ opacity: 1 }}
-                exit={{ opacity: 0 }}
-                className="contents"
-              >
-                {scenario.outputs.map((output, index) => (
-                  <motion.div
-                    key={output.label}
-                    initial={reducedMotion ? false : { opacity: 0, y: 8 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ delay: index * 0.07, duration: 0.35 }}
-                    className="flex flex-col items-center gap-2 rounded-xl border border-border/50 bg-background/55 px-2 py-3 text-center dark:bg-background/25"
-                  >
-                    <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-primary/10 ring-1 ring-inset ring-primary/10 dark:bg-primary/15">
-                      <output.icon
-                        className="h-3.5 w-3.5 text-primary dark:text-chart-3"
-                        strokeWidth={1.75}
-                      />
-                    </div>
-                    <span className="text-[10px] font-semibold leading-tight text-muted-foreground">
-                      {output.label}
-                    </span>
-                  </motion.div>
-                ))}
-              </motion.div>
-            </AnimatePresence>
-          </div>
-        </div>
-      </DemoPanel>
-
-      <div className="relative mt-4 overflow-hidden rounded-xl border border-border/50 bg-muted/25 dark:bg-muted/15">
-        <div className="flex items-center gap-2 border-b border-border/40 px-3 py-1.5">
-          <CircleDot className="h-3 w-3 text-primary/60 dark:text-chart-2/70" />
-          <span className="text-[9px] font-semibold uppercase tracking-wider text-muted-foreground/70">
-            Activity log
-          </span>
-        </div>
-        <div className="px-3 py-2.5 font-mono text-[11px] text-muted-foreground">
-          <AnimatePresence mode="wait">
-            <motion.p
-              key={`${scenario.id}-${logIndex}`}
-              initial={reducedMotion ? false : { opacity: 0, y: 4 }}
-              animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, y: -4 }}
-              transition={{ duration: 0.25 }}
-              className="truncate"
-            >
-              <span className="text-primary/60 dark:text-chart-3/60">&gt;</span> {scenario.logs[logIndex]}
-            </motion.p>
-          </AnimatePresence>
-        </div>
+          </g>
+        </svg>
       </div>
-    </DemoShell>
+    </div>
   );
 }
 
@@ -659,7 +333,7 @@ export default function SolutionBridge() {
               transition={{ duration: 0.65, ease: [0.25, 0.1, 0.25, 1] }}
               className="mb-8 flex flex-col gap-3 sm:flex-row sm:items-stretch"
             >
-              <PrimaryButton href="/automation-sprint">Explore the Sprint</PrimaryButton>
+              <PrimaryButton href="/automation-sprint" className="whitespace-nowrap">Explore the Sprint</PrimaryButton>
               <BookCallLink variant="secondary" frameClassName="w-full sm:min-w-[168px]" />
             </motion.div>
 
@@ -691,7 +365,7 @@ export default function SolutionBridge() {
             viewport={{ once: true, margin: "-60px" }}
             transition={{ duration: 0.85, ease: [0.25, 0.1, 0.25, 1] }}
           >
-            <AutomationDemo reducedMotion={!!reducedMotion} />
+            <WorkflowSVGDiagram reducedMotion={!!reducedMotion} />
           </motion.div>
         </div>
       </div>

@@ -3,7 +3,7 @@
     {
       "id": 1,
       "title": "Email Address",
-      "description": "bekurtechnologies@gmail.com",
+      "description": "admin@bekurtechnologies.com",
       "iconType": "email",
       "isLink": false,
       "order": 0
@@ -11,7 +11,7 @@
     {
       "id": 2,
       "title": "Phone Number",
-      "description": "+251-922876643",
+      "description": "+12029922179",
       "iconType": "phone",
       "isLink": false,
       "order": 1
@@ -28,7 +28,7 @@
     {
       "id": 4,
       "title": "Office Location",
-      "description": "Sebara Babur, Piassa, Addis Ababa, Ethiopia",
+      "description": "1309 COFFEEN AVE STE 1200 SHERIDAN, WY 82801",
       "iconType": "location",
       "isLink": false,
       "order": 3
