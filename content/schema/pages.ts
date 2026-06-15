@@ -134,6 +134,7 @@ export const aboutPageSchema = pageBaseSchema.extend({
     .array(
       z.object({
         value: z.string(),
+        unit: z.string(),
         label: z.string(),
         description: z.string(),
       })

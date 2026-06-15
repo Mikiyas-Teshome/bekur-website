@@ -2,11 +2,10 @@ import { NextRequest, NextResponse } from "next/server";
 import { getDataSource } from "@/lib/db";
 import { Contact } from "@/lib/entities/Contact";
 import { z } from "zod";
-import nodemailer from "nodemailer";
+import { Resend } from "resend";
 
 export const runtime = "nodejs";
 
-// Validation schema for contact form
 const contactFormSchema = z.object({
   name: z.string().min(1, "Name is required").max(100, "Name is too long"),
   email: z.string().email("Invalid email address"),
@@ -21,6 +20,10 @@ const contactFormSchema = z.object({
     .min(10, "Message must be at least 10 characters")
     .max(1000, "Message is too long"),
 });
+
+const contactFrom =
+  process.env.RESEND_FROM_EMAIL || "Bekur Technologies <bookings@bekurtechnologies.com>";
+const contactTo = process.env.CONTACT_EMAIL || "ewenetmikiyas@gmail.com";
 
 export async function GET() {
   try {
@@ -52,75 +55,36 @@ export async function GET() {
 
 export async function POST(request: NextRequest) {
   try {
-    const body = await request.json();
-
-    // Validate the form data
-    const validatedData = contactFormSchema.parse(body);
-
-    // SMTP Configuration
-    const smtpHost = process.env.SMTP_HOST;
-    const smtpPort = process.env.SMTP_PORT;
-    const smtpUser = process.env.SMTP_USER;
-    const smtpPass = process.env.SMTP_PASS;
-    const smtpFromName = process.env.SMTP_FROM_NAME || "Bekur Technologies";
-    const smtpFromEmail = process.env.SMTP_FROM_EMAIL || "noreply@bekurtechnologies.com";
-    const adminEmail = process.env.CONTACT_EMAIL || "info@bekurtechnologies.com";
-
-    // Check if SMTP is configured
-    if (!smtpHost || !smtpPort || !smtpUser || !smtpPass) {
-      console.error("❌ SMTP configuration is missing. Please check your .env.local file");
-      console.error("Required: SMTP_HOST, SMTP_PORT, SMTP_USER, SMTP_PASS");
-    } else {
-      try {
-        // Create SMTP transporter
-        const transporter = nodemailer.createTransport({
-          host: smtpHost,
-          port: parseInt(smtpPort, 10),
-          secure: parseInt(smtpPort, 10) === 465, // true for 465, false for other ports
-          auth: {
-            user: smtpUser,
-            pass: smtpPass,
-          },
-        });
-
-        // Email content
-        const mailOptions = {
-          from: `"${smtpFromName}" <${smtpFromEmail}>`,
-          to: adminEmail,
-          replyTo: validatedData.email, // Replies will go to the user's email
-          subject: validatedData.subject,
-          html: `
-            <h2>New Contact Form Submission</h2>
-            <p><strong>From:</strong> ${validatedData.name} (${validatedData.email})</p>
-            ${validatedData.company ? `<p><strong>Company:</strong> ${validatedData.company}</p>` : ""}
-            ${validatedData.phone ? `<p><strong>Phone:</strong> ${validatedData.phone}</p>` : ''}
-            <p><strong>Subject:</strong> ${validatedData.subject}</p>
-            <hr style="margin: 20px 0; border: none; border-top: 1px solid #ddd;">
-            <p><strong>Message:</strong></p>
-            <p style="white-space: pre-wrap;">${validatedData.message.replace(/\n/g, "<br>")}</p>
-          `,
-        };
-
-        // Send email
-        await transporter.sendMail(mailOptions);
-      } catch (emailError: unknown) {
-        // Log detailed error information
-        console.error("❌ Error sending email:", emailError);
-        if (emailError && typeof emailError === 'object') {
-          if ('message' in emailError) {
-            console.error("Email error message:", emailError.message);
-          }
-          if ('code' in emailError) {
-            console.error("Email error code:", emailError.code);
-          }
-          if ('command' in emailError) {
-            console.error("Email error command:", emailError.command);
-          }
-          console.error("Full error object:", JSON.stringify(emailError, null, 2));
-        }
-        // Continue even if email fails - don't block the form submission
-      }
+    if (!process.env.RESEND_API_KEY) {
+      console.error("RESEND_API_KEY is not configured");
+      return NextResponse.json(
+        { error: "Email service is not configured" },
+        { status: 500 }
+      );
     }
+
+    const body = await request.json();
+    const validatedData = contactFormSchema.parse(body);
+    const resend = new Resend(process.env.RESEND_API_KEY);
+
+    await resend.emails.send({
+      from: contactFrom,
+      to: contactTo,
+      replyTo: validatedData.email,
+      subject: `Contact form: ${validatedData.subject}`,
+      html: `
+        <div style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif; max-width: 600px; margin: 0 auto;">
+          <h2 style="color: #214a9c; margin-top: 0;">New contact form submission</h2>
+          <p><strong>From:</strong> ${validatedData.name} (${validatedData.email})</p>
+          ${validatedData.company ? `<p><strong>Company:</strong> ${validatedData.company}</p>` : ""}
+          ${validatedData.phone ? `<p><strong>Phone:</strong> ${validatedData.phone}</p>` : ""}
+          <p><strong>Subject:</strong> ${validatedData.subject}</p>
+          <hr style="margin: 20px 0; border: none; border-top: 1px solid #ddd;">
+          <p><strong>Message:</strong></p>
+          <p style="white-space: pre-wrap;">${validatedData.message.replace(/\n/g, "<br>")}</p>
+        </div>
+      `,
+    });
 
     return NextResponse.json({
       success: true,
@@ -142,7 +106,7 @@ export async function POST(request: NextRequest) {
 
     console.error("Error processing contact form:", error);
     return NextResponse.json(
-      { error: "Internal server error" },
+      { error: "Failed to send your message. Please try again." },
       { status: 500 }
     );
   }

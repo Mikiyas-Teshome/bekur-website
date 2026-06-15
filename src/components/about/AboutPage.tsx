@@ -31,7 +31,7 @@ type AboutPageProps = {
       primaryCta: { label: string; href: string };
     };
     whoWeAre: { eyebrow: string; headline: string; body: string };
-    stats: { value: string; label: string; description: string }[];
+    stats: { value: string; unit: string; label: string; description: string }[];
     mission: string;
     vision: string;
     delivery: { headquarters: string; serviceArea: string };
