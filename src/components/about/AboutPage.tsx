@@ -30,9 +30,8 @@ type AboutPageProps = {
       subheadline: string;
       primaryCta: { label: string; href: string };
     };
-    trustLine: string;
     whoWeAre: { eyebrow: string; headline: string; body: string };
-    stats: { value: string; label: string; description: string }[];
+    stats: { value: string; unit: string; label: string; description: string }[];
     mission: string;
     vision: string;
     delivery: { headquarters: string; serviceArea: string };
@@ -54,7 +53,6 @@ export default function AboutPage({
       <AboutHero
         headline={content.hero.headline}
         subheadline={content.hero.subheadline}
-        trustLine={content.trustLine}
         ctaLabel={content.hero.primaryCta.label}
         ctaHref={content.hero.primaryCta.href}
       />

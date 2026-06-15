@@ -33,7 +33,7 @@ const plans: Plan[] = [
       "Go / no-go decision gate",
       "Credited toward sprint if you proceed",
     ],
-    cta: { label: "Book a call", href: "/blueprint#book" },
+    cta: { label: "Book a call", href: "/book" },
   },
   {
     id: "pilot",

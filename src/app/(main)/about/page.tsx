@@ -38,7 +38,6 @@ export default function AboutRoute() {
     <AboutPage
       content={{
         hero: about.hero,
-        trustLine: about.trustLine,
         whoWeAre: about.whoWeAre,
         stats: about.stats,
         mission: about.mission,

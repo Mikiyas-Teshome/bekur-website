@@ -12,7 +12,7 @@
     "subheadline": "One production workflow. Fixed scope. Fixed price. Built into your existing stack — not a rip-and-replace platform sale.",
     "primaryCta": {
       "label": "Book a call",
-      "href": "/blueprint#book",
+      "href": "/book",
       "variant": "primary"
     },
     "secondaryCta": {
@@ -122,7 +122,7 @@
     "description": "30-minute scoping call. We listen to your top workflow pain, name the highest-ROI automation target, explain the sprint process, and answer your questions. No pressure. If we think you're a poor fit, we'll say so.",
     "cta": {
       "label": "Book a call",
-      "href": "/automation-sprint#book"
+      "href": "/book"
     }
   }
 }

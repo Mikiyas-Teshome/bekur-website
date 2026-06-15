@@ -10,6 +10,7 @@ import { cn } from "@/lib/utils";
 const contactFormSchema = z.object({
   name: z.string().min(1, "Name is required").max(100, "Name is too long"),
   email: z.string().email("Invalid email address"),
+  company: z.string().max(100, "Company name is too long").optional(),
   phone: z.string().optional(),
   subject: z.string().min(1, "Subject is required").max(200, "Subject is too long"),
   message: z
@@ -27,6 +28,7 @@ export default function MarketingContactForm() {
   const [form, setForm] = useState<FormData>({
     name: "",
     email: "",
+    company: "",
     phone: "",
     subject: "",
     message: "",
@@ -72,7 +74,7 @@ export default function MarketingContactForm() {
       }
 
       toast.success(data.message || "Thank you — we'll be in touch soon.");
-      setForm({ name: "", email: "", phone: "", subject: "", message: "" });
+      setForm({ name: "", email: "", company: "", phone: "", subject: "", message: "" });
       setErrors({});
     } catch (error) {
       if (error instanceof z.ZodError) {
@@ -93,7 +95,7 @@ export default function MarketingContactForm() {
   return (
     <form onSubmit={handleSubmit} className="space-y-5">
       <div className="grid grid-cols-1 gap-5 sm:grid-cols-2">
-        <Field label="Full name" error={errors.name}>
+        <Field label="Full name" required error={errors.name}>
           <Input
             name="name"
             value={form.name}
@@ -102,7 +104,7 @@ export default function MarketingContactForm() {
             className={cn(fieldClass, errors.name && "border-destructive")}
           />
         </Field>
-        <Field label="Work email" error={errors.email}>
+        <Field label="Work email" required error={errors.email}>
           <Input
             name="email"
             type="email"
@@ -115,7 +117,16 @@ export default function MarketingContactForm() {
       </div>
 
       <div className="grid grid-cols-1 gap-5 sm:grid-cols-2">
-        <Field label="Phone (optional)" error={errors.phone}>
+        <Field label="Company name" error={errors.company}>
+          <Input
+            name="company"
+            value={form.company}
+            onChange={handleChange}
+            placeholder="Your firm"
+            className={cn(fieldClass, errors.company && "border-destructive")}
+          />
+        </Field>
+        <Field label="Phone" error={errors.phone}>
           <Input
             name="phone"
             type="tel"
@@ -125,18 +136,19 @@ export default function MarketingContactForm() {
             className={fieldClass}
           />
         </Field>
-        <Field label="Subject" error={errors.subject}>
-          <Input
-            name="subject"
-            value={form.subject}
-            onChange={handleChange}
-            placeholder="Project or workflow inquiry"
-            className={cn(fieldClass, errors.subject && "border-destructive")}
-          />
-        </Field>
       </div>
 
-      <Field label="Message" error={errors.message}>
+      <Field label="Subject" required error={errors.subject}>
+        <Input
+          name="subject"
+          value={form.subject}
+          onChange={handleChange}
+          placeholder="Project or workflow inquiry"
+          className={cn(fieldClass, errors.subject && "border-destructive")}
+        />
+      </Field>
+
+      <Field label="Message" required error={errors.message}>
         <Textarea
           name="message"
           value={form.message}
@@ -153,7 +165,7 @@ export default function MarketingContactForm() {
       <button
         type="submit"
         disabled={isPending}
-        className="inline-flex h-12 w-full items-center justify-center rounded-full bg-primary text-sm font-semibold text-primary-foreground shadow-[0_4px_14px_-4px_rgba(33,74,156,0.45)] transition-all hover:bg-primary/90 active:scale-[0.98] disabled:opacity-60 dark:text-white"
+        className="inline-flex h-12 w-full items-center cursor-pointer justify-center rounded-[12px] bg-primary text-sm font-semibold text-primary-foreground shadow-[0_4px_14px_-4px_rgba(33,74,156,0.45)] transition-all hover:bg-primary/90 active:scale-[0.98] disabled:cursor-not-allowed disabled:opacity-60 dark:text-white"
       >
         {isPending ? "Sending…" : "Send message"}
       </button>
@@ -163,16 +175,26 @@ export default function MarketingContactForm() {
 
 function Field({
   label,
+  required,
   error,
   children,
 }: {
   label: string;
+  required?: boolean;
   error?: string;
   children: React.ReactNode;
 }) {
   return (
     <div className="space-y-2">
-      <label className="text-sm font-medium text-foreground">{label}</label>
+      <label className="text-sm font-medium text-foreground">
+        {label}
+        {required && (
+          <span className="text-destructive" aria-hidden="true">
+            {" "}
+            *
+          </span>
+        )}
+      </label>
       {children}
       {error && <p className="text-sm text-destructive">{error}</p>}
     </div>

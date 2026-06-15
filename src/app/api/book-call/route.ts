@@ -1,6 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
 import { Resend } from "resend";
-import { format } from "date-fns";
+import { format, isSunday, startOfDay, isBefore } from "date-fns";
 
 // Generate iCalendar (.ics) content
 function generateICS(
@@ -74,9 +74,10 @@ export async function POST(request: NextRequest) {
     const body = await request.json();
     const { fullName, email, phone, company, message, timezone, preferredDate, preferredTime } =
       body;
+    const companyLabel = typeof company === "string" && company.trim() ? company.trim() : fullName;
 
     // Validate required fields
-    if (!fullName || !email || !phone || !company || !preferredDate || !preferredTime || !timezone) {
+    if (!fullName || !email || !phone || !preferredDate || !preferredTime || !timezone) {
       return NextResponse.json(
         { error: "Missing required fields" },
         { status: 400 }
@@ -84,19 +85,29 @@ export async function POST(request: NextRequest) {
     }
 
     // Format date and time
-    const dateStr = format(new Date(preferredDate), "yyyy-MM-dd");
+    const bookingDate = startOfDay(new Date(preferredDate));
+    const today = startOfDay(new Date());
+
+    if (isBefore(bookingDate, today) || isSunday(bookingDate)) {
+      return NextResponse.json(
+        { error: "Selected date is not available" },
+        { status: 400 }
+      );
+    }
+
+    const dateStr = format(bookingDate, "yyyy-MM-dd");
     const timeStr = preferredTime;
 
     // Generate calendar URLs and ICS
     const { googleCalendarUrl, outlookUrl } = generateCalendarUrls(
       fullName,
       email,
-      company,
+      companyLabel,
       dateStr,
       timeStr,
       timezone
     );
-    const icsContent = generateICS(fullName, email, company, dateStr, timeStr, timezone);
+    const icsContent = generateICS(fullName, email, companyLabel, dateStr, timeStr, timezone);
 
     // Get timezone label
     const timezoneLabels: Record<string, string> = {
@@ -131,7 +142,7 @@ export async function POST(request: NextRequest) {
             <p style="margin: 0 0 12px 0;"><strong>📅 Date:</strong> ${dateFormatted}</p>
             <p style="margin: 0 0 12px 0;"><strong>🕐 Time:</strong> ${timeStr} (30 minutes)</p>
             <p style="margin: 0 0 12px 0;"><strong>🌍 Timezone:</strong> ${timezoneLabel}</p>
-            <p style="margin: 0;"><strong>🏢 Company:</strong> ${company}</p>
+            ${company ? `<p style="margin: 0;"><strong>🏢 Company:</strong> ${company}</p>` : ""}
           </div>
 
           <h3 style="color: #333; margin-top: 24px;">Add to Your Calendar:</h3>
@@ -162,12 +173,12 @@ export async function POST(request: NextRequest) {
     await resend.emails.send({
       from: "Bekur Technologies <bookings@bekurtechnologies.com>",
       to: "admin@bekurtechnologies.com",
-      subject: `New Booking: ${fullName} - ${company}`,
+      subject: `New Booking: ${fullName}${company ? ` - ${company}` : ""}`,
       html: `
         <div style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;">
           <h3>New Automation Sprint Booking</h3>
           <p><strong>Client:</strong> ${fullName}</p>
-          <p><strong>Company:</strong> ${company}</p>
+          ${company ? `<p><strong>Company:</strong> ${company}</p>` : ""}
           <p><strong>Email:</strong> ${email}</p>
           <p><strong>Phone:</strong> ${phone}</p>
           <p><strong>Scheduled:</strong> ${dateFormatted} at ${timeStr} (${timezoneLabel})</p>

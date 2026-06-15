@@ -30,8 +30,8 @@ export default function AboutComparison({ rows }: AboutComparisonProps) {
     <section className="relative w-full bg-background px-4 py-20 md:px-8 md:py-28 lg:py-32">
       <div className="relative mx-auto max-w-7xl">
         <motion.div
-          initial="hidden"
-          whileInView="visible"
+          initial={reducedMotion ? "visible" : "hidden"}
+          whileInView={reducedMotion ? undefined : "visible"}
           viewport={{ once: true, margin: "-60px" }}
           variants={headerContainer}
           className="mx-auto mb-12 flex max-w-3xl flex-col items-center text-center md:mb-16"
@@ -69,13 +69,20 @@ export default function AboutComparison({ rows }: AboutComparisonProps) {
                 Without a logic-first partner
               </p>
               <ul className="space-y-4">
-                {manualPainPoints.map((item) => (
-                  <li key={item} className="flex items-start gap-3 text-sm md:text-[15px]">
+                {manualPainPoints.map((item, index) => (
+                  <motion.li
+                    key={item}
+                    initial={reducedMotion ? false : { opacity: 0, x: -16 }}
+                    whileInView={reducedMotion ? undefined : { opacity: 1, x: 0 }}
+                    viewport={{ once: true, margin: "-20px" }}
+                    transition={{ delay: index * 0.06, duration: 0.55, ease }}
+                    className="flex items-start gap-3 text-sm md:text-[15px]"
+                  >
                     <span className="mt-0.5 flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-destructive/10">
                       <X className="h-3.5 w-3.5 text-destructive" strokeWidth={2} />
                     </span>
                     <span className="leading-relaxed text-muted-foreground">{item}</span>
-                  </li>
+                  </motion.li>
                 ))}
               </ul>
             </div>
@@ -85,13 +92,20 @@ export default function AboutComparison({ rows }: AboutComparisonProps) {
                 Bekur Automation Sprint
               </p>
               <ul className="space-y-4">
-                {bekurWins.map((item) => (
-                  <li key={item} className="flex items-start gap-3 text-sm md:text-[15px]">
+                {bekurWins.map((item, index) => (
+                  <motion.li
+                    key={item}
+                    initial={reducedMotion ? false : { opacity: 0, x: 16 }}
+                    whileInView={reducedMotion ? undefined : { opacity: 1, x: 0 }}
+                    viewport={{ once: true, margin: "-20px" }}
+                    transition={{ delay: index * 0.06, duration: 0.55, ease }}
+                    className="flex items-start gap-3 text-sm md:text-[15px]"
+                  >
                     <span className="mt-0.5 flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-primary/15">
                       <Check className="h-3.5 w-3.5 text-primary dark:text-chart-3" strokeWidth={2} />
                     </span>
                     <span className="leading-relaxed text-foreground">{item}</span>
-                  </li>
+                  </motion.li>
                 ))}
               </ul>
             </div>

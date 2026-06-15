@@ -42,13 +42,12 @@ const BlogCard: React.FC<BlogCardProps> = ({
       : "/assets/logo/logo-light.svg";
   };
 
-  // Helper function to get initials from author name
-  const getInitials = (name: string) => {
-    const parts = name.trim().split(" ");
-    const first = parts[0]?.[0] ?? "";
-    const second = parts[1]?.[0] ?? "";
-    return (first + second).toUpperCase();
-  };
+  const isBrandLogo =
+    !authorImage ||
+    authorImage.includes("/assets/logo/") ||
+    authorImage.includes("logo");
+
+  const avatarSrc = isBrandLogo ? getLogoPath() : authorImage;
 
   return (
     <div
@@ -90,26 +89,21 @@ const BlogCard: React.FC<BlogCardProps> = ({
         />
 
         {/* Author and Date */}
-        <div className="flex items-center space-x-2 pt-2">
-          {authorImage ? (
-            <div className="w-10 h-10 rounded-full overflow-hidden relative">
-              <Image
-                src={getLogoPath()}
-                alt={author}
-                fill
-                className="object-cover"
-              />
-            </div>
-          ) : (
-            <div className="w-10 h-10 flex items-center justify-center relative">
-              <Image
-                src={getLogoPath()}
-                alt="Author"
-                fill
-                className="object-contain"
-              />
-            </div>
-          )}
+        <div className="flex items-center gap-2 pt-2">
+          <div
+            className={
+              isBrandLogo
+                ? "relative h-10 w-10 shrink-0"
+                : "relative h-10 w-10 shrink-0 overflow-hidden rounded-full"
+            }
+          >
+            <Image
+              src={avatarSrc}
+              alt={author}
+              fill
+              className={isBrandLogo ? "object-contain" : "object-cover"}
+            />
+          </div>
 
           <div className="flex space-x-2">
             {author && (

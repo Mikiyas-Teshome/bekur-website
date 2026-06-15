@@ -9,7 +9,7 @@
     ],
     "cta": {
       "label": "Book a call",
-      "href": "/blueprint#book",
+      "href": "/book",
       "variant": "primary"
     }
   },
@@ -43,7 +43,7 @@
       {
         "title": "Contact",
         "links": [
-          { "label": "Book a call", "href": "/blueprint#book" },
+          { "label": "Book a call", "href": "/book" },
           { "label": "Contact", "href": "/contact" }
         ]
       }

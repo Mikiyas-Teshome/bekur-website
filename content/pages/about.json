@@ -11,31 +11,33 @@
     "subheadline": "Bekur helps managing partners streamline operations and reclaim billable hours with logic-first automation — fixed scope, fixed price, and production workflows in 3–6 weeks.",
     "primaryCta": {
       "label": "Book a call",
-      "href": "/blueprint#book",
+      "href": "/book",
       "variant": "primary"
     }
   },
-  "trustLine": "Shipped production systems operators trust · Fixed scope, fixed price, hard AI caps",
   "whoWeAre": {
     "eyebrow": "Who we are",
-    "headline": "Who we are",
+    "headline": "Senior-only systems for operators who refuse shelfware",
     "body": "Bekur is a senior-only operational systems team dedicated to ending AI hype fatigue for professional service firms. We map how you actually work, then ship custom automation into your existing stack — with hard AI spend caps and measurable ROI, not shelfware pilots."
   },
   "stats": [
     {
       "value": "1",
-      "label": "Production workflow per sprint",
-      "description": "Focus is the feature — one workflow shipped end-to-end, not a sprawling transformation program."
+      "unit": "workflow",
+      "label": "Shipped per sprint",
+      "description": "One production workflow end-to-end — not a sprawling transformation program."
     },
     {
       "value": "3–6",
-      "label": "Weeks per Automation Sprint",
-      "description": "One production workflow per engagement — fixed scope, fixed price, partner approval built in."
+      "unit": "weeks",
+      "label": "From kickoff to go-live",
+      "description": "Fixed scope, fixed price, and partner approval built into every Automation Sprint."
     },
     {
       "value": "90",
-      "label": "Day ROI target",
-      "description": "Measurable outcomes targeted within ninety days of go-live — not eighteen-month roadmaps."
+      "unit": "days",
+      "label": "To measurable ROI",
+      "description": "Outcomes targeted after go-live — not eighteen-month roadmaps."
     }
   ],
   "mission": "To free small professional service firms from AI hype fatigue — by mapping how they actually operate and shipping custom automation that adapts to their stack, with predictable economics and 3–6 week delivery.",

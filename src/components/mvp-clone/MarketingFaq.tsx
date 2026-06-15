@@ -54,7 +54,13 @@ export default function MarketingFaq({ items }: MarketingFaqProps) {
           </motion.p>
         </motion.div>
 
-        <div className="rounded-[28px] border border-border/60 bg-card p-2 shadow-[0_8px_32px_-16px_rgba(33,74,156,0.12)] dark:bg-card/95 md:rounded-[32px]">
+        <motion.div
+          initial={{ opacity: 0, y: 24 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-40px" }}
+          transition={{ duration: 0.65, ease }}
+          className="rounded-[28px] border border-border/60 bg-card p-2 shadow-[0_8px_32px_-16px_rgba(33,74,156,0.12)] dark:bg-card/95 md:rounded-[32px]"
+        >
           {items.map((faq, index) => (
             <motion.div
               key={faq.id}
@@ -96,7 +102,7 @@ export default function MarketingFaq({ items }: MarketingFaqProps) {
               </AnimatePresence>
             </motion.div>
           ))}
-        </div>
+        </motion.div>
       </div>
     </section>
   );

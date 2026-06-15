@@ -125,7 +125,6 @@ export const faqPageSchema = pageBaseSchema.extend({
 
 export const aboutPageSchema = pageBaseSchema.extend({
   pageId: z.literal("about"),
-  trustLine: z.string(),
   whoWeAre: z.object({
     eyebrow: z.string(),
     headline: z.string(),
@@ -135,6 +134,7 @@ export const aboutPageSchema = pageBaseSchema.extend({
     .array(
       z.object({
         value: z.string(),
+        unit: z.string(),
         label: z.string(),
         description: z.string(),
       })

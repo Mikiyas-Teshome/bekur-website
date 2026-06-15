@@ -2,12 +2,11 @@
 
 import { motion, useReducedMotion } from "framer-motion";
 import BookCallLink from "@/components/BookCallLink";
-import { ease, fadeUp, headerContainer } from "@/components/mvp-clone/motion";
+import { fadeUp, headerContainer } from "@/components/mvp-clone/motion";
 
 type AboutHeroProps = {
   headline: string;
   subheadline: string;
-  trustLine: string;
   ctaLabel: string;
   ctaHref: string;
 };
@@ -15,7 +14,6 @@ type AboutHeroProps = {
 export default function AboutHero({
   headline,
   subheadline,
-  trustLine,
   ctaLabel,
   ctaHref,
 }: AboutHeroProps) {
@@ -23,15 +21,22 @@ export default function AboutHero({
 
   return (
     <section
-      className="relative w-full overflow-hidden bg-muted/30 px-4 pb-16 pt-28 dark:bg-background md:px-8 md:pb-20 md:pt-36 lg:pb-24"
+      className="relative w-full overflow-hidden px-4 pb-14 pt-28 md:px-8 md:pb-16 md:pt-36 lg:pb-20"
       aria-label="About Bekur"
     >
-      <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_60%_50%_at_50%_0%,rgba(33,74,156,0.08),transparent_65%)] dark:bg-[radial-gradient(ellipse_60%_50%_at_50%_0%,rgba(33,74,156,0.14),transparent_65%)]" />
+      <div
+        className="pointer-events-none absolute inset-0 bg-gradient-to-b from-[#e9edf5] via-[#eef2f8] to-[#f2f5fa] dark:bg-none dark:bg-[#000104]"
+        aria-hidden="true"
+      >
+        <div className="hero-dots absolute inset-0" />
+        <div className="hero-glow absolute inset-0" />
+      </div>
 
-      <div className="relative mx-auto max-w-4xl">
+      <div className="relative z-10 mx-auto max-w-4xl">
         <motion.div
-          initial="hidden"
-          animate={reducedMotion ? undefined : "visible"}
+          initial={reducedMotion ? "visible" : "hidden"}
+          whileInView={reducedMotion ? undefined : "visible"}
+          viewport={{ once: true, amount: 0.3, margin: "-60px" }}
           variants={headerContainer}
           className="flex flex-col items-center text-center"
         >
@@ -61,34 +66,18 @@ export default function AboutHero({
 
           <motion.p
             variants={fadeUp}
-            className="mb-10 max-w-2xl text-base leading-relaxed text-muted-foreground md:text-lg md:leading-[1.65]"
+            className="mb-10 max-w-2xl text-base leading-relaxed text-muted-foreground md:text-[17px] md:leading-[1.65]"
           >
             {subheadline}
           </motion.p>
 
-          <motion.div variants={fadeUp} className="mb-10">
+          <motion.div variants={fadeUp}>
             <BookCallLink
               href={ctaHref}
               label={ctaLabel}
               variant="primary"
               showArrow
-              className="h-12 px-8 text-sm"
             />
-          </motion.div>
-
-          <motion.div
-            variants={fadeUp}
-            className="flex flex-col items-center gap-3 sm:flex-row sm:gap-4"
-          >
-            <div className="flex -space-x-2">
-              {[1, 2, 3, 4].map((i) => (
-                <span
-                  key={i}
-                  className="inline-flex h-9 w-9 rounded-full border-2 border-muted/30 bg-gradient-to-br from-primary/30 to-chart-2/40"
-                />
-              ))}
-            </div>
-            <p className="text-sm font-medium text-muted-foreground">{trustLine}</p>
           </motion.div>
         </motion.div>
       </div>
