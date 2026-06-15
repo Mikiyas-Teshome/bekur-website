@@ -68,8 +68,8 @@ export default function AboutValues({ values }: AboutValuesProps) {
 
       <div className="relative mx-auto max-w-7xl">
         <motion.div
-          initial="hidden"
-          whileInView="visible"
+          initial={reducedMotion ? "visible" : "hidden"}
+          whileInView={reducedMotion ? undefined : "visible"}
           viewport={{ once: true, margin: "-60px" }}
           variants={headerContainer}
           className="mx-auto mb-12 flex max-w-3xl flex-col items-center text-center md:mb-16"

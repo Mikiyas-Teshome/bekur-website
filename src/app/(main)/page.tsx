@@ -1,5 +1,5 @@
 import Hero from "@/components/mvp-clone/Hero";
-import IsThisYou from "@/components/mvp-clone/IsThisYou";
+// import IsThisYou from "@/components/mvp-clone/IsThisYou";
 import SolutionBridge from "@/components/mvp-clone/SolutionBridge";
 import Services from "@/components/mvp-clone/Services";
 import Benefits from "@/components/mvp-clone/Benefits";
@@ -71,7 +71,7 @@ export default function HomePage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
       <Hero />
-      <IsThisYou />
+      {/* <IsThisYou /> */}
       <SolutionBridge />
       <Services />
       <Process />
@@ -84,7 +84,7 @@ export default function HomePage() {
         <BlogSection />
       </div>
       <MarketingFaq items={faqItems} />
-      <MarketingCta ctaLabel="Book a call" ctaHref="/blueprint#book" />
+      <MarketingCta ctaLabel="Book a call" ctaHref="/book" />
       <MarketingContact />
     </main>
   );

@@ -215,6 +215,11 @@
   );
 }
 
+.hero-dots-full {
+  -webkit-mask-image: none;
+  mask-image: none;
+}
+
 /* Layered brand-blue glow — one wash from the top, one lift behind the CTA */
 .hero-glow {
   background:

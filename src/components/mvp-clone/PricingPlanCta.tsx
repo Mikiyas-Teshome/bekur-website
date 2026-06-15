@@ -19,7 +19,7 @@ export default function PricingPlanCta({
     <Link
       href={href}
       className={cn(
-        "group relative flex w-full items-center justify-center overflow-hidden rounded-full px-6 py-3.5 text-sm font-semibold leading-none transition-[background-color,transform,box-shadow] duration-300 ease-out active:scale-[0.98]",
+        "group relative flex h-12 w-full items-center justify-center overflow-hidden rounded-[10px] px-6 text-sm font-semibold leading-none transition-[background-color,transform,box-shadow] duration-300 ease-out active:scale-[0.98] sm:h-[52px]",
         tone === "inverted"
           ? "bg-primary-foreground text-primary hover:bg-primary-foreground/92 dark:bg-white dark:text-[#0a0a0a] dark:hover:bg-white/92"
           : "bg-foreground text-background shadow-[0_8px_28px_-10px_rgba(0,0,0,0.35)] hover:bg-foreground/90 dark:bg-foreground dark:text-background",

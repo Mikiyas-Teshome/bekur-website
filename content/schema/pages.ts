@@ -125,7 +125,6 @@ export const faqPageSchema = pageBaseSchema.extend({
 
 export const aboutPageSchema = pageBaseSchema.extend({
   pageId: z.literal("about"),
-  trustLine: z.string(),
   whoWeAre: z.object({
     eyebrow: z.string(),
     headline: z.string(),

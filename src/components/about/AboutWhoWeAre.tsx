@@ -31,8 +31,8 @@ export default function AboutWhoWeAre({
       <div className="relative mx-auto max-w-7xl">
         <div className="grid grid-cols-1 gap-12 lg:grid-cols-2 lg:gap-16 xl:gap-20">
           <motion.div
-            initial="hidden"
-            whileInView="visible"
+            initial={reducedMotion ? "visible" : "hidden"}
+            whileInView={reducedMotion ? undefined : "visible"}
             viewport={{ once: true, margin: "-60px" }}
             variants={headerContainer}
             className="flex flex-col items-center text-center lg:items-start lg:text-left"

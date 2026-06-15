@@ -11,11 +11,10 @@
     "subheadline": "Bekur helps managing partners streamline operations and reclaim billable hours with logic-first automation — fixed scope, fixed price, and production workflows in 3–6 weeks.",
     "primaryCta": {
       "label": "Book a call",
-      "href": "/blueprint#book",
+      "href": "/book",
       "variant": "primary"
     }
   },
-  "trustLine": "Shipped production systems operators trust · Fixed scope, fixed price, hard AI caps",
   "whoWeAre": {
     "eyebrow": "Who we are",
     "headline": "Who we are",

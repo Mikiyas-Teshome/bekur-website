@@ -10,6 +10,7 @@ export const runtime = "nodejs";
 const contactFormSchema = z.object({
   name: z.string().min(1, "Name is required").max(100, "Name is too long"),
   email: z.string().email("Invalid email address"),
+  company: z.string().max(100, "Company name is too long").optional(),
   phone: z.string().optional(),
   subject: z
     .string()
@@ -91,6 +92,7 @@ export async function POST(request: NextRequest) {
           html: `
             <h2>New Contact Form Submission</h2>
             <p><strong>From:</strong> ${validatedData.name} (${validatedData.email})</p>
+            ${validatedData.company ? `<p><strong>Company:</strong> ${validatedData.company}</p>` : ""}
             ${validatedData.phone ? `<p><strong>Phone:</strong> ${validatedData.phone}</p>` : ''}
             <p><strong>Subject:</strong> ${validatedData.subject}</p>
             <hr style="margin: 20px 0; border: none; border-top: 1px solid #ddd;">

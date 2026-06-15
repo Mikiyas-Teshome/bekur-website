@@ -11,7 +11,7 @@
     "subheadline": "This form is for founders and managing partners. If you're a fit, we'll recommend Blueprint or a sprint path.",
     "primaryCta": {
       "label": "Book a call instead",
-      "href": "/blueprint#book",
+      "href": "/book",
       "variant": "secondary"
     }
   },

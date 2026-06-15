@@ -40,7 +40,7 @@ export const blogPostMetaSchema = z.object({
   ]),
   painTags: z.array(portfolioPainTagSchema).optional(),
   relatedPortfolioSlugs: z.array(z.string()).optional(),
-  ctaHref: z.string().default("/blueprint#book"),
+  ctaHref: z.string().default("/book"),
 });
 
 export type PortfolioCaseStudyMeta = z.infer<

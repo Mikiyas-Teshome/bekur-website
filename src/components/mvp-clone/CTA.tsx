@@ -67,7 +67,7 @@ export default function CTA() {
                 </h3>
 
                 <BookCallLink
-                  href="/blueprint#book"
+                  href="/book"
                   variant="ctaBanner"
                   showArrow
                   arrowType="right"

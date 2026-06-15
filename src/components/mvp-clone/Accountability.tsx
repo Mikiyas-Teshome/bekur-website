@@ -205,7 +205,7 @@ export default function Accountability() {
               <BookCallLink variant="primary" showArrow />
               <Link
                 href="/how-we-work"
-                className="group inline-flex h-11 items-center justify-center gap-2 rounded-full border border-border/90 bg-card/70 px-6 text-sm font-semibold text-foreground backdrop-blur-sm transition-all hover:border-primary/35 hover:bg-card active:scale-[0.98]"
+                className="group inline-flex h-12 items-center justify-center gap-2 rounded-[10px] border border-border/90 bg-card/70 px-6 text-sm font-semibold text-foreground backdrop-blur-sm transition-all hover:border-primary/35 hover:bg-card active:scale-[0.98] sm:h-[52px] sm:px-7"
               >
                 Full delivery model
                 <ArrowUpRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />

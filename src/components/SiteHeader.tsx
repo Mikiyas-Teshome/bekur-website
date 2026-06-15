@@ -18,10 +18,10 @@ type NavItem = {
 
 const navItems: NavItem[] = [
   { name: "Home", href: "/" },
-  { name: "Work", href: "/portfolio" },
-  { name: "Insights", href: "/#insights", homeSectionId: "insights" },
-  { name: "Blog", href: "/blog" },
   { name: "About", href: "/about" },
+  { name: "Work", href: "/portfolio" },
+  { name: "Blog", href: "/blog" },
+  { name: "Contact Us", href: "/#contact", homeSectionId: "contact" },
 ];
 
 export default function SiteHeader() {

@@ -35,7 +35,7 @@ function PrimaryButton({
   return (
     <Link
       href={href}
-      className={`group relative inline-flex h-12 w-full items-center justify-center gap-2.5 overflow-hidden rounded-full bg-primary px-7 text-[15px] font-semibold text-primary-foreground shadow-[0_4px_24px_-4px_rgba(33,74,156,0.55)] transition-all hover:shadow-[0_8px_32px_-4px_rgba(33,74,156,0.65)] active:scale-[0.98] sm:w-auto sm:min-w-[200px] ${className}`}
+      className={`group relative inline-flex h-12 w-full items-center justify-center gap-2.5 overflow-hidden rounded-[10px] bg-primary px-7 text-[15px] font-semibold text-primary-foreground shadow-[0_4px_24px_-4px_rgba(33,74,156,0.55)] transition-all hover:shadow-[0_8px_32px_-4px_rgba(33,74,156,0.65)] active:scale-[0.98] sm:w-auto sm:min-w-[200px] sm:h-[52px] sm:px-9 ${className}`}
     >
       <span className="pointer-events-none absolute inset-0 bg-[linear-gradient(105deg,rgba(255,255,255,0.14)_0%,transparent_55%)] opacity-0 transition-opacity group-hover:opacity-100" />
       <span className="relative">{children}</span>
