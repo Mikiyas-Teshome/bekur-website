@@ -7,55 +7,54 @@
     "canonicalPath": "/"
   },
   "hero": {
-    "eyebrow": "Operational systems · Logic before code",
-    "headline": "Custom Automation No Templates. No Surprises. Fixed $ 3–6 Weeks.",
+    "eyebrow": "Logic before code · One workflow per sprint",
+    "headline": "Reclaim 200–400 billable hours per year — without ripping out your entire stack.",
     "headlineLines": [
-      { "text": "Custom Automation", "accent": true },
-      { "text": "Mapped to ", "sparkle": true },
-      { "text": "Your Workflows.", "accent": true }
+      { "text": "Reclaim billable hours", "accent": true },
+      { "text": "mapped to ", "sparkle": true },
+      { "text": "Your exact workflows.", "accent": true }
     ],
-    "subheadline": "Custom automation for professional service firms — mapped to how you actually work and built into the stack you already use. Fixed price. Hard AI spend cap. No scope creep.",
+    "subheadline": "Professional service firms lose thousands in partner hours every year to intake, document chase, and admin friction. Bekur maps your broken workflow and rebuilds it as automation — integrated into Clio, Karbon, HoneyBook, or whatever you're already running. Fixed scope. Fixed price. Hard monthly AI spend cap. Production live in 3–6 weeks.",
     "primaryCta": {
       "label": "Book a call",
-      "href": "/blueprint#book",
+      "href": "/automation-sprint",
       "variant": "primary"
     },
     "secondaryCta": {
-      "label": "See shipped systems",
+      "label": "See what shipped",
       "href": "/portfolio",
       "variant": "secondary"
     }
   },
   "pains": [
     {
+      "id": "billable-leakage",
+      "title": "Partners spend 8–12 hours a week on non-billable admin",
+      "description": "At your billing rates, that's $200K–$500K per year in lost capacity. Client intake, document chase, time reconciliation, and compliance reminders eat your senior hours. It scales with growth.",
+      "iconKey": "billable-leakage"
+    },
+    {
       "id": "rigid-saas",
-      "title": "Rigid SaaS & template fighting",
-      "description": "You bend proprietary workflows to fit Clio, Harvey, TaxDome, or HoneyBook. The workflow is the asset — the tool should adapt.",
+      "title": "You've bent your workflows to fit rigid SaaS templates",
+      "description": "Clio, Karbon, TaxDome, and HoneyBook work for the median firm. Your firm isn't median. You workaround, spreadsheet, and email-forward instead of automating your actual workflows.",
       "iconKey": "rigid-saas"
     },
     {
-      "id": "ai-cost",
-      "title": "Opaque, skyrocketing AI costs",
-      "description": "Token and API bills scale faster than value. No architectural discipline. No cap in writing.",
-      "iconKey": "ai-cost"
-    },
-    {
       "id": "data-silos",
-      "title": "Fragmented data silos",
-      "description": "Automation lives in one box while real work lives in email, spreadsheets, CRM, and legacy drives.",
+      "title": "Your real work lives in five different places — none of them talk to each other",
+      "description": "Matter status in Clio. Documents in Google Drive. Compliance dates in a spreadsheet. Client files in email. One outage or person leaving and suddenly nobody knows what's happening.",
       "iconKey": "data-silos"
     },
     {
-      "id": "failed-pilots",
-      "title": "Hype projects that fail",
-      "description": "Long cycles, unclear ROI, quietly shelved — budget, appetite, and team trust gone.",
-      "iconKey": "failed-pilots"
+      "id": "ai-cost",
+      "title": "When you try to automate with AI, costs explode and nobody knows why",
+      "description": "Token bills scale faster than value. ChatGPT Plus subscriptions and agency proposals have no spend cap. You want AI where it matters, not everywhere it's possible.",
+      "iconKey": "ai-cost"
     },
     {
-      "id": "billable-leakage",
-      "title": "Billable hour leakage",
-      "description": "Partners lose hundreds of hours a year to intake, document chase, reconciliation, and admin bloat.",
-      "iconKey": "billable-leakage"
+      "id": "failed-pilots",
+      "title": "You've tried automation projects. They took months and got quietly shelved.",
+      "description": "Unclear ROI, unclear timeline, unclear if it actually works. Budget and team appetite are gone. The promise of automation feels hollow now."
     }
   ],
   "sprintTeaser": {
@@ -66,45 +65,81 @@
   },
   "comparisonTable": [
     {
-      "alternative": "Vertical SaaS",
-      "theirFailure": "Built for the median firm; you bend to the product",
-      "bekurWins": "We map your logic and build around your stack"
+      "alternative": "Vertical SaaS (Clio, Karbon, TaxDome, etc.)",
+      "theirFailure": "Built for the median firm. You adapt your logic to fit their templates. Weeks of workaround configuration.",
+      "bekurWins": "We map *your* logic. We build *around* the tools you already own."
     },
     {
-      "alternative": "Generic AI agencies",
-      "theirFailure": "Open-ended hours, demos not production, uncapped AI cost",
-      "bekurWins": "Fixed scope, fixed price, hard monthly spend cap"
+      "alternative": "Generic AI agencies & freelancers",
+      "theirFailure": "Open-ended discovery, hourly billing, uncapped AI costs, demos not production, no accountability for outcomes.",
+      "bekurWins": "Fixed scope. Fixed price. Hard monthly AI cap. One workflow, production live, or you don't pay."
     },
     {
       "alternative": "Freelance developers",
-      "theirFailure": "Build what you describe; rarely challenge broken logic",
-      "bekurWins": "Logic Mapping is a deliverable before code"
+      "theirFailure": "Build what you ask for. Rarely push back on broken workflows. You own the maintenance debt.",
+      "bekurWins": "Logic mapping is our deliverable before code. We challenge the workflow. We own the production system."
     },
     {
       "alternative": "Enterprise consultancies",
-      "theirFailure": "Procurement, six-figure floors, 18-month roadmaps",
-      "bekurWins": "One sprint at a time, ROI inside 90 days"
+      "theirFailure": "Procurement, compliance requirements, six-figure minimums, 18-month roadmaps, handed off at the end.",
+      "bekurWins": "One sprint at a time. $4K to start. Measurable ROI in 90 days. We support you post-launch."
     }
   ],
   "proofPoints": [
     {
-      "id": "finden",
-      "headline": "Finden AI — #3 Product of the Day",
-      "detail": "Product Hunt (ahead of Vercel v0)",
-      "metric": "#3 POTD",
-      "href": "/portfolio/finden"
+      "id": "speed",
+      "headline": "3–6 weeks to production, not 6 months to planning.",
+      "detail": "One sprint = one workflow. Live in your stack before the next quarter."
     },
     {
       "id": "fixed-economics",
-      "headline": "Fixed scope. Fixed price. Hard monthly AI cap.",
-      "detail": "Economics written into scope before build begins."
+      "headline": "$4K–$22K per workflow. Hard monthly AI spend cap in writing.",
+      "detail": "No surprise bills. No scope creep. Economics locked before build begins."
     },
     {
-      "id": "sprint-speed",
-      "headline": "One workflow, live in 3–6 weeks",
-      "detail": "Production delivery per Automation Sprint — not 18-month roadmaps."
+      "id": "shipped-proof",
+      "headline": "Production systems running inside law, accounting, and consulting firms right now.",
+      "detail": "Not proofs of concept. Real workflows. Real ROI. Client case studies available.",
+      "href": "/portfolio"
     }
   ],
+  "objections": {
+    "headline": "Questions we hear before every engagement",
+    "questions": [
+      {
+        "q": "We already tried automation. It took six months and got shelved.",
+        "a": "Most automation fails because someone builds before they map. We spend weeks 1–2 mapping your exact logic — triggers, approvals, exceptions, and data sources. We challenge the workflow before code is written. The difference: you know exactly what you're getting, and the scope doesn't expand once we build."
+      },
+      {
+        "q": "How do we know you'll deliver what you promise?",
+        "a": "Scope is locked in writing before build begins. Logic map is a deliverable you approve. Price is fixed. AI spend cap is in the contract. If the system doesn't work or the workflow doesn't deliver the promised ROI, we own that. We're willing to put this in writing because we've done it before."
+      },
+      {
+        "q": "What if we're too small or too big for this?",
+        "a": "We work with 5-person advisory firms and 80-person partnership practices. Size isn't the blocker — whether you have billable hours being lost to admin is. If you're below $500K revenue or over $10M and don't make your own tech decisions, we'll say so upfront."
+      },
+      {
+        "q": "We don't have time for implementation.",
+        "a": "Logic mapping takes 3–4 hours of your time across weeks 1–2. The rest — build, integration, testing — we own. Go-live support takes a few hours. Most firms tell us they'd have done this sooner if they'd known how low the time commitment was."
+      },
+      {
+        "q": "Aren't you just gluing together APIs? How is that different from building custom code?",
+        "a": "Yes, we build on your existing stack — that's the point. You already pay for Clio, Karbon, or HoneyBook. Why rip that out? We map your logic, then integrate it into the tools you're already trained on. Custom code would cost 3× more and lock you into us forever. We'd rather you own the system."
+      },
+      {
+        "q": "What about data security and compliance?",
+        "a": "We inherit the security model of your existing tools (Clio's SOC 2, Karbon's access controls, etc.). We don't build new data stores or move sensitive client data. If you need HIPAA or specific regulatory certification, we'll tell you up front whether we can credibly deliver it."
+      },
+      {
+        "q": "What if the AI gets expensive?",
+        "a": "Hard monthly AI spend cap is part of scope. If you work with Claude, GPT-4, or open-source models, we architect for cost discipline from day one. No blank-check API subscriptions. You know the ceiling before we build."
+      },
+      {
+        "q": "What happens after go-live? Do we get abandoned?",
+        "a": "We don't abandon you. We support the handoff, train your team, and stay available for the first 90 days post-launch. The system is yours to own. If you want ongoing optimization, there's a retainer option — but you can cancel anytime."
+      }
+    ]
+  },
   "dynamicTeasers": {
     "portfolio": {
       "title": "Shipped systems",
@@ -120,11 +155,13 @@
     }
   },
   "icpStrip": {
-    "headline": "Built for managing partners at 5–50 person professional service firms",
+    "headline": "Built for managing partners at 5–80 person professional service firms who've outgrown templates.",
     "bullets": [
-      "$500K–$5M revenue · English-speaking markets (US, UK, CA, AU)",
-      "You've tried templates — they didn't fit how you work",
-      "You decide — not an IT committee"
+      "Law, accounting, consulting, or professional advisory practices",
+      "$500K–$10M revenue · US, UK, Europe, Canada, Australia",
+      "You decide on tech — not an IT committee or board",
+      "You've tried SaaS templates and they didn't fit your workflows",
+      "You have billable hours that are being lost to admin every week"
     ]
   }
 }

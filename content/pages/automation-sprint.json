@@ -22,9 +22,10 @@
     }
   },
   "definition": {
-    "oneLiner": "We help small professional service firms reclaim hundreds of partner hours in 3–6 weeks — without rigid SaaS templates, surprise AI bills, or scope creep.",
-    "timeline": "3–6 weeks per sprint",
-    "scopeRule": "Exactly one workflow per sprint. Additional workflows require a new sprint or change order."
+    "oneLiner": "One production workflow. Fixed scope. Fixed price. Hard monthly AI spend cap. Built into your existing stack. Live in 3–6 weeks.",
+    "problem": "Partners at professional service firms lose 8–15 hours every week to non-billable work: client intake, document chase, compliance reminders, time reconciliation. At your rates, that's $200K–$500K in lost annual capacity per firm. SaaS templates don't fit how you actually work. Generic AI agencies have no spend discipline. You need automation mapped to your exact logic, integrated into the tools you already own, with a hard cap in writing.",
+    "timeline": "3–6 weeks per sprint, with measurable ROI tracked within 90 days",
+    "scopeRule": "Exactly one workflow per sprint. Additional workflows require a new sprint or standalone quote."
   },
   "process": [
     {
@@ -67,9 +68,61 @@
     "ROI measurement plan (90-day window)"
   ],
   "promises": [
-    { "label": "Time to live", "value": "3–6 weeks" },
-    { "label": "Economics", "value": "Hard monthly AI cap in scope" },
-    { "label": "ROI window", "value": "Measurable target within 90 days of go-live" },
-    { "label": "Risk gate", "value": "Optional paid Blueprint before full build" }
-  ]
+    { "label": "Time to live", "value": "3–6 weeks to production (not months of planning)" },
+    { "label": "Economics", "value": "Fixed price. Hard monthly AI cap. No surprise bills." },
+    { "label": "Scope", "value": "One workflow in writing. Approved by partner. No creep." },
+    { "label": "Risk gate", "value": "Optional paid Blueprint before full sprint to lock scope and price" }
+  ],
+  "guarantees": [
+    {
+      "guarantee": "Go-Live Guarantee",
+      "promise": "System deployed to production on the timeline promised in scope, with team adoption support.",
+      "ifBroken": "We extend the sprint at no cost until delivered."
+    },
+    {
+      "guarantee": "Scope Integrity Guarantee",
+      "promise": "Exactly one workflow per sprint. No mid-build requests for additional workflows.",
+      "ifBroken": "Additional scopes require a separate sprint or formal change order."
+    },
+    {
+      "guarantee": "AI Spend Guarantee",
+      "promise": "Monthly AI API cost capped in writing. No surprise token overages.",
+      "ifBroken": "We cover overages beyond the documented cap."
+    },
+    {
+      "guarantee": "ROI Measurement Guarantee",
+      "promise": "Clear baseline metrics captured at go-live. 90-day ROI report showing time/cost impact.",
+      "ifBroken": "If the system doesn't deliver measurable impact within 90 days, we refund 30% of the engagement fee."
+    }
+  ],
+  "objections": [
+    {
+      "q": "How do we know which workflow to automate first?",
+      "a": "We ask: What's costing you the most partner hours right now? Document chase? Client intake? Compliance date tracking? Reconciliation? We identify the highest-ROI workflow in the scoping call. That's your first sprint."
+    },
+    {
+      "q": "What if the workflow is more complex than it seems?",
+      "a": "That's why the Blueprint phase (optional, $2.5K) exists. We map the logic, uncover complexity, and lock scope before the full build. Scope changes after that require a formal change order — not scope creep."
+    },
+    {
+      "q": "Will we actually adopt it? Our team resists change.",
+      "a": "If the automation solves a real pain (like chase time or intake hours), adoption happens fast. Week 6 includes adoption walkthrough and support. Most teams use the system Monday morning because it saves them hours. Resistance usually means the pain point wasn't clear enough — we validate that together."
+    },
+    {
+      "q": "What if it breaks or doesn't work in production?",
+      "a": "We own the system for 90 days post-launch. Bugs, edge cases, integration issues — we fix them at no extra cost. Our ROI measurement plan includes weekly check-ins for the first month to catch and fix issues early."
+    },
+    {
+      "q": "Can we integrate this with tools we might switch away from later?",
+      "a": "Yes. We build using documented APIs and standard patterns. The logic lives in the automation layer, not locked into any single tool. If you switch platforms later, the workflow can be migrated."
+    }
+  ],
+  "nextStep": {
+    "headline": "Ready to reclaim partner hours?",
+    "description": "30-minute scoping call. We listen to your top workflow pain, name the highest-ROI automation target, explain the sprint process, and answer your questions. No pressure. If we think you're a poor fit, we'll say so.",
+    "cta": {
+      "label": "Book a call",
+      "href": "/automation-sprint#book"
+    }
+  }
 }

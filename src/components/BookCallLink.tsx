@@ -49,7 +49,7 @@ const buttonVariantClass: Record<Variant, string> = {
 };
 
 export default function BookCallLink({
-  href = "/blueprint#book",
+  href = "/book",
   className,
   frameClassName,
   label = DEFAULT_LABEL,

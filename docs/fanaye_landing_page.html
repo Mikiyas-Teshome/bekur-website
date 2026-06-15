@@ -1,0 +1,1256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Fanaye Technologies — Operational Systems for Professional Service Firms</title>
+<meta name="description" content="Fanaye Technologies builds AI-powered operational systems for law firms, accounting practices, and consultancies. Replace fragmented tools with one system your firm actually runs on.">
+<meta name="keywords" content="law firm operations software, accounting firm automation, consulting operations system, professional services workflow automation, operational systems partner, AI workflow automation law firms">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Fraunces:ital,wght@0,300;0,400;0,600;1,300;1,400&display=swap" rel="stylesheet">
+
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --ink: #0D0D0D;
+    --ink-muted: #4A4A4A;
+    --ink-faint: #888;
+    --paper: #FAFAF8;
+    --surface: #FFFFFF;
+    --rule: #E6E4DF;
+    --accent: #1A3A2A;
+    --accent-mid: #2D6A4F;
+    --accent-light: #E8F2EC;
+    --accent-bright: #3BAA6E;
+    --gold: #C8952A;
+    --gold-light: #FBF3E2;
+    --danger: #B23A2E;
+    --fs-xs: 0.75rem;
+    --fs-sm: 0.875rem;
+    --fs-base: 1rem;
+    --fs-md: 1.125rem;
+    --fs-lg: 1.375rem;
+    --fs-xl: 1.75rem;
+    --fs-2xl: 2.25rem;
+    --fs-3xl: 3rem;
+    --fs-4xl: 4rem;
+    --fw-regular: 400;
+    --fw-medium: 500;
+    --fw-semibold: 600;
+    --radius: 6px;
+    --radius-lg: 12px;
+    --shadow-card: 0 1px 4px rgba(0,0,0,0.06), 0 0 0 1px rgba(0,0,0,0.05);
+    --max-w: 1120px;
+    --gutter: clamp(1.5rem, 5vw, 4rem);
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'Inter', sans-serif;
+    background: var(--paper);
+    color: var(--ink);
+    font-size: var(--fs-base);
+    line-height: 1.7;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .container { max-width: var(--max-w); margin: 0 auto; padding: 0 var(--gutter); }
+
+  /* ─── NAV ─── */
+  nav {
+    position: sticky; top: 0; z-index: 100;
+    background: rgba(250,250,248,0.92);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--rule);
+  }
+  .nav-inner {
+    max-width: var(--max-w); margin: 0 auto; padding: 0 var(--gutter);
+    display: flex; align-items: center; justify-content: space-between;
+    height: 64px; gap: 2rem;
+  }
+  .nav-logo {
+    font-family: 'Fraunces', serif; font-weight: 600; font-size: 1.25rem;
+    color: var(--accent); letter-spacing: -0.02em; text-decoration: none;
+    display: flex; align-items: center; gap: 0.5rem;
+  }
+  .nav-logo .dot { width: 8px; height: 8px; background: var(--accent-bright); border-radius: 50%; display: inline-block; }
+  .nav-links { display: flex; align-items: center; gap: 2rem; list-style: none; }
+  .nav-links a { text-decoration: none; color: var(--ink-muted); font-size: var(--fs-sm); font-weight: var(--fw-medium); transition: color 0.2s; }
+  .nav-links a:hover { color: var(--ink); }
+  .nav-cta { background: var(--accent); color: #fff; padding: 0.5rem 1.25rem; border-radius: var(--radius); font-size: var(--fs-sm); font-weight: var(--fw-semibold); text-decoration: none; transition: background 0.2s; white-space: nowrap; }
+  .nav-cta:hover { background: var(--accent-mid); }
+
+  /* ─── HERO ─── */
+  .hero {
+    padding: clamp(5rem, 10vw, 9rem) 0 clamp(4rem, 8vw, 7rem);
+    border-bottom: 1px solid var(--rule);
+    background: var(--paper);
+    overflow: hidden;
+    position: relative;
+  }
+  .hero::before {
+    content: '';
+    position: absolute; top: -200px; right: -200px;
+    width: 600px; height: 600px;
+    background: radial-gradient(circle, #E8F2EC 0%, transparent 70%);
+    pointer-events: none;
+  }
+  .hero-grid {
+    max-width: var(--max-w); margin: 0 auto; padding: 0 var(--gutter);
+    display: grid; grid-template-columns: 1fr 420px; gap: 5rem; align-items: center;
+  }
+  .hero-eyebrow {
+    display: inline-flex; align-items: center; gap: 0.5rem;
+    background: var(--accent-light); border: 1px solid #C0DAC8;
+    border-radius: 100px; padding: 0.35rem 0.9rem;
+    font-size: var(--fs-xs); font-weight: var(--fw-semibold);
+    color: var(--accent); letter-spacing: 0.06em; text-transform: uppercase;
+    margin-bottom: 1.5rem;
+  }
+  .hero-eyebrow::before { content: '●'; font-size: 8px; color: var(--accent-bright); }
+  .hero h1 {
+    font-family: 'Fraunces', serif; font-weight: 300; font-size: clamp(2.5rem, 5.5vw, 4rem);
+    line-height: 1.1; letter-spacing: -0.03em; color: var(--ink);
+    margin-bottom: 1.5rem;
+  }
+  .hero h1 em { font-style: italic; color: var(--accent-mid); }
+  .hero-sub {
+    font-size: var(--fs-md); color: var(--ink-muted); line-height: 1.8;
+    max-width: 520px; margin-bottom: 2.5rem;
+  }
+  .hero-actions { display: flex; align-items: center; gap: 1rem; flex-wrap: wrap; }
+  .btn-primary {
+    background: var(--accent); color: #fff; padding: 0.875rem 2rem;
+    border-radius: var(--radius); font-weight: var(--fw-semibold); font-size: var(--fs-sm);
+    text-decoration: none; transition: background 0.2s, transform 0.15s;
+    display: inline-flex; align-items: center; gap: 0.5rem;
+  }
+  .btn-primary:hover { background: var(--accent-mid); transform: translateY(-1px); }
+  .btn-secondary {
+    color: var(--ink-muted); font-size: var(--fs-sm); font-weight: var(--fw-medium);
+    text-decoration: none; display: inline-flex; align-items: center; gap: 0.4rem;
+    border-bottom: 1px solid var(--rule); padding-bottom: 2px; transition: color 0.2s;
+  }
+  .btn-secondary:hover { color: var(--ink); }
+  .hero-trust {
+    margin-top: 3rem; padding-top: 2rem; border-top: 1px solid var(--rule);
+    display: flex; align-items: center; gap: 2rem; flex-wrap: wrap;
+  }
+  .hero-trust-label { font-size: var(--fs-xs); color: var(--ink-faint); font-weight: var(--fw-medium); letter-spacing: 0.04em; text-transform: uppercase; }
+  .trust-stat { text-align: left; }
+  .trust-stat strong { display: block; font-size: var(--fs-xl); font-weight: var(--fw-semibold); color: var(--ink); font-family: 'Fraunces', serif; line-height: 1.1; }
+  .trust-stat span { font-size: var(--fs-xs); color: var(--ink-muted); }
+
+  /* Hero card panel */
+  .hero-panel {
+    background: var(--surface); border: 1px solid var(--rule);
+    border-radius: var(--radius-lg); padding: 2rem; box-shadow: var(--shadow-card);
+    position: relative;
+  }
+  .panel-label { font-size: var(--fs-xs); color: var(--ink-faint); font-weight: var(--fw-medium); letter-spacing: 0.05em; text-transform: uppercase; margin-bottom: 1rem; }
+  .panel-metric { display: flex; flex-direction: column; gap: 0.875rem; }
+  .metric-row {
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 0.75rem 1rem; background: var(--paper); border-radius: var(--radius);
+    border: 1px solid var(--rule);
+  }
+  .metric-row .label { font-size: var(--fs-sm); color: var(--ink-muted); }
+  .metric-row .val { font-size: var(--fs-sm); font-weight: var(--fw-semibold); }
+  .metric-row .val.green { color: #1D7A4F; }
+  .metric-row .val.red { color: var(--danger); }
+  .metric-row .val.neutral { color: var(--ink); }
+  .panel-footer { margin-top: 1.25rem; padding: 0.875rem 1rem; background: var(--accent-light); border-radius: var(--radius); border: 1px solid #C0DAC8; }
+  .panel-footer p { font-size: var(--fs-xs); color: var(--accent); font-weight: var(--fw-medium); line-height: 1.6; }
+  .panel-tag {
+    position: absolute; top: -12px; left: 1.5rem;
+    background: var(--accent-bright); color: #fff;
+    font-size: 11px; font-weight: var(--fw-semibold); padding: 3px 10px;
+    border-radius: 100px; letter-spacing: 0.03em;
+  }
+
+  /* ─── SECTION SHELL ─── */
+  section { padding: clamp(4rem, 8vw, 7rem) 0; }
+  .section-eyebrow {
+    font-size: var(--fs-xs); font-weight: var(--fw-semibold); letter-spacing: 0.1em;
+    text-transform: uppercase; color: var(--accent-mid); margin-bottom: 1rem;
+  }
+  .section-heading {
+    font-family: 'Fraunces', serif; font-weight: 300; font-size: clamp(1.75rem, 4vw, 2.75rem);
+    line-height: 1.15; letter-spacing: -0.025em; color: var(--ink); margin-bottom: 1.25rem;
+  }
+  .section-heading em { font-style: italic; color: var(--accent-mid); }
+  .section-sub { font-size: var(--fs-md); color: var(--ink-muted); line-height: 1.8; max-width: 620px; }
+  .text-center { text-align: center; }
+  .text-center .section-sub { margin: 0 auto; }
+  hr.rule { border: none; border-top: 1px solid var(--rule); }
+
+  /* ─── TRUST BAR ─── */
+  .trust-bar { background: var(--accent); color: #fff; padding: 1.25rem 0; }
+  .trust-bar-inner {
+    max-width: var(--max-w); margin: 0 auto; padding: 0 var(--gutter);
+    display: flex; align-items: center; justify-content: space-between; gap: 2rem; flex-wrap: wrap;
+  }
+  .trust-bar-label { font-size: var(--fs-xs); font-weight: var(--fw-semibold); letter-spacing: 0.08em; text-transform: uppercase; opacity: 0.7; white-space: nowrap; }
+  .trust-items { display: flex; align-items: center; gap: 2.5rem; flex-wrap: wrap; }
+  .trust-item { font-size: var(--fs-sm); opacity: 0.9; display: flex; align-items: center; gap: 0.5rem; }
+  .trust-item::before { content: '✓'; font-weight: 700; color: var(--accent-bright); }
+
+  /* ─── PROBLEM SECTION ─── */
+  .problem-bg { background: var(--ink); color: #fff; }
+  .problem-bg .section-eyebrow { color: var(--accent-bright); }
+  .problem-bg .section-heading { color: #fff; }
+  .problem-bg .section-sub { color: rgba(255,255,255,0.65); }
+  .problems-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1px; margin-top: 3.5rem; background: rgba(255,255,255,0.08); }
+  .problem-card {
+    background: #131313; padding: 2rem 1.75rem;
+    transition: background 0.2s;
+  }
+  .problem-card:hover { background: #1a1a1a; }
+  .problem-card .icon { font-size: 1.5rem; margin-bottom: 1rem; opacity: 0.8; }
+  .problem-card h3 { font-size: var(--fs-md); font-weight: var(--fw-semibold); color: #fff; margin-bottom: 0.75rem; line-height: 1.4; }
+  .problem-card p { font-size: var(--fs-sm); color: rgba(255,255,255,0.55); line-height: 1.7; }
+  .cost-callout {
+    margin-top: 3.5rem; padding: 2.5rem 2rem; background: rgba(59,170,110,0.1);
+    border: 1px solid rgba(59,170,110,0.25); border-radius: var(--radius-lg);
+    text-align: center;
+  }
+  .cost-callout strong { font-family: 'Fraunces', serif; font-size: clamp(2rem, 4vw, 3.25rem); font-weight: 300; color: var(--accent-bright); display: block; margin-bottom: 0.75rem; }
+  .cost-callout p { font-size: var(--fs-sm); color: rgba(255,255,255,0.6); max-width: 520px; margin: 0 auto; }
+
+  /* ─── SOLUTION ─── */
+  .solution-split { display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: center; }
+  .solution-features { display: flex; flex-direction: column; gap: 1.5rem; margin-top: 2.5rem; }
+  .feature-row { display: flex; gap: 1rem; }
+  .feature-icon { width: 40px; height: 40px; background: var(--accent-light); border-radius: var(--radius); display: flex; align-items: center; justify-content: center; flex-shrink: 0; font-size: 1.1rem; }
+  .feature-row h4 { font-size: var(--fs-sm); font-weight: var(--fw-semibold); color: var(--ink); margin-bottom: 0.25rem; }
+  .feature-row p { font-size: var(--fs-sm); color: var(--ink-muted); line-height: 1.65; }
+  .guarantee-pill {
+    display: inline-flex; align-items: center; gap: 0.5rem;
+    background: #FBF3E2; border: 1px solid #E4C46B; border-radius: 100px;
+    padding: 0.4rem 1rem; font-size: var(--fs-xs); font-weight: var(--fw-semibold);
+    color: #7A5A0A; margin-top: 2rem;
+  }
+  .guarantee-pill::before { content: '★'; color: var(--gold); }
+
+  /* Dashboard mockup */
+  .dashboard-mock {
+    background: var(--surface); border: 1px solid var(--rule); border-radius: var(--radius-lg);
+    overflow: hidden; box-shadow: 0 8px 40px rgba(0,0,0,0.08);
+  }
+  .mock-header {
+    background: var(--accent); padding: 0.875rem 1.25rem;
+    display: flex; align-items: center; gap: 0.875rem;
+  }
+  .mock-header span { font-size: var(--fs-sm); font-weight: var(--fw-semibold); color: rgba(255,255,255,0.9); }
+  .mock-dots { display: flex; gap: 5px; }
+  .mock-dots i { width: 10px; height: 10px; border-radius: 50%; background: rgba(255,255,255,0.3); }
+  .mock-body { padding: 1.25rem; display: flex; flex-direction: column; gap: 0.875rem; }
+  .mock-kpi-row { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0.625rem; }
+  .mock-kpi { background: var(--paper); padding: 0.75rem; border-radius: 6px; border: 1px solid var(--rule); }
+  .mock-kpi .kpi-val { font-size: 1.25rem; font-weight: var(--fw-semibold); color: var(--ink); line-height: 1.1; }
+  .mock-kpi .kpi-lbl { font-size: 11px; color: var(--ink-faint); margin-top: 2px; }
+  .mock-kpi .kpi-delta { font-size: 11px; margin-top: 3px; font-weight: 500; }
+  .mock-kpi .kpi-delta.up { color: #1D7A4F; }
+  .mock-kpi .kpi-delta.down { color: var(--danger); }
+  .mock-row { background: var(--paper); border: 1px solid var(--rule); border-radius: 6px; padding: 0.65rem 0.875rem; display: flex; align-items: center; justify-content: space-between; }
+  .mock-row .lbl { font-size: var(--fs-sm); color: var(--ink-muted); }
+  .mock-badge { font-size: 11px; padding: 2px 8px; border-radius: 100px; font-weight: 500; }
+  .mock-badge.green { background: #E2F4EB; color: #1D7A4F; }
+  .mock-badge.amber { background: #FEF3CD; color: #8A6200; }
+  .mock-badge.blue { background: #E3EDFC; color: #1355A5; }
+  .mock-ai-bar { background: var(--accent-light); border: 1px solid #C0DAC8; border-radius: 6px; padding: 0.65rem 0.875rem; }
+  .mock-ai-bar p { font-size: 11px; color: var(--accent); line-height: 1.5; }
+  .mock-ai-bar p strong { font-weight: 600; }
+
+  /* ─── OFFERS ─── */
+  .offers-bg { background: var(--surface); }
+  .offers-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 1.5rem; margin-top: 3.5rem; }
+  .offer-card {
+    background: var(--paper); border: 1px solid var(--rule); border-radius: var(--radius-lg);
+    padding: 2rem 1.75rem; position: relative; transition: box-shadow 0.2s, border-color 0.2s;
+  }
+  .offer-card:hover { box-shadow: 0 4px 24px rgba(0,0,0,0.08); border-color: #C8C4BE; }
+  .offer-card.featured {
+    border-color: var(--accent-mid); background: var(--surface);
+    box-shadow: 0 2px 12px rgba(26,58,42,0.08);
+  }
+  .offer-pill {
+    position: absolute; top: -12px; left: 1.5rem;
+    font-size: 11px; font-weight: var(--fw-semibold); padding: 3px 10px;
+    border-radius: 100px; letter-spacing: 0.03em;
+  }
+  .offer-pill.popular { background: var(--accent); color: #fff; }
+  .offer-pill.entry { background: var(--gold-light); color: var(--gold); border: 1px solid #E4C46B; }
+  .offer-icon { font-size: 1.75rem; margin-bottom: 1rem; }
+  .offer-card h3 { font-size: var(--fs-md); font-weight: var(--fw-semibold); color: var(--ink); margin-bottom: 0.5rem; }
+  .offer-card .offer-problem { font-size: var(--fs-sm); color: var(--ink-muted); margin-bottom: 1.25rem; line-height: 1.65; }
+  .offer-outcomes { list-style: none; display: flex; flex-direction: column; gap: 0.5rem; margin-bottom: 1.5rem; }
+  .offer-outcomes li { font-size: var(--fs-sm); color: var(--ink); display: flex; gap: 0.6rem; align-items: flex-start; }
+  .offer-outcomes li::before { content: '→'; color: var(--accent-mid); font-weight: 600; flex-shrink: 0; margin-top: 1px; }
+  .offer-price { font-size: var(--fs-sm); color: var(--ink-faint); border-top: 1px solid var(--rule); padding-top: 1rem; margin-top: auto; }
+  .offer-price strong { color: var(--ink); font-weight: var(--fw-semibold); }
+  .offer-guarantee { font-size: 11px; color: var(--accent-mid); margin-top: 0.4rem; font-weight: var(--fw-medium); }
+
+  /* ─── WHY US ─── */
+  .why-split { display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: start; }
+  .diff-list { display: flex; flex-direction: column; gap: 1.25rem; margin-top: 2rem; }
+  .diff-item { display: flex; gap: 1.25rem; padding: 1.5rem; background: var(--surface); border: 1px solid var(--rule); border-radius: var(--radius-lg); }
+  .diff-num { font-family: 'Fraunces', serif; font-size: 2rem; font-weight: 300; color: var(--rule); line-height: 1; flex-shrink: 0; width: 2.5rem; }
+  .diff-item h4 { font-size: var(--fs-sm); font-weight: var(--fw-semibold); color: var(--ink); margin-bottom: 0.375rem; }
+  .diff-item p { font-size: var(--fs-sm); color: var(--ink-muted); line-height: 1.65; }
+  .vs-table { margin-top: 2.5rem; border: 1px solid var(--rule); border-radius: var(--radius-lg); overflow: hidden; }
+  .vs-header { display: grid; grid-template-columns: 1fr 1fr 1fr; background: var(--paper); border-bottom: 1px solid var(--rule); }
+  .vs-header div { padding: 0.875rem 1rem; font-size: var(--fs-xs); font-weight: var(--fw-semibold); letter-spacing: 0.05em; text-transform: uppercase; color: var(--ink-faint); }
+  .vs-header div.highlight { background: var(--accent-light); color: var(--accent); }
+  .vs-row { display: grid; grid-template-columns: 1fr 1fr 1fr; border-bottom: 1px solid var(--rule); }
+  .vs-row:last-child { border-bottom: none; }
+  .vs-row div { padding: 0.75rem 1rem; font-size: var(--fs-sm); color: var(--ink-muted); display: flex; align-items: center; gap: 0.4rem; }
+  .vs-row div.highlight { background: rgba(232,242,236,0.4); color: var(--ink); font-weight: var(--fw-medium); }
+  .yes { color: #1D7A4F; font-weight: 600; }
+  .no { color: #aaa; }
+
+  /* ─── PROCESS ─── */
+  .process-bg { background: var(--ink); color: #fff; }
+  .process-bg .section-eyebrow { color: var(--accent-bright); }
+  .process-bg .section-heading { color: #fff; }
+  .process-bg .section-sub { color: rgba(255,255,255,0.6); }
+  .process-steps { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 0; margin-top: 3.5rem; position: relative; }
+  .process-steps::before {
+    content: ''; position: absolute; top: 28px; left: 0; right: 0; height: 1px;
+    background: repeating-linear-gradient(90deg, rgba(255,255,255,0.15) 0, rgba(255,255,255,0.15) 8px, transparent 8px, transparent 16px);
+    z-index: 0;
+  }
+  .process-step { padding: 0 1.5rem 2rem; position: relative; z-index: 1; }
+  .step-num {
+    width: 56px; height: 56px; border-radius: 50%;
+    background: var(--accent); display: flex; align-items: center; justify-content: center;
+    font-family: 'Fraunces', serif; font-size: 1.25rem; font-weight: 300; color: #fff;
+    margin-bottom: 1.5rem;
+  }
+  .process-step h3 { font-size: var(--fs-md); font-weight: var(--fw-semibold); color: #fff; margin-bottom: 0.5rem; }
+  .process-step p { font-size: var(--fs-sm); color: rgba(255,255,255,0.55); line-height: 1.7; }
+  .process-step .step-time { font-size: var(--fs-xs); color: var(--accent-bright); font-weight: var(--fw-semibold); margin-top: 0.75rem; letter-spacing: 0.03em; }
+
+  /* ─── CASE STUDIES ─── */
+  .cases-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 1.5rem; margin-top: 3.5rem; }
+  .case-card {
+    background: var(--surface); border: 1px solid var(--rule); border-radius: var(--radius-lg);
+    overflow: hidden; transition: box-shadow 0.2s;
+  }
+  .case-card:hover { box-shadow: 0 6px 28px rgba(0,0,0,0.07); }
+  .case-header { padding: 1.75rem; border-bottom: 1px solid var(--rule); background: var(--paper); }
+  .case-tag { font-size: 11px; font-weight: var(--fw-semibold); letter-spacing: 0.06em; text-transform: uppercase; color: var(--accent-mid); margin-bottom: 0.625rem; }
+  .case-card h3 { font-size: var(--fs-md); font-weight: var(--fw-semibold); color: var(--ink); line-height: 1.35; }
+  .case-body { padding: 1.75rem; }
+  .case-quote { font-size: var(--fs-sm); color: var(--ink-muted); line-height: 1.75; font-style: italic; border-left: 3px solid var(--accent-light); padding-left: 1rem; margin-bottom: 1.5rem; }
+  .case-results { display: flex; flex-direction: column; gap: 0.625rem; }
+  .case-result { display: flex; align-items: flex-start; gap: 0.75rem; }
+  .case-result .metric { font-size: var(--fs-xl); font-weight: var(--fw-semibold); color: var(--accent-mid); font-family: 'Fraunces', serif; min-width: 3.5rem; line-height: 1; }
+  .case-result p { font-size: var(--fs-sm); color: var(--ink-muted); line-height: 1.5; }
+
+  /* ─── GUARANTEES ─── */
+  .guarantees-bg { background: var(--gold-light); border-top: 1px solid #E4C46B; border-bottom: 1px solid #E4C46B; }
+  .guarantees-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1.25rem; margin-top: 3rem; }
+  .guarantee-card {
+    background: #fff; border: 1px solid #E4C46B; border-radius: var(--radius-lg);
+    padding: 1.5rem 1.25rem;
+  }
+  .guarantee-card .g-icon { font-size: 1.5rem; margin-bottom: 0.75rem; }
+  .guarantee-card h4 { font-size: var(--fs-sm); font-weight: var(--fw-semibold); color: var(--ink); margin-bottom: 0.4rem; }
+  .guarantee-card p { font-size: var(--fs-sm); color: var(--ink-muted); line-height: 1.65; }
+
+  /* ─── TESTIMONIALS ─── */
+  .testimonials-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem; margin-top: 3.5rem; }
+  .testimonial-card {
+    background: var(--surface); border: 1px solid var(--rule); border-radius: var(--radius-lg);
+    padding: 1.75rem;
+  }
+  .stars { color: var(--gold); font-size: 0.875rem; margin-bottom: 1rem; letter-spacing: 2px; }
+  .testimonial-card blockquote { font-size: var(--fs-sm); color: var(--ink); line-height: 1.75; margin-bottom: 1.25rem; font-style: italic; }
+  .testimonial-author { display: flex; align-items: center; gap: 0.75rem; }
+  .author-avatar { width: 36px; height: 36px; border-radius: 50%; background: var(--accent-light); display: flex; align-items: center; justify-content: center; font-size: var(--fs-xs); font-weight: var(--fw-semibold); color: var(--accent); }
+  .author-name { font-size: var(--fs-sm); font-weight: var(--fw-semibold); color: var(--ink); }
+  .author-role { font-size: var(--fs-xs); color: var(--ink-faint); }
+
+  /* ─── OBJECTIONS / FAQ ─── */
+  .objections-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.25rem; margin-top: 3rem; }
+  .objection-card { background: var(--surface); border: 1px solid var(--rule); border-radius: var(--radius-lg); padding: 1.5rem; }
+  .objection-card .q { font-size: var(--fs-sm); font-weight: var(--fw-semibold); color: var(--ink); margin-bottom: 0.5rem; display: flex; gap: 0.5rem; }
+  .objection-card .q::before { content: 'Q'; background: var(--paper); border: 1px solid var(--rule); border-radius: 4px; padding: 0 5px; font-family: 'Fraunces', serif; font-size: 11px; font-style: italic; flex-shrink: 0; height: fit-content; }
+  .objection-card .a { font-size: var(--fs-sm); color: var(--ink-muted); line-height: 1.7; }
+
+  /* ─── FINAL CTA ─── */
+  .cta-section { background: var(--accent); color: #fff; padding: clamp(5rem, 9vw, 8rem) 0; }
+  .cta-inner { max-width: 680px; margin: 0 auto; padding: 0 var(--gutter); text-align: center; }
+  .cta-section h2 { font-family: 'Fraunces', serif; font-weight: 300; font-size: clamp(2rem, 5vw, 3.25rem); line-height: 1.15; letter-spacing: -0.025em; color: #fff; margin-bottom: 1.25rem; }
+  .cta-section h2 em { font-style: italic; color: rgba(255,255,255,0.75); }
+  .cta-section p { font-size: var(--fs-md); color: rgba(255,255,255,0.7); margin-bottom: 2.5rem; line-height: 1.75; }
+  .cta-actions { display: flex; align-items: center; justify-content: center; gap: 1.25rem; flex-wrap: wrap; }
+  .btn-white { background: #fff; color: var(--accent); padding: 0.9rem 2rem; border-radius: var(--radius); font-weight: var(--fw-semibold); font-size: var(--fs-sm); text-decoration: none; display: inline-flex; align-items: center; gap: 0.5rem; transition: opacity 0.2s; }
+  .btn-white:hover { opacity: 0.92; }
+  .btn-ghost { color: rgba(255,255,255,0.8); font-size: var(--fs-sm); font-weight: var(--fw-medium); text-decoration: none; border-bottom: 1px solid rgba(255,255,255,0.3); padding-bottom: 2px; }
+  .cta-guarantee { margin-top: 2rem; font-size: var(--fs-xs); color: rgba(255,255,255,0.55); }
+
+  /* ─── FOOTER ─── */
+  footer { background: var(--ink); color: rgba(255,255,255,0.5); padding: 3rem 0; }
+  .footer-inner { max-width: var(--max-w); margin: 0 auto; padding: 0 var(--gutter); display: flex; align-items: center; justify-content: space-between; gap: 2rem; flex-wrap: wrap; }
+  .footer-logo { font-family: 'Fraunces', serif; font-weight: 600; font-size: 1.1rem; color: rgba(255,255,255,0.85); }
+  .footer-links { display: flex; gap: 2rem; list-style: none; }
+  .footer-links a { font-size: var(--fs-sm); color: rgba(255,255,255,0.5); text-decoration: none; transition: color 0.2s; }
+  .footer-links a:hover { color: rgba(255,255,255,0.85); }
+  .footer-legal { font-size: var(--fs-xs); }
+
+  /* ─── RESPONSIVE ─── */
+  @media (max-width: 900px) {
+    .hero-grid { grid-template-columns: 1fr; gap: 3rem; }
+    .hero-panel { display: none; }
+    .solution-split, .why-split { grid-template-columns: 1fr; gap: 3rem; }
+    .objections-grid { grid-template-columns: 1fr; }
+    .process-steps::before { display: none; }
+  }
+  @media (max-width: 640px) {
+    .nav-links { display: none; }
+    .trust-items { gap: 1rem; }
+    .vs-table { font-size: var(--fs-xs); }
+  }
+</style>
+</head>
+
+<body>
+
+<!-- ══════════════════════════════════════════
+     NAV
+══════════════════════════════════════════ -->
+<nav>
+  <div class="nav-inner">
+    <a href="#" class="nav-logo">
+      <span class="dot"></span>
+      Fanaye Technologies
+    </a>
+    <ul class="nav-links">
+      <li><a href="#why">Why Fanaye</a></li>
+      <li><a href="#services">Services</a></li>
+      <li><a href="#process">Process</a></li>
+      <li><a href="#results">Results</a></li>
+      <li><a href="#faq">FAQ</a></li>
+    </ul>
+    <a href="#audit" class="nav-cta">Book an Audit →</a>
+  </div>
+</nav>
+
+<!-- ══════════════════════════════════════════
+     HERO
+══════════════════════════════════════════ -->
+<section class="hero">
+  <div class="hero-grid">
+    <div class="hero-content">
+      <div class="hero-eyebrow">Operational Systems for Professional Service Firms</div>
+
+      <h1>Your best people<br>shouldn't spend their week<br><em>managing information.</em></h1>
+
+      <p class="hero-sub">
+        Fanaye builds the operational systems that let law firms, accounting practices, and consultancies do more with the team they already have. Less chasing. Less chaos. More delivery — with AI built in from day one.
+      </p>
+
+      <div class="hero-actions">
+        <a href="#audit" class="btn-primary">
+          Book a Free Operational Audit →
+        </a>
+        <a href="#results" class="btn-secondary">
+          See client results ↓
+        </a>
+      </div>
+
+      <div class="hero-trust">
+        <span class="hero-trust-label">Proof</span>
+        <div class="trust-stat">
+          <strong>15–20 hrs</strong>
+          <span>reclaimed per week, on average</span>
+        </div>
+        <div class="trust-stat">
+          <strong>60 days</strong>
+          <span>to measurable operational change</span>
+        </div>
+        <div class="trust-stat">
+          <strong>4–8×</strong>
+          <span>average ROI in year one</span>
+        </div>
+      </div>
+    </div>
+
+    <div style="position: relative;">
+      <div class="hero-panel">
+        <span class="panel-tag">Live System View</span>
+        <p class="panel-label">Wakefield &amp; Associates — Ops Dashboard</p>
+        <div class="mock-kpi-row">
+          <div class="mock-kpi">
+            <div class="kpi-val">94%</div>
+            <div class="kpi-lbl">Matters on track</div>
+            <div class="kpi-delta up">↑ from 61%</div>
+          </div>
+          <div class="mock-kpi">
+            <div class="kpi-val">1.4d</div>
+            <div class="kpi-lbl">Avg intake time</div>
+            <div class="kpi-delta up">↓ was 11 days</div>
+          </div>
+          <div class="mock-kpi">
+            <div class="kpi-val">0</div>
+            <div class="kpi-lbl">Missed deadlines</div>
+            <div class="kpi-delta up">90-day streak</div>
+          </div>
+        </div>
+        <div class="panel-metric" style="margin-top: 0.875rem;">
+          <div class="metric-row">
+            <span class="label">Bergson acquisition — due diligence</span>
+            <span class="val green">On track</span>
+          </div>
+          <div class="metric-row">
+            <span class="label">Chen estate filing — documents</span>
+            <span class="val neutral">2 pending</span>
+          </div>
+          <div class="metric-row">
+            <span class="label">Rahman compliance review</span>
+            <span class="val green">Submitted</span>
+          </div>
+        </div>
+        <div class="panel-footer">
+          <p><strong>AI summary (auto-generated):</strong> 3 matters flagged this week. Bergson acquisition on schedule. Document collection for Chen estate running 1 day ahead. No compliance deadlines at risk.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════
+     TRUST BAR
+══════════════════════════════════════════ -->
+<div class="trust-bar">
+  <div class="trust-bar-inner">
+    <span class="trust-bar-label">Built &amp; proven across</span>
+    <div class="trust-items">
+      <span class="trust-item">Law &amp; legal practices</span>
+      <span class="trust-item">Accounting firms</span>
+      <span class="trust-item">Management consultancies</span>
+      <span class="trust-item">Financial advisory firms</span>
+      <span class="trust-item">US · UK · Europe</span>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════════
+     PROBLEM SECTION
+══════════════════════════════════════════ -->
+<section class="problem-bg" id="problem">
+  <div class="container">
+    <div class="section-eyebrow">The real cost of manual operations</div>
+    <h2 class="section-heading" style="color:#fff;">Your firm has the right people.<br>It's running on the wrong systems.</h2>
+    <p class="section-sub">Most professional service firms have invested in tools. The problem isn't the tools — it's the operational gaps between them. These are the six patterns we see in every firm we audit.</p>
+
+    <div class="problems-grid">
+      <div class="problem-card">
+        <div class="icon">⚡</div>
+        <h3>No single source of truth for active work</h3>
+        <p>Matter status, project ownership, and deadlines live in five different places. Leadership can't see what's happening without asking five people. Decisions get made on gut feel.</p>
+      </div>
+      <div class="problem-card">
+        <div class="icon">📋</div>
+        <h3>Client onboarding takes two weeks and drops tasks</h3>
+        <p>New client setup is a 12-step email-and-spreadsheet process. Every person does it differently. First impressions suffer. Senior staff spend hours on work that should take minutes.</p>
+      </div>
+      <div class="problem-card">
+        <div class="icon">⏰</div>
+        <h3>Compliance deadlines live in individual heads</h3>
+        <p>Regulatory dates sit in shared calendars and personal notebooks. One missed filing creates liability multiples larger than any system investment. The risk is real and it compounds.</p>
+      </div>
+      <div class="problem-card">
+        <div class="icon">📂</div>
+        <h3>Staff spend 5–8 hours a week chasing documents</h3>
+        <p>Every engagement involves cycles of follow-up emails for signatures, forms, and files. It's demoralizing. It delays delivery. And the ROI of fixing it is calculated in days, not months.</p>
+      </div>
+      <div class="problem-card">
+        <div class="icon">📊</div>
+        <h3>Management reports take two days to build manually</h3>
+        <p>Partners and ops staff pull data from billing, PM tools, and spreadsheets every week. By Monday, the report is already stale. Leadership is flying blind on decisions that cost real money.</p>
+      </div>
+      <div class="problem-card">
+        <div class="icon">🔒</div>
+        <h3>Critical knowledge is locked in your best people</h3>
+        <p>When a senior person is out or leaves, the firm doesn't know how to handle their accounts. Key-person risk isn't just an HR issue — it's an operational one. It's a solved problem. Most firms just haven't solved it yet.</p>
+      </div>
+    </div>
+
+    <div class="cost-callout">
+      <strong>$468,000</strong>
+      <p>The estimated annual capacity cost of 15% admin overhead at a 20-person professional services firm billing at $150/hr. This is what manual operations actually cost — not a headline, but a calculation. We will run this math for your firm in the audit.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════
+     SOLUTION
+══════════════════════════════════════════ -->
+<section id="why">
+  <div class="container">
+    <div class="solution-split">
+      <div>
+        <div class="section-eyebrow">What we build</div>
+        <h2 class="section-heading">Operational systems that run your firm — <em>not just software that lives in it.</em></h2>
+        <p class="section-sub">Fanaye Technologies is not a software vendor. We are your operational systems partner. Every engagement starts with a structured audit of how your firm actually works — then we design, build, and embed a system around that reality, with AI where it creates genuine value.</p>
+
+        <div class="solution-features">
+          <div class="feature-row">
+            <div class="feature-icon">🏗️</div>
+            <div>
+              <h4>Built around your firm's actual workflows</h4>
+              <p>We audit your operations first. We build what your firm needs — not a template that requires you to adapt to the software.</p>
+            </div>
+          </div>
+          <div class="feature-row">
+            <div class="feature-icon">🤖</div>
+            <div>
+              <h4>AI that creates operational outcomes, not buzzwords</h4>
+              <p>Status summaries generated automatically. Documents classified without manual sorting. Anomalies flagged before they become crises. AI as mechanism, not headline.</p>
+            </div>
+          </div>
+          <div class="feature-row">
+            <div class="feature-icon">🔗</div>
+            <div>
+              <h4>Integrated with the tools your firm already uses</h4>
+              <p>Clio, Karbon, Xero, Salesforce, SharePoint — we connect your existing tools rather than forcing a rip-and-replace that disrupts delivery.</p>
+            </div>
+          </div>
+          <div class="feature-row">
+            <div class="feature-icon">📈</div>
+            <div>
+              <h4>Guaranteed measurable outcomes</h4>
+              <p>Every engagement includes a specific operational guarantee. If we don't deliver, you don't pay. Risk removal is built into how we work, not offered as an afterthought.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="guarantee-pill">
+          We built our own operational platform before building yours — SpeedOps runs every Fanaye project internally.
+        </div>
+      </div>
+
+      <div class="dashboard-mock">
+        <div class="mock-header">
+          <div class="mock-dots"><i></i><i></i><i></i></div>
+          <span>Professional Firm Operations Hub</span>
+        </div>
+        <div class="mock-body">
+          <div class="mock-kpi-row">
+            <div class="mock-kpi">
+              <div class="kpi-val">28</div>
+              <div class="kpi-lbl">Active matters</div>
+              <div class="kpi-delta up">+4 this week</div>
+            </div>
+            <div class="mock-kpi">
+              <div class="kpi-val">96%</div>
+              <div class="kpi-lbl">On schedule</div>
+              <div class="kpi-delta up">↑ from 72%</div>
+            </div>
+            <div class="mock-kpi">
+              <div class="kpi-val">$0</div>
+              <div class="kpi-lbl">Billing lag</div>
+              <div class="kpi-delta up">Was: 3 weeks</div>
+            </div>
+          </div>
+          <div class="mock-row">
+            <span class="lbl">Chen estate — document collection</span>
+            <span class="mock-badge green">Auto-collected</span>
+          </div>
+          <div class="mock-row">
+            <span class="lbl">Q3 compliance filings — all 14 clients</span>
+            <span class="mock-badge green">All submitted</span>
+          </div>
+          <div class="mock-row">
+            <span class="lbl">Rahman contract — partner approval</span>
+            <span class="mock-badge amber">Awaiting sign-off</span>
+          </div>
+          <div class="mock-row">
+            <span class="lbl">New client: Ashford & Partners</span>
+            <span class="mock-badge blue">Onboarding: day 2</span>
+          </div>
+          <div class="mock-ai-bar">
+            <p><strong>AI status summary (auto-generated, 6:00 AM):</strong> All compliance deadlines this week met. One approval pending from M. Warren — reminder sent. Document collection for 4 active matters complete. No items require urgent attention.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════
+     OFFERS / SERVICES
+══════════════════════════════════════════ -->
+<section class="offers-bg" id="services">
+  <div class="container">
+    <div class="text-center">
+      <div class="section-eyebrow">Operational systems</div>
+      <h2 class="section-heading">Eight systems that address your firm's <em>most expensive problems.</em></h2>
+      <p class="section-sub">Every system is built from a structured audit of your current operations. Every engagement includes AI automation where it creates measurable value. Every build comes with a specific outcome guarantee.</p>
+    </div>
+
+    <div class="offers-grid">
+      <div class="offer-card featured">
+        <span class="offer-pill popular">Most Requested</span>
+        <div class="offer-icon">🎛️</div>
+        <h3>Operations Control Center</h3>
+        <p class="offer-problem">No single source of truth. Work status, deadlines, and ownership scattered across five tools.</p>
+        <ul class="offer-outcomes">
+          <li>Live matter/project status — no asking around</li>
+          <li>AI-generated daily status summaries</li>
+          <li>Deadline alerts before problems develop</li>
+          <li>Executive KPI panel auto-populated from live data</li>
+        </ul>
+        <div class="offer-price">
+          <strong>$12,000–$22,000</strong> + $1,500/mo system improvement<br>
+          <div class="offer-guarantee">★ Guarantee: Admin time drops ≥6 hrs/week in 60 days or next month free</div>
+        </div>
+      </div>
+
+      <div class="offer-card">
+        <span class="offer-pill entry">Entry Point</span>
+        <div class="offer-icon">🔍</div>
+        <h3>Operational Health Audit + Roadmap</h3>
+        <p class="offer-problem">Something is broken but you don't know where to start. Initiatives get stalled or misdirected.</p>
+        <ul class="offer-outcomes">
+          <li>Structured 2-week operational audit</li>
+          <li>Pain mapping and root cause analysis</li>
+          <li>12-month prioritized roadmap</li>
+          <li>Quick wins shortlist with ROI estimates</li>
+        </ul>
+        <div class="offer-price">
+          <strong>$3,500–$6,000</strong> flat fee (credited to full build)<br>
+          <div class="offer-guarantee">★ Guarantee: 5+ actionable improvements found or full refund</div>
+        </div>
+      </div>
+
+      <div class="offer-card">
+        <div class="offer-icon">⚡</div>
+        <h3>Client Intake &amp; Onboarding Engine</h3>
+        <p class="offer-problem">New client setup takes 2 weeks. 12-step manual process. Drops tasks. Damages first impressions.</p>
+        <ul class="offer-outcomes">
+          <li>New clients fully onboarded in 48 hours</li>
+          <li>Automated CRM population and document requests</li>
+          <li>AI-powered intake extraction</li>
+          <li>Consistent process regardless of who handles it</li>
+        </ul>
+        <div class="offer-price">
+          <strong>$9,000–$16,000</strong> + $1,200/mo<br>
+          <div class="offer-guarantee">★ Guarantee: Onboarding time halves in 45 days</div>
+        </div>
+      </div>
+
+      <div class="offer-card">
+        <div class="offer-icon">📁</div>
+        <h3>Zero-Chase Document Collection</h3>
+        <p class="offer-problem">Staff spend 5–8 hours per week chasing clients for documents, signatures, and forms.</p>
+        <ul class="offer-outcomes">
+          <li>Client document portal with automated reminders</li>
+          <li>Real-time collection status for every matter</li>
+          <li>Smart follow-up timing based on client history</li>
+          <li>Document completeness AI checker</li>
+        </ul>
+        <div class="offer-price">
+          <strong>$7,500–$13,000</strong> + $900/mo<br>
+          <div class="offer-guarantee">★ Guarantee: Chase time under 3 days average or retainer credit</div>
+        </div>
+      </div>
+
+      <div class="offer-card">
+        <div class="offer-icon">⚖️</div>
+        <h3>Compliance &amp; Deadline Tracking</h3>
+        <p class="offer-problem">Regulatory dates in spreadsheets and individual calendars. One missed filing creates serious liability.</p>
+        <ul class="offer-outcomes">
+          <li>Centralized compliance calendar across all clients</li>
+          <li>Automated escalation before deadlines at risk</li>
+          <li>AI extracts deadlines from regulatory documents</li>
+          <li>Partner-level oversight view with red/amber/green status</li>
+        </ul>
+        <div class="offer-price">
+          <strong>$11,000–$20,000</strong> + $1,500/mo<br>
+          <div class="offer-guarantee">★ Guarantee: Any system failure causing a missed deadline → full retainer refund</div>
+        </div>
+      </div>
+
+      <div class="offer-card">
+        <div class="offer-icon">📈</div>
+        <h3>Executive Intelligence Dashboard</h3>
+        <p class="offer-problem">Partners spend 3–5 hours per week pulling reports that are stale before they're read.</p>
+        <ul class="offer-outcomes">
+          <li>Live firm health: utilization, WIP, pipeline, deadlines</li>
+          <li>Natural language queries ("show clients over budget this month")</li>
+          <li>Anomaly detection and predictive flags</li>
+          <li>No manual report building — ever again</li>
+        </ul>
+        <div class="offer-price">
+          <strong>$15,000–$30,000</strong> + $2,000/mo<br>
+          <div class="offer-guarantee">★ Guarantee: Leadership using it weekly by day 60 or redesign free</div>
+        </div>
+      </div>
+
+      <div class="offer-card">
+        <div class="offer-icon">💰</div>
+        <h3>Billing &amp; WIP Acceleration</h3>
+        <p class="offer-problem">Billing lag from manual time reconciliation. Revenue left on the table every month.</p>
+        <ul class="offer-outcomes">
+          <li>Billing cycle reduced from 3 weeks to 48 hours</li>
+          <li>AI time-entry suggestions from calendar/email activity</li>
+          <li>Real-time WIP tracking and revenue leakage alerts</li>
+          <li>Automated billing prompts and invoice triggers</li>
+        </ul>
+        <div class="offer-price">
+          <strong>$10,000–$18,000</strong> + $1,400/mo<br>
+          <div class="offer-guarantee">★ Guarantee: Billing cycle reduces ≥5 days in 60 days or retainer credit</div>
+        </div>
+      </div>
+
+      <div class="offer-card">
+        <div class="offer-icon">🧠</div>
+        <h3>Internal Knowledge &amp; SOP Hub</h3>
+        <p class="offer-problem">Critical knowledge lives in your best people's heads. When they're out, operations slow. When they leave, operations break.</p>
+        <ul class="offer-outcomes">
+          <li>AI-searchable knowledge portal for your entire firm</li>
+          <li>Natural language queries over all internal documents</li>
+          <li>Gap detection — stale SOPs flagged automatically</li>
+          <li>Eliminates the "ask Sarah" dependency</li>
+        </ul>
+        <div class="offer-price">
+          <strong>$9,000–$16,000</strong> + $1,000/mo<br>
+          <div class="offer-guarantee">★ Guarantee: Active team usage by day 60 or UX redesign free</div>
+        </div>
+      </div>
+    </div>
+
+    <p style="text-align:center; margin-top: 2.5rem; font-size: var(--fs-sm); color: var(--ink-faint);">Not sure which system your firm needs first? That's exactly what the <a href="#audit" style="color: var(--accent-mid); font-weight: 500;">Operational Health Audit</a> answers.</p>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════
+     WHY FANAYE
+══════════════════════════════════════════ -->
+<section style="background: var(--paper); border-top: 1px solid var(--rule);">
+  <div class="container">
+    <div class="why-split">
+      <div>
+        <div class="section-eyebrow">Why Fanaye</div>
+        <h2 class="section-heading">Four things that make this firm <em>categorically different.</em></h2>
+        <p class="section-sub">Most agencies build what you ask for. We build what your operations actually need — which is why every engagement starts with an audit, not a proposal.</p>
+
+        <div class="diff-list">
+          <div class="diff-item">
+            <span class="diff-num">1</span>
+            <div>
+              <h4>We built our own operational system before building yours</h4>
+              <p>SpeedOps is the platform Fanaye uses to run every client project — real-time visibility, AI-assisted delivery, financial tracking. No other agency can say this. It means every system we build has been stress-tested on real operational complexity first.</p>
+            </div>
+          </div>
+          <div class="diff-item">
+            <span class="diff-num">2</span>
+            <div>
+              <h4>We specialize in professional service operations specifically</h4>
+              <p>We speak your language: billable hours, matter management, partner governance, compliance cycles, client confidentiality. Generalist agencies don't. This domain fluency is why our systems work from day one, not month six.</p>
+            </div>
+          </div>
+          <div class="diff-item">
+            <span class="diff-num">3</span>
+            <div>
+              <h4>Every engagement is guaranteed by a specific operational outcome</h4>
+              <p>Not "you'll be satisfied." Specific metrics: admin time drops by X hours, onboarding halves, billing cycle reduces by Y days. If we miss it, you don't pay for that period. Full stop.</p>
+            </div>
+          </div>
+          <div class="diff-item">
+            <span class="diff-num">4</span>
+            <div>
+              <h4>Discovery first, always — no build without a baseline</h4>
+              <p>We never propose a solution without first understanding your operations. The audit pays for itself in clarity: firms that skip discovery end up with software that solves the wrong problem. We won't let that happen.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div>
+        <h3 style="font-size: var(--fs-md); font-weight: var(--fw-semibold); margin-bottom: 1.5rem; color: var(--ink);">How Fanaye compares</h3>
+        <div class="vs-table">
+          <div class="vs-header">
+            <div></div>
+            <div>Generic agencies</div>
+            <div class="highlight">Fanaye</div>
+          </div>
+          <div class="vs-row">
+            <div style="font-weight: 500; color: var(--ink);">Operational discovery audit</div>
+            <div><span class="no">Rarely included</span></div>
+            <div class="highlight"><span class="yes">✓</span> Always first</div>
+          </div>
+          <div class="vs-row">
+            <div style="font-weight: 500; color: var(--ink);">Professional firm domain knowledge</div>
+            <div><span class="no">Generic</span></div>
+            <div class="highlight"><span class="yes">✓</span> Dedicated</div>
+          </div>
+          <div class="vs-row">
+            <div style="font-weight: 500; color: var(--ink);">Measurable outcome guarantees</div>
+            <div><span class="no">No</span></div>
+            <div class="highlight"><span class="yes">✓</span> Every engagement</div>
+          </div>
+          <div class="vs-row">
+            <div style="font-weight: 500; color: var(--ink);">AI built into workflow logic</div>
+            <div><span class="no">Add-on</span></div>
+            <div class="highlight"><span class="yes">✓</span> Day one</div>
+          </div>
+          <div class="vs-row">
+            <div style="font-weight: 500; color: var(--ink);">Existing tool integrations</div>
+            <div><span class="no">Sometimes</span></div>
+            <div class="highlight"><span class="yes">✓</span> Always included</div>
+          </div>
+          <div class="vs-row">
+            <div style="font-weight: 500; color: var(--ink);">Ongoing system improvement retainer</div>
+            <div><span class="no">Maintenance only</span></div>
+            <div class="highlight"><span class="yes">✓</span> Monthly delivery</div>
+          </div>
+          <div class="vs-row">
+            <div style="font-weight: 500; color: var(--ink);">Proprietary internal ops platform</div>
+            <div><span class="no">No</span></div>
+            <div class="highlight"><span class="yes">✓</span> SpeedOps</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════
+     PROCESS
+══════════════════════════════════════════ -->
+<section class="process-bg" id="process">
+  <div class="container">
+    <div class="text-center">
+      <div class="section-eyebrow">How it works</div>
+      <h2 class="section-heading" style="color:#fff;">From discovery to deployed system — <em>a structured path with no surprises.</em></h2>
+      <p class="section-sub" style="margin: 0 auto;">Most firms fear implementation because they've been burned before. Here is exactly what happens from the day you engage Fanaye to the day your system is running.</p>
+    </div>
+
+    <div class="process-steps">
+      <div class="process-step">
+        <div class="step-num">1</div>
+        <h3>Operational Discovery</h3>
+        <p>We audit your current workflows, tools, and pain points. Interview key team members. Map where time is lost, where risk concentrates, and where automation will land hardest.</p>
+        <div class="step-time">Weeks 1–2 · Your time investment: ~3 hours</div>
+      </div>
+
+      <div class="process-step">
+        <div class="step-num">2</div>
+        <h3>System Architecture</h3>
+        <p>We present your findings with a prioritized roadmap. You approve the architecture. Scope is locked in writing before any build begins — no surprises, no scope creep.</p>
+        <div class="step-time">Week 3 · Milestone: Architecture sign-off</div>
+      </div>
+
+      <div class="process-step">
+        <div class="step-num">3</div>
+        <h3>Phased Build</h3>
+        <p>We build in phases. You see working functionality at each checkpoint, not just a big reveal at the end. First tangible operational change visible within two weeks of build start.</p>
+        <div class="step-time">Weeks 4–10 · Bi-weekly demos and check-ins</div>
+      </div>
+
+      <div class="process-step">
+        <div class="step-num">4</div>
+        <h3>Integration &amp; Testing</h3>
+        <p>We connect your existing tools, migrate critical data, and run UAT with your team. Training sessions included — adoption isn't your problem to solve, it's ours to guarantee.</p>
+        <div class="step-time">Weeks 10–12 · Your team runs the system</div>
+      </div>
+
+      <div class="process-step">
+        <div class="step-num">5</div>
+        <h3>Go-Live &amp; Optimize</h3>
+        <p>System goes live. Guarantee clock starts. We monitor adoption, track the baseline metrics, and run optimization sessions at 30, 60, and 90 days post-launch.</p>
+        <div class="step-time">Week 12+ · Guarantee tracking begins</div>
+      </div>
+
+      <div class="process-step">
+        <div class="step-num">6</div>
+        <h3>Monthly Improvement</h3>
+        <p>The retainer delivers ongoing value: one new automation per month, usage analytics review, and a system evolution session. Firms that stay with us grow their operational advantage compounding.</p>
+        <div class="step-time">Month 4+ · System keeps getting better</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════
+     CASE STUDIES / RESULTS
+══════════════════════════════════════════ -->
+<section id="results">
+  <div class="container">
+    <div class="text-center">
+      <div class="section-eyebrow">What operational systems actually do</div>
+      <h2 class="section-heading">The systems we've built — <em>and what changed.</em></h2>
+      <p class="section-sub">Every case study below is drawn from real operational work. System types, outcomes, and technical complexity are representative. Client identifiers withheld by agreement.</p>
+    </div>
+
+    <div class="cases-grid">
+      <div class="case-card">
+        <div class="case-header">
+          <div class="case-tag">US Professional Services Firm · Operations</div>
+          <h3>Unified operational command center replacing five fragmented tools</h3>
+        </div>
+        <div class="case-body">
+          <div class="case-quote">"Before, I had to send five messages to understand the status of any project. Now I open one view in the morning and I know exactly what needs attention."</div>
+          <div class="case-results">
+            <div class="case-result">
+              <span class="metric">72%</span>
+              <p>reduction in internal status update requests per week within 60 days of go-live</p>
+            </div>
+            <div class="case-result">
+              <span class="metric">5</span>
+              <p>disconnected tools (Jira, Notion, Slack, Monday, email) unified into one AI-powered system</p>
+            </div>
+            <div class="case-result">
+              <span class="metric">18 hrs</span>
+              <p>of weekly coordination overhead eliminated across the team per week</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="case-card">
+        <div class="case-header">
+          <div class="case-tag">Enterprise Operations · Full lifecycle system</div>
+          <h3>End-to-end operational command center: procurement, order lifecycle, finance, HR</h3>
+        </div>
+        <div class="case-body">
+          <div class="case-quote">"The complexity we were running on spreadsheets and email chains is now organized, visible, and searchable. We can scale without adding admin headcount."</div>
+          <div class="case-results">
+            <div class="case-result">
+              <span class="metric">1M+</span>
+              <p>operational records managed at sub-second query response across the full system</p>
+            </div>
+            <div class="case-result">
+              <span class="metric">100%</span>
+              <p>of procurement, vendor, and financial workflows unified into one controlled system</p>
+            </div>
+            <div class="case-result">
+              <span class="metric">Real-time</span>
+              <p>operational visibility for leadership — zero manual report compilation</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="case-card">
+        <div class="case-header">
+          <div class="case-tag">Netherlands Financial Institution · Intelligence Platform</div>
+          <h3>Multi-dimensional financial intelligence and structured decision-support system</h3>
+        </div>
+        <div class="case-body">
+          <div class="case-quote">"Institutional buyers need transparency and structure. Fanaye built exactly that — a system that makes complex data navigable and decisions defensible."</div>
+          <div class="case-results">
+            <div class="case-result">
+              <span class="metric">50+</span>
+              <p>entities scored and compared across multi-dimensional evaluation frameworks</p>
+            </div>
+            <div class="case-result">
+              <span class="metric">Full</span>
+              <p>methodology transparency layer — every score justified, every data point sourced</p>
+            </div>
+            <div class="case-result">
+              <span class="metric">Zero</span>
+              <p>manual data compilation — all scoring and comparison logic automated end-to-end</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════
+     GUARANTEES
+══════════════════════════════════════════ -->
+<section class="guarantees-bg" id="guarantees">
+  <div class="container">
+    <div class="text-center">
+      <div class="section-eyebrow">Risk reversal</div>
+      <h2 class="section-heading">We guarantee specific outcomes. <em>Not satisfaction — results.</em></h2>
+      <p class="section-sub">Generic satisfaction guarantees are marketing. These are operational commitments tied to measurable baselines we document before every build begins.</p>
+    </div>
+
+    <div class="guarantees-grid">
+      <div class="guarantee-card">
+        <div class="g-icon">⏱️</div>
+        <h4>Time Recovery Guarantee</h4>
+        <p>Admin time drops by ≥6 hours per week within 60 days — or your next month is free. Tracked against agreed baseline before launch.</p>
+      </div>
+      <div class="guarantee-card">
+        <div class="g-icon">✅</div>
+        <h4>Adoption Guarantee</h4>
+        <p>≥60% of target users active weekly by day 60 — or we redesign the UX at no charge. Tracked via system analytics, not self-reporting.</p>
+      </div>
+      <div class="guarantee-card">
+        <div class="g-icon">⚡</div>
+        <h4>Onboarding Speed Guarantee</h4>
+        <p>First new client fully handled through your new system within 10 business days of go-live — or we extend the build at no cost.</p>
+      </div>
+      <div class="guarantee-card">
+        <div class="g-icon">⚖️</div>
+        <h4>Compliance Miss Guarantee</h4>
+        <p>If any deadline is missed due to a system failure in the first 90 days, we refund that full retainer month. System failure only — not client input failure.</p>
+      </div>
+      <div class="guarantee-card">
+        <div class="g-icon">📋</div>
+        <h4>Scope Integrity Guarantee</h4>
+        <p>No scope creep charges for minor adjustments in the first 60 days. Major new features excluded — defined in writing at project start.</p>
+      </div>
+      <div class="guarantee-card">
+        <div class="g-icon">📊</div>
+        <h4>ROI Clarity Guarantee</h4>
+        <p>At 90 days, we deliver a quantified ROI report showing measured time and cost savings — calculated against baseline data captured at project start.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════
+     TESTIMONIALS
+══════════════════════════════════════════ -->
+<section style="background: var(--surface); border-top: 1px solid var(--rule);" id="testimonials">
+  <div class="container">
+    <div class="text-center">
+      <div class="section-eyebrow">From the firms we work with</div>
+      <h2 class="section-heading">What managing partners say <em>once operations actually work.</em></h2>
+    </div>
+
+    <div class="testimonials-grid">
+      <div class="testimonial-card">
+        <div class="stars">★★★★★</div>
+        <blockquote>"We'd been saying we'd 'fix the ops' for two years. Fanaye did it in ten weeks. The system runs our onboarding, tracks our deadlines, and gives me a morning briefing that replaces three meetings a week."</blockquote>
+        <div class="testimonial-author">
+          <div class="author-avatar">MP</div>
+          <div>
+            <div class="author-name">Managing Partner</div>
+            <div class="author-role">12-attorney immigration firm, US Northeast</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="testimonial-card">
+        <div class="stars">★★★★★</div>
+        <blockquote>"The document chase problem alone was worth the investment. We used to spend the first two weeks of every engagement chasing client files. That's gone. The system handles it. My team spent last quarter on billable work, not email threads."</blockquote>
+        <div class="testimonial-author">
+          <div class="author-avatar">OP</div>
+          <div>
+            <div class="author-name">Firm Owner</div>
+            <div class="author-role">Accounting practice, 18 staff, US Midwest</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="testimonial-card">
+        <div class="stars">★★★★★</div>
+        <blockquote>"What surprised me was how little of my team's time the implementation took. They said 3 hours in week one. It was actually 2.5. The system was live and in use before I had time to worry about adoption."</blockquote>
+        <div class="testimonial-author">
+          <div class="author-avatar">OD</div>
+          <div>
+            <div class="author-name">Operations Director</div>
+            <div class="author-role">Strategy consultancy, 35 consultants, UK</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════
+     OBJECTION HANDLING / FAQ
+══════════════════════════════════════════ -->
+<section style="background: var(--paper); border-top: 1px solid var(--rule);" id="faq">
+  <div class="container">
+    <div class="text-center">
+      <div class="section-eyebrow">Common questions</div>
+      <h2 class="section-heading">The questions we hear <em>before every engagement.</em></h2>
+    </div>
+
+    <div class="objections-grid">
+      <div class="objection-card">
+        <div class="q">We already have software. Why do we need this?</div>
+        <div class="a">Software doesn't build operational systems — it gives you tools to build them yourself. Firms that buy Clio, Karbon, and Xero and expect the operational problems to go away find that the problems follow them into the new software. We build the system around your actual workflows and connect your existing tools. The question isn't whether you have tools. It's whether your operations actually work.</div>
+      </div>
+
+      <div class="objection-card">
+        <div class="q">What does this actually cost, relative to what we'd save?</div>
+        <div class="a">A 20-person firm where senior staff spend 15% of their week on admin is losing roughly $468,000 in annual billing capacity. Our typical engagement — fully loaded, including retainer for year one — is $25,000–$40,000. At your billing rates, recovering 6 hours per week per fee-earner pays for the engagement within a quarter. We will run this calculation for your firm in the audit, with your numbers.</div>
+      </div>
+
+      <div class="objection-card">
+        <div class="q">We don't have time for a big implementation project.</div>
+        <div class="a">Our implementation process requires approximately 3 hours of your team's time in week one. We conduct the audit, design the architecture, and handle the build. You review, approve, and test. Most clients tell us they'd have done it sooner if they'd known how low the time commitment was on their end. The first operational change is visible in week two of the build.</div>
+      </div>
+
+      <div class="objection-card">
+        <div class="q">How do we know you'll deliver what you promise?</div>
+        <div class="a">Every engagement has a named guarantee tied to a measurable baseline we document before build begins. If we miss it, you don't pay for that period. This isn't a marketing statement — it's a contractual commitment. We're willing to put this in writing because we've done this before and we know what results are achievable.</div>
+      </div>
+
+      <div class="objection-card">
+        <div class="q">We had a bad experience with a software implementation before.</div>
+        <div class="a">Most implementations fail because someone builds software without first understanding the operational reality it needs to serve. That's why every Fanaye engagement starts with a structured audit. We won't propose a build until we understand your workflows, your team, your pain points, and your current tools. Discovery first — always. No exceptions.</div>
+      </div>
+
+      <div class="objection-card">
+        <div class="q">What happens after the system is built — do we get left with it?</div>
+        <div class="a">The retainer is structured as monthly operational improvement delivery, not support and maintenance. Every month includes: one new automation delivered, usage analytics reviewed, and a system evolution session. Firms that stay on retainer keep compounding their operational advantage. You can cancel anytime — but the firms that do usually come back when they realize what they gave up.</div>
+      </div>
+
+      <div class="objection-card">
+        <div class="q">We're a small firm — is this built for larger organizations?</div>
+        <div class="a">The Operational Health Audit is designed for firms from 5 to 200 staff. Some of our most impactful work has been for 8–15 person firms where every hour reclaimed is directly visible on the bottom line. The smallest audit client we've taken had 6 staff and recovered more than the engagement cost in billing capacity within 60 days. Size determines scope, not suitability.</div>
+      </div>
+
+      <div class="objection-card">
+        <div class="q">What makes Fanaye different from a freelancer or cheaper offshore shop?</div>
+        <div class="a">Offshore shops build what you ask for. Fanaye builds what your operations need — which often aren't the same thing. We bring domain knowledge of professional service operations, a structured methodology (the Fanaye Operational Design Process), and guaranteed outcomes. Cheaper options are available. None of them come with a measurable guarantee or the industry fluency to know what a managing partner actually needs from their operations.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════
+     FINAL CTA
+══════════════════════════════════════════ -->
+<section class="cta-section" id="audit">
+  <div class="cta-inner">
+    <h2>Stop running your firm on systems that <em>weren't designed for it.</em></h2>
+    <p>The Operational Health Audit takes two weeks and gives you a definitive picture of where your operations are broken, what fixing them is worth, and the exact order to address them. The fee applies 100% toward your first build if you proceed. If we don't surface at least five actionable improvements, the audit is free.</p>
+    <div class="cta-actions">
+      <a href="mailto:hello@fanayetechnologies.com" class="btn-white">
+        Book Your Operational Audit →
+      </a>
+      <a href="#services" class="btn-ghost">Explore the services first</a>
+    </div>
+    <div class="cta-guarantee">★ $3,500–$6,000 flat fee · Credited to your build · Full refund if we don't find $10,000+ in recoverable value</div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════
+     FOOTER
+══════════════════════════════════════════ -->
+<footer>
+  <div class="footer-inner">
+    <span class="footer-logo">Fanaye Technologies</span>
+    <ul class="footer-links">
+      <li><a href="#why">Why Fanaye</a></li>
+      <li><a href="#services">Services</a></li>
+      <li><a href="#process">Process</a></li>
+      <li><a href="#faq">FAQ</a></li>
+      <li><a href="mailto:hello@fanayetechnologies.com">Contact</a></li>
+    </ul>
+    <span class="footer-legal">© 2025 Fanaye Technologies. US · UK · Africa</span>
+  </div>
+</footer>
+
+</body>
+</html>

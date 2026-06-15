@@ -7,9 +7,9 @@
     "canonicalPath": "/blueprint"
   },
   "hero": {
-    "eyebrow": "Start here",
-    "headline": "Blueprint: map the logic before you commit to the build",
-    "subheadline": "A paid logic-mapping engagement that defines one workflow, fixes sprint scope and price, and puts a hard AI spend cap on paper — before a line of production code.",
+    "eyebrow": "De-risk before you build",
+    "headline": "Blueprint: lock scope, timeline, and price before you commit to the build",
+    "subheadline": "Most automation projects fail because someone starts building before they map the actual workflow. Blueprint is a paid logic-mapping engagement: 2 weeks, we map your exact workflows and edge cases, lock scope and price in writing, and give you a clear go/no-go decision. No surprises. No scope creep. No blank checks.",
     "primaryCta": {
       "label": "Book a call",
       "href": "/blueprint#book",
